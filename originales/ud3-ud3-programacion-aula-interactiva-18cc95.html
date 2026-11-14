@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UD3 Programación de aula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#f5f7f8; --paper:#ffffff; --ink:#18222d; --muted:#5a6774; --line:#d9e0e5;
+  --accent:#0d6b63; --accent-ink:#ffffff; --accent-soft:#e3f1ef; --mark:#fff3cf;
+  --ok:#1d7a3e; --ok-soft:#e4f4e9; --bad:#b4372b; --bad-soft:#fbe9e6;
+  --f-display:"IBM Plex Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --f-num:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11171c; --paper:#182128; --ink:#e4eaee; --muted:#9aa8b3; --line:#2c3943;
+    --accent:#4fb3a8; --accent-ink:#0d1a19; --accent-soft:#1c3330; --mark:#4a4020;
+    --ok:#5cc184; --ok-soft:#1b3326; --bad:#ef8a7e; --bad-soft:#3a2220;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11171c; --paper:#182128; --ink:#e4eaee; --muted:#9aa8b3; --line:#2c3943;
+  --accent:#4fb3a8; --accent-ink:#0d1a19; --accent-soft:#1c3330; --mark:#4a4020;
+  --ok:#5cc184; --ok-soft:#1b3326; --bad:#ef8a7e; --bad-soft:#3a2220;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body)}
+h1,h2,h3{font-family:var(--f-display);line-height:1.2;margin:0;text-wrap:balance}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header{background:var(--paper);border-bottom:1px solid var(--line);padding:28px 0 20px}
+.kicker{font:500 .8rem var(--f-num);color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+header h1{font-size:clamp(1.5rem,4vw,2.2rem);margin:6px 0 10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.92rem}
+.meta b{color:var(--ink);font-weight:600}
+.status{margin-top:16px;padding:12px 14px;border-radius:6px;background:var(--accent-soft);border-left:4px solid var(--accent);font-size:.95rem}
+.status strong{color:var(--accent)}
+.prog{margin-top:14px;display:flex;align-items:center;gap:12px;font-size:.88rem;color:var(--muted)}
+.bar{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:thin}
+nav button{flex:0 0 auto;border:1px solid transparent;background:none;color:var(--muted);font:500 .9rem var(--f-body);padding:7px 12px;border-radius:5px;cursor:pointer}
+nav button:hover{color:var(--ink);background:var(--paper)}
+nav button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+main{padding:24px 0 60px}
+section[role="tabpanel"]{display:none}
+section[role="tabpanel"].on{display:block}
+h2{font-size:1.45rem;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:0 0 14px}
+.card h3{font:600 1.05rem/1.3 var(--f-body);margin:0 0 8px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+ul,ol{padding-left:1.3em;margin:.4em 0}
+li{margin:.25em 0}
+.tag{display:inline-block;font:500 .75rem var(--f-num);padding:.1em .5em;border-radius:3px;background:var(--accent-soft);color:var(--accent);margin-right:4px}
+.tag.eval{background:var(--mark);color:var(--ink)}
+.week{border-left:4px solid var(--line)}
+.week.now{border-left-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.week.done{opacity:.75}
+.wh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.wh h3{margin:0}
+.wd{font:500 .85rem var(--f-num);color:var(--muted)}
+.now-badge{font:600 .72rem var(--f-body);background:var(--accent);color:var(--accent-ink);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.wsub{color:var(--muted);font-size:.9rem;margin:4px 0 10px}
+.tasks{list-style:none;padding:0;margin:8px 0 0}
+.tasks li{margin:0}
+.tasks label{display:flex;gap:10px;align-items:flex-start;padding:6px 4px;border-radius:4px;cursor:pointer}
+.tasks label:hover{background:var(--bg)}
+.tasks input{margin-top:5px;width:17px;height:17px;accent-color:var(--accent);flex:0 0 auto}
+.tasks input:checked + span{text-decoration:line-through;color:var(--muted)}
+.wprog{font:500 .8rem var(--f-num);color:var(--muted);margin-top:8px}
+.goal{margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:5px;font-size:.9rem}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:8px}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:0}
+.steps li::before{content:counter(s);font:600 .9rem var(--f-num);background:var(--accent);color:var(--accent-ink);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;flex:0 0 auto}
+details{background:var(--paper);border:1px solid var(--line);border-radius:6px;margin:0 0 8px}
+summary{cursor:pointer;padding:10px 14px;font-weight:500;list-style:none;display:flex;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font:600 1rem var(--f-num);color:var(--accent);width:14px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 14px 12px 38px;color:var(--ink)}
+code,.num{font-family:var(--f-num);font-size:.92em}
+.formula{font:500 1rem var(--f-num);background:var(--bg);padding:6px 10px;border-radius:4px;display:inline-block;margin:4px 0}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.small{font-size:.85rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:18px 0 30px;color:var(--muted);font-size:.85rem}
+.sechead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.pbtn{border:1px solid var(--accent);background:var(--paper);color:var(--accent);font:600 .85rem var(--f-body);padding:6px 12px;border-radius:5px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+.pbtn:hover{background:var(--accent);color:var(--accent-ink)}
+@media print{
+  @page{margin:14mm}
+  nav,.tools,.btn,.pbtn,.status,.prog{display:none!important}
+  :root{--bg:#fff;--paper:#fff;--ink:#000;--muted:#444;--line:#ccc;--accent:#0d6b63;--accent-soft:#e3f1ef;--mark:#fff3cf}
+  body{background:#fff;color:#000}
+  header{padding:0 0 10px}
+  main{padding-top:10px}
+  section[role="tabpanel"]{display:block!important;page-break-inside:auto;margin-bottom:18px}
+  body.print-one section[role="tabpanel"]{display:none!important}
+  body.print-one section[role="tabpanel"].printing{display:block!important}
+  .week.now{box-shadow:none}
+  .card,details,.q{break-inside:avoid}
+  footer{padding:8px 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="kicker">0653 Gestión Financiera · CFGS Administración y Finanzas · Semipresencial</div>
+    <h1>UD3. Operaciones Financieras II: rentas financieras</h1>
+    <div class="meta">
+      <span><b>Periodo:</b> 26 de octubre – 13 de noviembre de 2026</span>
+      <span><b>Horas:</b> 14 h</span>
+      <span><b>RA3</b> · CE b, i</span>
+      <span><b>Cuestionario:</b> 5 – 11 nov</span>
+      <span><b>Examen 1ª ev.:</b> lun 16 nov 15:00–16:50 (tarde) · mar 17 nov 8:00–9:50 (mañana)</span>
+    </div>
+    <div class="status" id="status">Cargando tu semana…</div>
+    <div class="prog"><span>Tu progreso</span><div class="bar"><i id="pbar"></i></div><span id="ptxt" class="num">0 %</span></div>
+  </div>
+</header>
+
+<nav aria-label="Secciones">
+  <div class="wrap" role="tablist">
+    <button role="tab" data-t="t-plan" aria-selected="true">Plan semanal</button>
+    <button role="tab" data-t="t-unidad">La unidad</button>
+    <button role="tab" data-t="t-estudio">Cómo estudiar</button>
+    <button role="tab" data-t="t-act">Actividades</button>
+    <button role="tab" data-t="t-eval">Evaluación</button>
+    <button role="tab" data-t="t-check">Checklist final</button>
+    <button role="tab" data-t="t-ayuda">Ayuda</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- PLAN -->
+<section role="tabpanel" id="t-plan" class="on">
+  <h2>Plan semana a semana</h2>
+  <p class="lead">Unas 5 horas por semana (14 h en total): 2 h de tutoría colectiva (o su documento TC) y unas 3 h de trabajo autónomo. Marca cada tarea al terminarla. Tu progreso se guarda en este navegador.</p>
+  <div id="weeks"></div>
+  <div class="tools">
+    <button class="btn sec" id="reset">Borrar mi progreso</button>
+    <button class="btn sec" id="printall">Imprimir todo / PDF</button>
+  </div>
+</section>
+
+<!-- UNIDAD -->
+<section role="tabpanel" id="t-unidad">
+  <h2>La unidad en un vistazo</h2>
+  <p class="lead">Pasas de valorar un único capital (UD2) a valorar una sucesión de capitales. Es la base para entender los préstamos (UD4) y la valoración de inversiones (UD5).</p>
+  <div class="card">
+    <h3>Resultado de aprendizaje y criterios</h3>
+    <p><span class="tag">RA3</span>Evalúa productos y servicios financieros del mercado, realizando los cálculos y elaborando los informes oportunos.</p>
+    <ul>
+      <li><b>3b)</b> Se han efectuado las operaciones matemáticas necesarias para valorar cada producto.</li>
+      <li><b>3i)</b> Se han realizado los cálculos financieros necesarios utilizando aplicaciones informáticas específicas.</li>
+    </ul>
+    <p class="small">RD 1584/2011, de 4 de noviembre · Orden 13/2015, de 5 de marzo (currículo de la Comunitat Valenciana).</p>
+  </div>
+  <h3 style="font:600 1.1rem var(--f-body);margin:18px 0 10px">Contenidos (estúdialos en este orden)</h3>
+  <details open><summary>3.1 Las rentas financieras: concepto, elementos y clasificación</summary><div class="in">Sucesión de capitales (términos) con vencimientos periódicos. Elementos: término C, origen, final, duración, periodo y tipo de interés. Valor actual V<sub>0</sub> y valor final V<sub>n</sub>. Clasificación: constante o variable, temporal o perpetua, pospagable o prepagable, inmediata, diferida o anticipada, entera o fraccionada.<br><span class="small">Material: Objetivos y contenidos · Presentación UD3 · Esquema resumen · TC teoría · Actividades resueltas 1 y 2</span></div></details>
+  <details><summary>3.2.1 Renta constante temporal, inmediata y pospagable</summary><div class="in"><span class="formula">Valor actual:  V<sub>0</sub> = C · [1 − (1 + i)^−n] / i</span><br><span class="formula">Valor final:   V<sub>n</sub> = C · [(1 + i)^n − 1] / i</span><br>Los términos vencen al final de cada periodo. Despeje del término C y del número de términos n (con logaritmos). El tipo i no se despeja: se obtiene por tanteo o con la hoja de cálculo.<br><span class="small">Material: Presentación UD3 · Formulario (apartado 6) · Actividades resueltas 4 a 6</span></div></details>
+  <details><summary>3.2.2 Renta constante temporal, inmediata y prepagable</summary><div class="in"><span class="formula">Valor actual:  V<sub>0</sub> = C · [1 − (1 + i)^−n] / i · (1 + i)</span><br><span class="formula">Valor final:   V<sub>n</sub> = C · [(1 + i)^n − 1] / i · (1 + i)</span><br>Los términos vencen al inicio de cada periodo: se multiplica el valor de la renta pospagable por (1 + i).<br><span class="small">Material: Presentación UD3 · Formulario (apartado 6) · Actividades propuestas 4 y 16</span></div></details>
+  <details><summary>3.2.3 Rentas constantes perpetuas</summary><div class="in"><span class="formula">Pospagable:  V<sub>0</sub> = C / i</span><br><span class="formula">Prepagable:  V<sub>0</sub> = C / i · (1 + i) = C + C / i</span><br>Renta con infinitos términos (n → ∞). Solo tiene valor actual: no existe valor final.<br><span class="small">Material: Presentación UD3 · Formulario (apartado 6) · Actividad resuelta 3 · Actividades propuestas 15 y 20</span></div></details>
+  <details><summary>3.2.4 Rentas constantes diferidas y anticipadas</summary><div class="in"><span class="formula">Diferida d periodos:    V<sub>0</sub> = C · [1 − (1 + i)^−n] / i · (1 + i)^−d</span><br><span class="formula">Anticipada h periodos:  V<sub>n</sub>+h = C · [(1 + i)^n − 1] / i · (1 + i)^h</span><br>Diferida: se valora d periodos antes del origen de la renta y se actualiza con (1 + i)^−d. Anticipada: se valora h periodos después del último término y se capitaliza con (1 + i)^h. Una renta anticipada nunca puede ser perpetua.<br><span class="small">Material: Presentación UD3 · Formulario (apartados 4 y 5) · Actividad resuelta 9 · Actividades propuestas 16, 18 y 19</span></div></details>
+  <details><summary>3.2.5 Rentas constantes fraccionadas</summary><div class="in"><span class="formula">Tipo del subperiodo:  i(m) = (1 + i)^(1/m) − 1</span><br><span class="formula">Valor actual:  V<sub>0</sub> = C(m) · [1 − (1 + i(m))^−n·m] / i(m)</span><br>Los términos se pagan m veces al año. Término anual y tanto de frecuencia m, o término de frecuencia m y tanto anual: el tipo y el número de términos van siempre en la misma unidad que el término. Si el dato es un nominal J(m): i(m) = J(m) / m.<br><span class="small">Material: Formulario (apartado 7) · Actividades resueltas 7, 8 y 10 a 14 · Documento «Utilización de los tantos o tipos de interés en los préstamos»</span></div></details>
+  <details><summary>3.3 y 3.4 Ampliación: tipos distintos y rentas variables</summary><div class="in"><span class="formula">Geométrica (q):  V<sub>0</sub> = C · [1 − q^n · (1 + i)^−n] / (1 + i − q)</span><br><span class="formula">Aritmética (r):  V<sub>0</sub> = (C + r / i + n · r) · [1 − (1 + i)^−n] / i − n · r / i</span><br>Rentas variables, inmediatas, temporales y pospagables: términos C, Cq, Cq², … (geométrica) o C, C + r, C + 2r, … (aritmética). Si el tipo de interés cambia a lo largo de la renta, se valora cada tramo con su tipo y se lleva todo al mismo momento.<br><span class="small">Material: Presentación UD3 · Formulario (apartado 9)</span></div></details>
+  <details><summary>Transversal: hoja de cálculo</summary><div class="in">Comprueba tus resultados: <br><code>=VA(tasa;nper;pago;;tipo)</code> para el valor actual, <code>=VF(tasa;nper;pago;;tipo)</code> para el valor final, <code>=PAGO(tasa;nper;va;;tipo)</code> para el término, <code>=NPER(tasa;pago;va;;tipo)</code> para el número de términos y <code>=TASA(nper;pago;va;;tipo)</code> para el tipo (tipo 0 = pospagable, 1 = prepagable).<br><span class="small">Material: Excel o LibreOffice Calc · Formulario (apartado 10)</span></div></details>
+  <div class="card" style="margin-top:14px">
+    <h3>Qué tienes que saber hacer al terminar</h3>
+    <ul>
+      <li>Explicar qué es una renta financiera e identificar sus elementos (término, origen, final, duración y tipo).</li>
+      <li>Clasificar una renta según su cuantía, duración, vencimiento, momento de valoración y frecuencia.</li>
+      <li>Calcular el valor actual y el valor final de una renta constante temporal, pospagable o prepagable.</li>
+      <li>Valorar rentas perpetuas, diferidas y anticipadas.</li>
+      <li>Pasar de un tanto a su equivalente y valorar rentas fraccionadas (términos mensuales o trimestrales con tipo anual).</li>
+      <li>Despejar el término y el número de términos, y comparar alternativas de pago o ahorro por equivalencia financiera.</li>
+      <li>Usar la calculadora científica y la hoja de cálculo.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ESTUDIO -->
+<section role="tabpanel" id="t-estudio">
+  <h2>Cómo estudiar esta unidad</h2>
+  <p class="lead">Se aprende haciendo ejercicios, no memorizando: el 70 % del trabajo es práctico.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Ciclo de estudio</h3>
+      <ol class="steps">
+        <li><div><b>Entiende la idea (semana 1).</b> Objetivos y contenidos, Presentación y Esquema resumen de la unidad.</div></li>
+        <li><div><b>Haz tu formulario.</b> Cada fórmula con el significado de cada letra y cuándo se usa.</div></li>
+        <li><div><b>Actividades propuestas (semanas 1 a 3),</b> según avanzas en la teoría. Autocorrige con el solucionario y marca las que fallas.</div></li>
+        <li><div><b>Actividades resueltas (semanas 2 y 3).</b> Tapa la solución, plantéalo y compara. Repite las propuestas falladas.</div></li>
+        <li><div><b>Pregunta</b> lo que no salga: foro de la UD3, mensajería o tutoría individual.</div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Los 6 pasos para cualquier ejercicio</h3>
+      <ol class="steps">
+        <li><div>Lee el ejercicio completo.</div></li>
+        <li><div>Identifica incógnita y datos: tradúcelo a C, n, i, d, h, m y V<sub>0</sub> o V<sub>n</sub>.</div></li>
+        <li><div>Dibuja el eje temporal: ¿cuándo vence el primer y el último término? ¿Dónde se valora la renta?</div></li>
+        <li><div>Clasifica la renta (temporal o perpetua, pospagable o prepagable, inmediata, diferida o anticipada, entera o fraccionada) y elige la fórmula.</div></li>
+        <li><div>Opera con el tipo y el número de términos en la misma unidad que el término (tipo en tanto por uno: 8 % = 0,08).</div></li>
+        <li><div>Interpreta: ¿tiene sentido el resultado? Compruébalo con la hoja de cálculo.</div></li>
+      </ol>
+    </div>
+  </div>
+  <h3 style="font:600 1.1rem var(--f-body);margin:18px 0 10px">Errores frecuentes (pulsa para ver cómo evitarlos)</h3>
+  <details><summary>Mezclar la periodicidad del término y la del tipo</summary><div class="in">Cuotas mensuales con tipo anual: pasa a tipo mensual, i(12) = (1 + i)^(1/12) − 1, y usa n · 12 términos.</div></details>
+  <details><summary>Dividir el tipo efectivo anual entre m</summary><div class="in">i/m solo vale si el dato es un nominal: i(m) = J(m)/m. Si te dan el efectivo, usa el tipo equivalente.</div></details>
+  <details><summary>Confundir pospagable y prepagable</summary><div class="in">Pospagable: el término vence al final del periodo. Prepagable: al inicio, y se multiplica por (1 + i).</div></details>
+  <details><summary>Contar mal el diferimiento d</summary><div class="in">El primer término vence en d + 1. Si el primer pago trimestral es a 1 año y 3 meses, d = 4 trimestres.</div></details>
+  <details><summary>Calcular el valor final de una renta perpetua</summary><div class="in">No existe: una perpetua solo tiene valor actual, V0 = C / i.</div></details>
+</section>
+
+<!-- ACTIVIDADES -->
+<section role="tabpanel" id="t-act">
+  <h2>Actividades y entregas</h2>
+  <p class="lead">Solo el cuestionario de Aules cuenta para la nota; el resto son autoevaluables y te preparan para el cuestionario y el examen.</p>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Actividad</th><th>Tipo</th><th>Cuándo</th><th>Para qué</th></tr></thead>
+      <tbody>
+        <tr><td>Actividades propuestas + solucionario</td><td><span class="tag">Autoevaluable</span></td><td>Semanas 1 a 3, según la teoría</td><td>Fijar cada bloque teórico</td></tr>
+        <tr><td>Actividades resueltas</td><td><span class="tag">Autoevaluable</span></td><td>Semanas 2 y 3</td><td>Afianzar el método paso a paso</td></tr>
+        <tr><td>Ejercicios para el cuestionario (PDF)</td><td><span class="tag">Preparación</span></td><td>Desde el 26 oct (inicio de la unidad)</td><td>Resolverlos en papel antes del cuestionario</td></tr>
+        <tr><td><b>Cuestionario UD3: Rentas financieras</b></td><td><span class="tag eval">Evaluable</span></td><td><b>5 – 11 nov, 23:59</b></td><td>Evaluar CE 3b y 3i</td></tr>
+        <tr><td>Solución detallada del cuestionario</td><td><span class="tag">Retroalimentación</span></td><td>Desde el 12 nov</td><td>Revisar errores y ver la nota en el Calificador</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Cómo hacer bien el cuestionario</h3>
+    <ul>
+      <li>Resuelve primero todos los ejercicios del PDF en papel, con el procedimiento completo.</li>
+      <li>Abre el cuestionario con tus resultados delante: las preguntas se refieren a esos ejercicios.</li>
+      <li>Test con una respuesta correcta; los errores no restan. Fuera de plazo no se puede entregar.</li>
+      <li>Si tu resultado no aparece entre las opciones, revisa unidades (tipo y n en la misma unidad que el término), pospagable o prepagable y diferimiento.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EVALUACION -->
+<section role="tabpanel" id="t-eval">
+  <h2>Cómo se evalúa</h2>
+  <p class="lead">La UD3 no tiene examen propio: entra en la prueba presencial de la 1ª evaluación (lunes 16 de noviembre, de 15:00 a 16:50 (tarde), y martes 17 de noviembre, de 8:00 a 9:50 (mañana)), obligatoria para ser evaluado.</p>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Componente</th><th>Peso</th><th>Qué aporta la UD3</th></tr></thead>
+      <tbody>
+        <tr><td>Actitudinal: actividades en plazo, foros, trabajo continuo</td><td class="num">20 % (2 p)</td><td>Cuestionario de rentas financieras y participación en el foro</td></tr>
+        <tr><td>Prueba objetiva presencial (teoría + práctica)</td><td class="num">80 % (8 p)</td><td>Ejercicios de rentas financieras y conceptos de la unidad</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Para que la nota cuente</h3><ul><li>Presentarte a la prueba presencial (si no, «no evaluado»).</li><li>Al menos un 50 % en la parte teórica y un 50 % en la práctica.</li><li>Nota de 1 a 10 sin decimales.</li></ul></div>
+    <div class="card"><h3>Qué se valora en el examen</h3><ul><li>Planteamiento y procedimiento, no solo el resultado.</li><li>Explicación y razonamiento del resultado.</li><li>Presentación: limpieza, orden y claridad.</li></ul></div>
+  </div>
+  <p class="small">Detalle completo en la Guía Didáctica 2026-27, apartado 9.</p>
+</section>
+
+<!-- CHECKLIST -->
+<section role="tabpanel" id="t-check">
+  <h2>Checklist final</h2>
+  <p class="lead">Marca lo que ya sabes hacer sin mirar los apuntes. Si algo queda sin marcar, vuelve a las actividades de ese bloque.</p>
+  <div class="card"><ul class="tasks" id="checklist"></ul><div class="wprog" id="ckprog"></div></div>
+</section>
+
+<!-- AYUDA -->
+<section role="tabpanel" id="t-ayuda">
+  <h2>Dónde pedir ayuda</h2>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Canal</th><th>Para qué</th><th>Cómo</th></tr></thead>
+      <tbody>
+        <tr><td>Foro de dudas de la UD3 (Aules)</td><td>Dudas que pueden servir a todo el grupo</td><td>Indica el número de ejercicio y hasta dónde llegaste</td></tr>
+        <tr><td>Mensajería de Aules o correo</td><td>Dudas personales</td><td><a href="mailto:manolilopez@cipfp-misericordia.org">manolilopez@cipfp-misericordia.org</a></td></tr>
+        <tr><td>Tutoría individual (TIGF)</td><td>Resolver dudas con calma</td><td>Con cita previa, mañana o tarde</td></tr>
+        <tr><td>Tutoría colectiva (TCGF)</td><td>Explicación y ejercicios clave</td><td>Según tu horario; si no puedes venir, documentos TC teoría y TC práctica</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">Días no lectivos en la unidad: ninguno (el 1 de noviembre, Todos los Santos, cae en domingo).</p>
+</section>
+</main>
+
+<footer><div class="wrap">CIPFP Misericordia · Gestión Financiera · Curso 2026-27 · Programación de aula UD3</div></footer>
+
+<script>
+(function(){
+  var KEY = 'gf-ud3-progreso-2627';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ state = {}; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+  var WEEKS = [
+    {id:"s1", title:"Semana 1 · Teoría", from:"2026-10-26", to:"2026-11-01", dates:"26 oct – 1 nov",
+     sub:"3.1 Concepto y clasificación · 3.2 Rentas constantes: pospagables, prepagables, perpetuas, diferidas, anticipadas y fraccionadas",
+     goal:"Conocer las fórmulas de cada tipo de renta y saber cuándo se aplica cada una.",
+     tasks:["Leer Objetivos y contenidos y la Presentación UD3","Asistir a la TC teoría (o leer el documento TC teoría)","Leer el Esquema resumen de rentas financieras","Hacer mi propio formulario y compararlo con el Formulario de rentas financieras","Actividades propuestas 1 a 4: variables, clasificación y rentas anuales","Actividades propuestas 5 a 8: rentas fraccionadas","Autocorregir las propuestas con el solucionario y marcar las falladas","Descargar los Ejercicios para el cuestionario (disponibles desde el 26 oct)"]},
+    {id:"s2", title:"Semana 2 · Práctica de rentas inmediatas y fraccionadas", from:"2026-11-02", to:"2026-11-08", dates:"2 – 8 nov",
+     sub:"Rentas pospagables y prepagables · perpetuas · tantos equivalentes y rentas fraccionadas · cálculo del término y del número de términos (el cuestionario evaluable se abre el 5 nov)",
+     goal:"Resolver cualquier renta inmediata o fraccionada, calcular el término y el número de términos y pasar de un tanto a su equivalente.",
+     tasks:["Asistir a la TC práctica I (o leer el documento TC práctica)","Actividades resueltas 1 a 8: variables, clasificación, rentas inmediatas, perpetua y fraccionadas","Actividades propuestas 9 a 19: fraccionadas, diferidas, anticipadas y perpetuas","Repetir las propuestas que fallé","Avanzar los Ejercicios para el cuestionario 1 a 6 (rentas pospagables y prepagables)","Terminar los Ejercicios para el cuestionario 7 a 10 (equivalencia de rentas y comparación de alternativas): el cuestionario se abre el 5 nov"]},
+    {id:"s3", title:"Semana 3 · Práctica de rentas diferidas, anticipadas y repaso", from:"2026-11-09", to:"2026-11-13", dates:"9 – 13 nov",
+     sub:"Rentas diferidas y anticipadas · comparación de alternativas · hoja de cálculo · repaso (el cuestionario evaluable cierra el 11 nov)",
+     goal:"Valorar rentas diferidas, anticipadas y perpetuas, y comparar alternativas de pago o ahorro por equivalencia financiera.",
+     tasks:["Asistir a la TC práctica II (o leer el documento TC práctica)","Actividades resueltas 9 a 14: rentas diferidas, ahorro y préstamos con términos mensuales","Actividades propuestas 20 a 31: casos combinados y comparación de alternativas","Hacer el cuestionario UD3 en Aules si aún no lo he hecho (cierra el 11 nov, 23:59)","Comprobar mis resultados con la hoja de cálculo","Llevar mis dudas al foro de la UD3"]},
+    {id:"s4", title:"Cuestionario evaluable", from:"2026-11-10", to:"2026-11-11", dates:"5 – 11 nov", eval:true,
+     sub:"Cierre de la UD3 (en paralelo con la semana 3; con la solución podrás repasar para el examen del 16 y 17 de noviembre)",
+     goal:"Tener la UD3 evaluada en Aules antes del 11 de noviembre a las 23:59.",
+     tasks:["Terminar en papel todos los Ejercicios para el cuestionario","Hacer el cuestionario UD3 en Aules (antes del 11 nov, 23:59)","Revisar la solución detallada (desde el 12 nov) y mi nota en el Calificador","Repasar con la solución y el Checklist final antes del examen de la 1ª evaluación (lun 16 nov tarde · mar 17 nov mañana)"]}
+  ];
+  var CHECK = ["Explico qué es una renta financiera y distingo sus elementos (término, origen, final, duración y tipo).","Clasifico una renta según su cuantía, duración, vencimiento, momento de valoración y frecuencia.","Calculo el valor actual y el valor final de una renta constante inmediata y pospagable.","Calculo el valor de una renta prepagable multiplicando por (1 + i).","Valoro una renta perpetua pospagable y prepagable.","Valoro una renta diferida (actualizo con (1 + i)^−d) y una anticipada (capitalizo con (1 + i)^h).","Paso de un tipo efectivo al tipo del subperiodo y trabajo con nominales, i(m) = J(m)/m.","Valoro rentas fraccionadas con el tipo y el número de términos en la unidad del término.","Despejo el término C y el número de términos n.","Comparo alternativas de pago o ahorro llevando todo al mismo momento.","Compruebo mis cálculos con la hoja de cálculo.","He hecho el cuestionario evaluable dentro de plazo."];
+
+  function d(s){ var p=s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  var today = new Date(); today.setHours(0,0,0,0);
+
+  function esc(s){ return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+
+  // Semanas
+  var wc = document.getElementById('weeks'), html='';
+  WEEKS.forEach(function(w){
+    var now = today>=d(w.from) && today<=d(w.to), past = today>d(w.to);
+    html += '<div class="card week'+(now?' now':'')+(past?' done':'')+'" id="w-'+w.id+'">'+
+      '<div class="wh"><h3>'+esc(w.title)+(now?'<span class="now-badge">Esta semana</span>':'')+(w.eval?' <span class="tag eval">Evaluable</span>':'')+'</h3><span class="wd">'+esc(w.dates)+'</span></div>'+
+      '<div class="wsub">'+esc(w.sub)+'</div><ul class="tasks">';
+    w.tasks.forEach(function(t,i){
+      var k=w.id+'-'+i;
+      html += '<li><label><input type="checkbox" data-k="'+k+'"'+(state[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>';
+    });
+    html += '</ul><div class="wprog" data-w="'+w.id+'"></div><div class="goal"><b>Al acabar deberías:</b> '+esc(w.goal)+'</div></div>';
+  });
+  wc.innerHTML = html;
+
+  // Checklist
+  var cl = document.getElementById('checklist'), ch='';
+  CHECK.forEach(function(t,i){ var k='ck-'+i; ch += '<li><label><input type="checkbox" data-k="'+k+'"'+(state[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>'; });
+  cl.innerHTML = ch;
+
+  function refresh(){
+    var total=0, done=0;
+    WEEKS.forEach(function(w){
+      var n=w.tasks.length, c=0;
+      w.tasks.forEach(function(_,i){ if(state[w.id+'-'+i]) c++; });
+      total+=n; done+=c;
+      document.querySelector('[data-w="'+w.id+'"]').textContent = c+' de '+n+' tareas hechas';
+    });
+    var pct = total? Math.round(done*100/total):0;
+    document.getElementById('pbar').style.width = pct+'%';
+    document.getElementById('ptxt').textContent = pct+' %';
+    var c2=0; CHECK.forEach(function(_,i){ if(state['ck-'+i]) c2++; });
+    document.getElementById('ckprog').textContent = c2+' de '+CHECK.length+' marcados'+(c2===CHECK.length?' · ¡Unidad dominada!':'');
+  }
+  document.addEventListener('change', function(e){
+    var k = e.target && e.target.getAttribute && e.target.getAttribute('data-k');
+    if(!k) return;
+    if(e.target.checked) state[k]=true; else delete state[k];
+    save(); refresh();
+  });
+  document.getElementById('reset').addEventListener('click', function(){
+    state={}; save(); document.querySelectorAll('input[data-k]').forEach(function(i){i.checked=false;}); refresh();
+  });
+  refresh();
+
+  // Estado de la semana
+  var st = document.getElementById('status'), msg;
+  var cur = WEEKS.filter(function(w){ return today>=d(w.from) && today<=d(w.to); })[0];
+  var qopen = today>=d('2026-11-05') && today<=d('2026-11-11');
+  if (today < d('2026-10-26')) {
+    var days = Math.round((d('2026-10-26')-today)/864e5);
+    msg = 'La unidad empieza el <strong>26 de octubre</strong> (faltan '+days+' día'+(days===1?'':'s')+'). Ve descargando el formulario y los Ejercicios para el cuestionario.';
+  } else if (cur) {
+    msg = 'Estás en la <strong>'+esc(cur.title)+'</strong> ('+esc(cur.dates)+'). '+esc(cur.goal);
+    if (cur.eval) { var left = Math.round((d('2026-11-11')-today)/864e5); msg += ' Te quedan <strong>'+left+' día'+(left===1?'':'s')+'</strong> para cerrar el cuestionario.'; }
+    else if (qopen) { msg += ' El cuestionario evaluable está abierto hasta el <strong>11 de noviembre (23:59)</strong>.'; }
+  } else {
+    msg = 'La UD3 ha terminado. Repásala antes del <strong>examen de la 1ª evaluación: lunes 16 de noviembre (15:00–16:50, tarde) o martes 17 de noviembre (8:00–9:50, mañana)</strong>: usa el checklist final.';
+  }
+  st.innerHTML = msg;
+
+  // Pestañas
+  var tabs = document.querySelectorAll('[role="tab"]');
+  function show(id){
+    tabs.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-t')===id ? 'true':'false'); });
+    document.querySelectorAll('[role="tabpanel"]').forEach(function(p){ p.classList.toggle('on', p.id===id); });
+    try { localStorage.setItem(KEY+'-tab', id); } catch(e){}
+  }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ show(b.getAttribute('data-t')); window.scrollTo({top: document.querySelector('nav').offsetTop, behavior:'smooth'}); }); });
+  try { var lt = localStorage.getItem(KEY+'-tab'); if (lt && document.getElementById(lt)) show(lt); } catch(e){}
+
+  // Imprimir / PDF por apartado
+  var openedForPrint=[];
+  function prepPrint(sec){
+    openedForPrint=[];
+    document.querySelectorAll(sec?('#'+sec.id+' details'):'details').forEach(function(dd){ if(!dd.open){ dd.open=true; openedForPrint.push(dd);} });
+    if(sec){ document.body.classList.add('print-one'); sec.classList.add('printing'); }
+  }
+  function endPrint(){
+    document.body.classList.remove('print-one');
+    document.querySelectorAll('.printing').forEach(function(x){x.classList.remove('printing');});
+    openedForPrint.forEach(function(dd){dd.open=false;}); openedForPrint=[];
+  }
+  window.addEventListener('afterprint', endPrint);
+  document.querySelectorAll('section[role="tabpanel"]').forEach(function(sec){
+    var h=sec.querySelector('h2'); if(!h) return;
+    var wrap=document.createElement('div'); wrap.className='sechead';
+    h.parentNode.insertBefore(wrap,h); wrap.appendChild(h);
+    var b=document.createElement('button'); b.type='button'; b.className='pbtn';
+    b.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/></svg>Imprimir / PDF';
+    b.title='Imprime este apartado o guárdalo como PDF (elige «Guardar como PDF» en el destino)';
+    b.addEventListener('click', function(){ prepPrint(sec); setTimeout(function(){ window.print(); }, 50); });
+    wrap.appendChild(b);
+  });
+  var pa=document.getElementById('printall');
+  if(pa) pa.addEventListener('click', function(){ prepPrint(null); setTimeout(function(){ window.print(); },50); });
+})();
+</script>
+</body>
+</html>

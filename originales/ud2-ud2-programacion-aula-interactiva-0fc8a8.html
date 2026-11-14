@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UD2 Programación de aula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#f5f7f8; --paper:#ffffff; --ink:#18222d; --muted:#5a6774; --line:#d9e0e5;
+  --accent:#0d6b63; --accent-ink:#ffffff; --accent-soft:#e3f1ef; --mark:#fff3cf;
+  --ok:#1d7a3e; --ok-soft:#e4f4e9; --bad:#b4372b; --bad-soft:#fbe9e6;
+  --f-display:"IBM Plex Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --f-num:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11171c; --paper:#182128; --ink:#e4eaee; --muted:#9aa8b3; --line:#2c3943;
+    --accent:#4fb3a8; --accent-ink:#0d1a19; --accent-soft:#1c3330; --mark:#4a4020;
+    --ok:#5cc184; --ok-soft:#1b3326; --bad:#ef8a7e; --bad-soft:#3a2220;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11171c; --paper:#182128; --ink:#e4eaee; --muted:#9aa8b3; --line:#2c3943;
+  --accent:#4fb3a8; --accent-ink:#0d1a19; --accent-soft:#1c3330; --mark:#4a4020;
+  --ok:#5cc184; --ok-soft:#1b3326; --bad:#ef8a7e; --bad-soft:#3a2220;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body)}
+h1,h2,h3{font-family:var(--f-display);line-height:1.2;margin:0;text-wrap:balance}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header{background:var(--paper);border-bottom:1px solid var(--line);padding:28px 0 20px}
+.kicker{font:500 .8rem var(--f-num);color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+header h1{font-size:clamp(1.5rem,4vw,2.2rem);margin:6px 0 10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.92rem}
+.meta b{color:var(--ink);font-weight:600}
+.status{margin-top:16px;padding:12px 14px;border-radius:6px;background:var(--accent-soft);border-left:4px solid var(--accent);font-size:.95rem}
+.status strong{color:var(--accent)}
+.prog{margin-top:14px;display:flex;align-items:center;gap:12px;font-size:.88rem;color:var(--muted)}
+.bar{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:thin}
+nav button{flex:0 0 auto;border:1px solid transparent;background:none;color:var(--muted);font:500 .9rem var(--f-body);padding:7px 12px;border-radius:5px;cursor:pointer}
+nav button:hover{color:var(--ink);background:var(--paper)}
+nav button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+main{padding:24px 0 60px}
+section[role="tabpanel"]{display:none}
+section[role="tabpanel"].on{display:block}
+h2{font-size:1.45rem;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:0 0 14px}
+.card h3{font:600 1.05rem/1.3 var(--f-body);margin:0 0 8px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+ul,ol{padding-left:1.3em;margin:.4em 0}
+li{margin:.25em 0}
+.tag{display:inline-block;font:500 .75rem var(--f-num);padding:.1em .5em;border-radius:3px;background:var(--accent-soft);color:var(--accent);margin-right:4px}
+.tag.eval{background:var(--mark);color:var(--ink)}
+.week{border-left:4px solid var(--line)}
+.week.now{border-left-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.week.done{opacity:.75}
+.wh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.wh h3{margin:0}
+.wd{font:500 .85rem var(--f-num);color:var(--muted)}
+.now-badge{font:600 .72rem var(--f-body);background:var(--accent);color:var(--accent-ink);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.wsub{color:var(--muted);font-size:.9rem;margin:4px 0 10px}
+.tasks{list-style:none;padding:0;margin:8px 0 0}
+.tasks li{margin:0}
+.tasks label{display:flex;gap:10px;align-items:flex-start;padding:6px 4px;border-radius:4px;cursor:pointer}
+.tasks label:hover{background:var(--bg)}
+.tasks input{margin-top:5px;width:17px;height:17px;accent-color:var(--accent);flex:0 0 auto}
+.tasks input:checked + span{text-decoration:line-through;color:var(--muted)}
+.wprog{font:500 .8rem var(--f-num);color:var(--muted);margin-top:8px}
+.goal{margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:5px;font-size:.9rem}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:8px}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:0}
+.steps li::before{content:counter(s);font:600 .9rem var(--f-num);background:var(--accent);color:var(--accent-ink);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;flex:0 0 auto}
+details{background:var(--paper);border:1px solid var(--line);border-radius:6px;margin:0 0 8px}
+summary{cursor:pointer;padding:10px 14px;font-weight:500;list-style:none;display:flex;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font:600 1rem var(--f-num);color:var(--accent);width:14px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 14px 12px 38px;color:var(--ink)}
+code,.num{font-family:var(--f-num);font-size:.92em}
+.formula{font:500 1rem var(--f-num);background:var(--bg);padding:6px 10px;border-radius:4px;display:inline-block;margin:4px 0}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.small{font-size:.85rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:18px 0 30px;color:var(--muted);font-size:.85rem}
+.sechead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.pbtn{border:1px solid var(--accent);background:var(--paper);color:var(--accent);font:600 .85rem var(--f-body);padding:6px 12px;border-radius:5px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+.pbtn:hover{background:var(--accent);color:var(--accent-ink)}
+@media print{
+  @page{margin:14mm}
+  nav,.tools,.btn,.pbtn,.status,.prog{display:none!important}
+  :root{--bg:#fff;--paper:#fff;--ink:#000;--muted:#444;--line:#ccc;--accent:#0d6b63;--accent-soft:#e3f1ef;--mark:#fff3cf}
+  body{background:#fff;color:#000}
+  header{padding:0 0 10px}
+  main{padding-top:10px}
+  section[role="tabpanel"]{display:block!important;page-break-inside:auto;margin-bottom:18px}
+  body.print-one section[role="tabpanel"]{display:none!important}
+  body.print-one section[role="tabpanel"].printing{display:block!important}
+  .week.now{box-shadow:none}
+  .card,details,.q{break-inside:avoid}
+  footer{padding:8px 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="kicker">0653 Gestión Financiera · CFGS Administración y Finanzas · Semipresencial</div>
+    <h1>UD2. Operaciones Financieras I: capitalización y descuento</h1>
+    <div class="meta">
+      <span><b>Periodo:</b> 5 – 25 de octubre de 2026</span>
+      <span><b>Horas:</b> 15 h</span>
+      <span><b>RA3</b> · CE a, b, i</span>
+      <span><b>Cuestionario:</b> 26 oct – 1 nov</span>
+      <span><b>Examen 1ª ev.:</b> 16 – 20 nov</span>
+    </div>
+    <div class="status" id="status">Cargando tu semana…</div>
+    <div class="prog"><span>Tu progreso</span><div class="bar"><i id="pbar"></i></div><span id="ptxt" class="num">0 %</span></div>
+  </div>
+</header>
+
+<nav aria-label="Secciones">
+  <div class="wrap" role="tablist">
+    <button role="tab" data-t="t-plan" aria-selected="true">Plan semanal</button>
+    <button role="tab" data-t="t-unidad">La unidad</button>
+    <button role="tab" data-t="t-estudio">Cómo estudiar</button>
+    <button role="tab" data-t="t-act">Actividades</button>
+    <button role="tab" data-t="t-eval">Evaluación</button>
+    <button role="tab" data-t="t-check">Checklist final</button>
+    <button role="tab" data-t="t-ayuda">Ayuda</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- PLAN -->
+<section role="tabpanel" id="t-plan" class="on">
+  <h2>Plan semana a semana</h2>
+  <p class="lead">Unas 5 horas por semana: 2 h de tutoría colectiva (o su documento TC) y unas 3 h de trabajo autónomo. Marca cada tarea al terminarla; tu progreso se guarda en este navegador.</p>
+  <div id="weeks"></div>
+  <div class="tools">
+    <button class="btn sec" id="reset">Borrar mi progreso</button>
+    <button class="btn sec" id="printall">Imprimir todo / PDF</button>
+  </div>
+</section>
+
+<!-- UNIDAD -->
+<section role="tabpanel" id="t-unidad">
+  <h2>La unidad en un vistazo</h2>
+  <p class="lead">Es la base de todo el cálculo financiero del módulo: sin ella no podrás resolver rentas (UD3), préstamos (UD4) ni inversiones (UD5).</p>
+  <div class="card">
+    <h3>Resultado de aprendizaje y criterios</h3>
+    <p><span class="tag">RA3</span>Evalúa productos y servicios financieros del mercado, realizando los cálculos y elaborando los informes oportunos.</p>
+    <ul>
+      <li><b>3a)</b> Se ha recogido información sobre productos y servicios financieros a través de los diferentes canales disponibles.</li>
+      <li><b>3b)</b> Se han efectuado las operaciones matemáticas necesarias para valorar cada producto.</li>
+      <li><b>3i)</b> Se han realizado los cálculos financieros necesarios utilizando aplicaciones informáticas específicas.</li>
+    </ul>
+    <p class="small">RD 1584/2011, de 4 de noviembre · Orden 13/2015, de 5 de marzo (currículo de la Comunitat Valenciana).</p>
+  </div>
+  <h3 style="font:600 1.1rem var(--f-body);margin:18px 0 10px">Contenidos (estúdialos en este orden)</h3>
+  <details open><summary>2.1 El capital financiero</summary><div class="in">Valor del dinero en el tiempo. Intercambio de capitales. Equivalencia financiera. Variables: C<sub>0</sub>, C<sub>n</sub>, I, i, n.<br><span class="small">Material: Objetivos y contenidos · Presentación UD2 · TC teoría</span></div></details>
+  <details><summary>2.2 Capitalización simple</summary><div class="in"><span class="formula">Cn = C0 · (1 + i · n)</span><br>Despeje de C<sub>0</sub>, i, n e I. Fraccionamiento del tanto. Tantos equivalentes en simple (i<sub>m</sub> = i/m). Año comercial (360) y civil (365).<br><span class="small">Material: Vídeo 1 · Actividad de clase capitalización simple · Formulario</span></div></details>
+  <details><summary>2.3 Capitalización compuesta</summary><div class="in"><span class="formula">Cn = C0 · (1 + i)^n</span><br>Despeje de las demás variables (n con logaritmos). Tantos equivalentes: <span class="formula">(1 + i) = (1 + i(m))^m</span> con i(m) = J(m)/m. TAE, TIN y tanto fraccionado. Simple frente a compuesta.<br><span class="small">Material: Vídeos 2 y 3 · Actividad de clase capitalización compuesta · Formulario</span></div></details>
+  <details><summary>2.4 Descuento simple y compuesto</summary><div class="in">Comercial (sobre el nominal): <span class="formula">E = N · (1 − d · n)</span> · Racional (sobre el efectivo): <span class="formula">E = N / (1 + i · n)</span><br>Compuesto comercial: <span class="formula">E = N · (1 − d)^n</span> · Compuesto racional: <span class="formula">E = N · (1 + i)^−n</span><br>Descuento de efectos y liquidación de la remesa.<br><span class="small">Material: Vídeo 4 · Actividad de clase descuento simple · Formulario</span></div></details>
+  <details><summary>Transversal: hoja de cálculo</summary><div class="in">Comprueba tus resultados: <code>=C0*(1+i)^n</code> para capitalizar y <code>=Cn/(1+i)^n</code> para actualizar.</div></details>
+  <div class="card" style="margin-top:14px">
+    <h3>Qué tienes que saber hacer al terminar</h3>
+    <ul>
+      <li>Explicar por qué el dinero vale distinto según el momento en que está disponible.</li>
+      <li>Distinguir capitalización y actualización, y régimen simple y compuesto.</li>
+      <li>Calcular capital inicial, final, intereses, tipo y tiempo en cualquier operación.</li>
+      <li>Homogeneizar tiempo y tipo, y pasar de un tanto a su equivalente (TAE, TIN, fraccionado).</li>
+      <li>Elegir el régimen según el plazo: menos de un año, simple; más de un año, compuesto.</li>
+      <li>Resolver descuentos comercial y racional, simples y compuestos, y liquidar una remesa.</li>
+      <li>Usar la calculadora científica y la hoja de cálculo.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ESTUDIO -->
+<section role="tabpanel" id="t-estudio">
+  <h2>Cómo estudiar esta unidad</h2>
+  <p class="lead">Se aprende haciendo ejercicios, no memorizando: el 70 % del trabajo es práctico.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Ciclo de estudio</h3>
+      <ol class="steps">
+        <li><div><b>Entiende la idea</b> (semana 1). Objetivos y contenidos, Presentación y vídeo del bloque.</div></li>
+        <li><div><b>Haz tu formulario.</b> Cada fórmula con el significado de cada letra y cuándo se usa.</div></li>
+        <li><div><b>Actividades propuestas</b> (semana 1), junto con la teoría. Autocorrige con el solucionario y marca las que fallas.</div></li>
+        <li><div><b>Actividades resueltas</b> (semanas 2 y 3). Tapa la solución, plantéalo y compara. Repite las propuestas falladas.</div></li>
+        <li><div><b>Pregunta</b> lo que no salga: foro de la UD2, mensajería o tutoría individual.</div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Los 6 pasos para cualquier ejercicio</h3>
+      <ol class="steps">
+        <li><div>Lee el ejercicio completo.</div></li>
+        <li><div>Identifica incógnita y datos: tradúcelo a C<sub>0</sub>, C<sub>n</sub>, I, i, n, d.</div></li>
+        <li><div>Plantéalo: ¿capitalizo o descuento? ¿simple o compuesto? ¿comercial o racional?</div></li>
+        <li><div>Elige la fórmula.</div></li>
+        <li><div>Opera con tiempo y tipo en la misma unidad.</div></li>
+        <li><div>Interpreta: ¿tiene sentido el resultado?</div></li>
+      </ol>
+    </div>
+  </div>
+  <h3 style="font:600 1.1rem var(--f-body);margin:18px 0 10px">Errores frecuentes (pulsa para ver cómo evitarlos)</h3>
+  <details><summary>Mezclar unidades de tiempo y tipo</summary><div class="in">Un tipo anual con un tiempo en meses o días sin convertir. Pasa todo a la misma unidad: 90 días al 10 % anual → n = 90/360.</div></details>
+  <details><summary>Usar 365 cuando piden año comercial</summary><div class="in">Año comercial = 360 días; año civil = 365. Léelo en el enunciado; si no dice nada, usa el comercial.</div></details>
+  <details><summary>Dividir la TAE entre m en compuesta</summary><div class="in">i/m solo vale en simple. En compuesta: (1 + i) = (1 + i(m))^m, y recuerda que i(m) = J(m)/m.</div></details>
+  <details><summary>Confundir descuento comercial y racional</summary><div class="in">Comercial: el descuento se calcula sobre el nominal (lo usa el banco). Racional: sobre el efectivo (es el matemáticamente exacto).</div></details>
+  <details><summary>Poner el tipo en porcentaje dentro de la fórmula</summary><div class="in">8 % se escribe 0,08.</div></details>
+</section>
+
+<!-- ACTIVIDADES -->
+<section role="tabpanel" id="t-act">
+  <h2>Actividades y entregas</h2>
+  <p class="lead">Solo el cuestionario de Aules cuenta para la nota; el resto son autoevaluables y te preparan para el cuestionario y el examen.</p>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Actividad</th><th>Tipo</th><th>Cuándo</th><th>Para qué</th></tr></thead>
+      <tbody>
+        <tr><td>Actividades propuestas + solucionario</td><td><span class="tag">Autoevaluable</span></td><td>Semana 1, con la teoría</td><td>Fijar cada bloque teórico</td></tr>
+        <tr><td>Actividades resueltas</td><td><span class="tag">Autoevaluable</span></td><td>Semanas 2 y 3</td><td>Afianzar el método paso a paso</td></tr>
+        <tr><td>Actividades de clase (simple, compuesta, descuento)</td><td><span class="tag">Autoevaluable</span></td><td>Semanas 2 y 3</td><td>Practicar lo visto en la TC práctica</td></tr>
+        <tr><td>Ejercicios para el cuestionario (PDF)</td><td><span class="tag">Preparación</span></td><td>Desde el 5 oct (inicio de la unidad)</td><td>Resolverlos en papel antes del cuestionario</td></tr>
+        <tr><td><b>Cuestionario UD2: Capitalización y descuento</b></td><td><span class="tag eval">Evaluable</span></td><td><b>26 oct – 1 nov, 23:59</b></td><td>Evaluar CE 3a, 3b y 3i</td></tr>
+        <tr><td>Solución detallada del cuestionario</td><td><span class="tag">Retroalimentación</span></td><td>Desde el 2 nov</td><td>Revisar errores y ver la nota en el Calificador</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Cómo hacer bien el cuestionario</h3>
+    <ul>
+      <li>Resuelve primero todos los ejercicios del PDF en papel, con el procedimiento completo.</li>
+      <li>Abre el cuestionario con tus resultados delante: las preguntas se refieren a esos ejercicios.</li>
+      <li>Test con una respuesta correcta; los errores no restan. Fuera de plazo no se puede entregar.</li>
+      <li>Si tu resultado no aparece entre las opciones, revisa unidades (tiempo, tipo, año 360/365).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EVALUACION -->
+<section role="tabpanel" id="t-eval">
+  <h2>Cómo se evalúa</h2>
+  <p class="lead">La UD2 no tiene examen propio: entra en la prueba presencial de la 1ª evaluación (16–20 de noviembre de 2026), obligatoria para ser evaluado.</p>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Componente</th><th>Peso</th><th>Qué aporta la UD2</th></tr></thead>
+      <tbody>
+        <tr><td>Actitudinal: actividades en plazo, foros, trabajo continuo</td><td class="num">20 % (2 p)</td><td>Cuestionario de capitalización y descuento y participación en el foro</td></tr>
+        <tr><td>Prueba objetiva presencial (teoría + práctica)</td><td class="num">80 % (8 p)</td><td>Ejercicios de capitalización y descuento y conceptos de la unidad</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Para que la nota cuente</h3><ul><li>Presentarte a la prueba presencial (si no, «no evaluado»).</li><li>Al menos un 50 % en la parte teórica y un 50 % en la práctica.</li><li>Nota de 1 a 10 sin decimales.</li></ul></div>
+    <div class="card"><h3>Qué se valora en el examen</h3><ul><li>Planteamiento y procedimiento, no solo el resultado.</li><li>Explicación y razonamiento del resultado.</li><li>Presentación: limpieza, orden y claridad.</li></ul></div>
+  </div>
+  <p class="small">Detalle completo en la Guía Didáctica 2026-27, apartado 9.</p>
+</section>
+
+<!-- CHECKLIST -->
+<section role="tabpanel" id="t-check">
+  <h2>Checklist final</h2>
+  <p class="lead">Marca lo que ya sabes hacer sin mirar los apuntes. Si algo queda sin marcar, vuelve a las actividades de ese bloque.</p>
+  <div class="card"><ul class="tasks" id="checklist"></ul><div class="wprog" id="ckprog"></div></div>
+</section>
+
+<!-- AYUDA -->
+<section role="tabpanel" id="t-ayuda">
+  <h2>Dónde pedir ayuda</h2>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Canal</th><th>Para qué</th><th>Cómo</th></tr></thead>
+      <tbody>
+        <tr><td>Foro de dudas de la UD2 (Aules)</td><td>Dudas que pueden servir a todo el grupo</td><td>Indica el número de ejercicio y hasta dónde llegaste</td></tr>
+        <tr><td>Mensajería de Aules o correo</td><td>Dudas personales</td><td><a href="mailto:manolilopez@cipfp-misericordia.org">manolilopez@cipfp-misericordia.org</a></td></tr>
+        <tr><td>Tutoría individual (TIGF)</td><td>Resolver dudas con calma</td><td>Con cita previa, mañana o tarde</td></tr>
+        <tr><td>Tutoría colectiva (TCGF)</td><td>Explicación y ejercicios clave</td><td>Según tu horario; si no puedes venir, documentos TC teoría y TC práctica</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">Días no lectivos en la unidad: 9 de octubre (Día de la Comunitat Valenciana) y 12 de octubre (Día de la Hispanidad).</p>
+</section>
+</main>
+
+<footer><div class="wrap">CIPFP Misericordia · Gestión Financiera · Curso 2026-27 · Programación de aula UD2</div></footer>
+
+<script>
+(function(){
+  var KEY = 'gf-ud2-progreso-2627';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ state = {}; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+  var WEEKS = [
+    {id:'s1', title:'Semana 1 · Teoría', from:'2026-10-05', to:'2026-10-11', dates:'5–11 oct · 9 oct festivo',
+     sub:'2.1 Capital financiero · 2.2 Capitalización simple · 2.3 Capitalización compuesta · 2.4 Descuento',
+     goal:'Conocer las fórmulas de cada bloque y saber cuándo se aplica cada una.',
+     tasks:['Leer Objetivos y contenidos y la Presentación UD2','Asistir a la TC teoría (o leer el documento TC teoría)','Ver los vídeos resumen 1 a 4','Hacer mi propio formulario y compararlo con el Formulario de la unidad','Actividades propuestas: capitalización simple','Actividades propuestas: capitalización compuesta y tantos equivalentes','Actividades propuestas: descuento','Autocorregir las propuestas con el solucionario y marcar las falladas','Descargar los Ejercicios para el cuestionario (disponibles desde hoy)']},
+    {id:'s2', title:'Semana 2 · Práctica de capitalización', from:'2026-10-12', to:'2026-10-18', dates:'13–18 oct · 12 oct festivo',
+     sub:'Capitalización simple y compuesta · TAE, TIN y tanto fraccionado · simple frente a compuesta',
+     goal:'Resolver cualquier ejercicio de capitalización, pasar de TIN a TAE y elegir régimen según el plazo.',
+     tasks:['Asistir a la TC práctica I (o leer el documento TC práctica)','Actividades resueltas: capitalización simple','Actividades resueltas: capitalización compuesta y tantos equivalentes','Actividad de clase: capitalización simple','Actividad de clase: capitalización compuesta','Repetir las propuestas que fallé','Avanzar los Ejercicios para el cuestionario de capitalización']},
+    {id:'s3', title:'Semana 3 · Práctica de descuento', from:'2026-10-19', to:'2026-10-25', dates:'19–25 oct',
+     sub:'Descuento simple y compuesto, comercial y racional · descuento de efectos · repaso',
+     goal:'Distinguir y calcular los cuatro descuentos y liquidar una remesa de efectos.',
+     tasks:['Asistir a la TC práctica II (o leer el documento TC práctica)','Actividades resueltas: descuento','Actividad de clase: descuento simple','Avanzar los Ejercicios para el cuestionario de descuento','Llevar mis dudas al foro de la UD2']},
+    {id:'s4', title:'Cuestionario evaluable', from:'2026-10-26', to:'2026-11-01', dates:'26 oct – 1 nov', eval:true,
+     sub:'Cierre de la UD2 (en paralelo empieza la UD3, Rentas)',
+     goal:'Tener la UD2 evaluada en Aules antes del 1 de noviembre a las 23:59.',
+     tasks:['Terminar en papel todos los Ejercicios para el cuestionario','Hacer el cuestionario UD2 en Aules (antes del 1 nov, 23:59)','Revisar la solución detallada (desde el 2 nov) y mi nota en el Calificador']}
+  ];
+  var CHECK = ['Explico qué es un capital financiero y qué significa que dos capitales sean equivalentes.','Distingo una operación de capitalización de una de actualización (descuento).','Calculo Cn, C0, I, i y n en capitalización simple, con año comercial y civil.','Calculo tantos equivalentes en simple (i/m).','Calculo Cn, C0, I, i y n en capitalización compuesta, incluido despejar n con logaritmos.','Paso de TIN a tanto fraccionado y a TAE, y al revés.','Sé qué régimen aplicar según el plazo de la operación.','Calculo descuento comercial y racional en simple y en compuesto.','Liquido una remesa de efectos (nominal, descuento, comisiones y efectivo).','Compruebo mis cálculos con la hoja de cálculo.','He hecho el cuestionario evaluable dentro de plazo.'];
+
+  function d(s){ var p=s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  var today = new Date(); today.setHours(0,0,0,0);
+
+  function esc(s){ return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+
+  // Semanas
+  var wc = document.getElementById('weeks'), html='';
+  WEEKS.forEach(function(w){
+    var now = today>=d(w.from) && today<=d(w.to), past = today>d(w.to);
+    html += '<div class="card week'+(now?' now':'')+(past?' done':'')+'" id="w-'+w.id+'">'+
+      '<div class="wh"><h3>'+esc(w.title)+(now?'<span class="now-badge">Esta semana</span>':'')+(w.eval?' <span class="tag eval">Evaluable</span>':'')+'</h3><span class="wd">'+esc(w.dates)+'</span></div>'+
+      '<div class="wsub">'+esc(w.sub)+'</div><ul class="tasks">';
+    w.tasks.forEach(function(t,i){
+      var k=w.id+'-'+i;
+      html += '<li><label><input type="checkbox" data-k="'+k+'"'+(state[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>';
+    });
+    html += '</ul><div class="wprog" data-w="'+w.id+'"></div><div class="goal"><b>Al acabar deberías:</b> '+esc(w.goal)+'</div></div>';
+  });
+  wc.innerHTML = html;
+
+  // Checklist
+  var cl = document.getElementById('checklist'), ch='';
+  CHECK.forEach(function(t,i){ var k='ck-'+i; ch += '<li><label><input type="checkbox" data-k="'+k+'"'+(state[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>'; });
+  cl.innerHTML = ch;
+
+  function refresh(){
+    var total=0, done=0;
+    WEEKS.forEach(function(w){
+      var n=w.tasks.length, c=0;
+      w.tasks.forEach(function(_,i){ if(state[w.id+'-'+i]) c++; });
+      total+=n; done+=c;
+      document.querySelector('[data-w="'+w.id+'"]').textContent = c+' de '+n+' tareas hechas';
+    });
+    var pct = total? Math.round(done*100/total):0;
+    document.getElementById('pbar').style.width = pct+'%';
+    document.getElementById('ptxt').textContent = pct+' %';
+    var c2=0; CHECK.forEach(function(_,i){ if(state['ck-'+i]) c2++; });
+    document.getElementById('ckprog').textContent = c2+' de '+CHECK.length+' marcados'+(c2===CHECK.length?' · ¡Unidad dominada!':'');
+  }
+  document.addEventListener('change', function(e){
+    var k = e.target && e.target.getAttribute && e.target.getAttribute('data-k');
+    if(!k) return;
+    if(e.target.checked) state[k]=true; else delete state[k];
+    save(); refresh();
+  });
+  document.getElementById('reset').addEventListener('click', function(){
+    state={}; save(); document.querySelectorAll('input[data-k]').forEach(function(i){i.checked=false;}); refresh();
+  });
+  refresh();
+
+  // Estado de la semana
+  var st = document.getElementById('status'), msg;
+  var cur = WEEKS.filter(function(w){ return today>=d(w.from) && today<=d(w.to); })[0];
+  if (today < d('2026-10-05')) {
+    var days = Math.round((d('2026-10-05')-today)/864e5);
+    msg = 'La unidad empieza el <strong>5 de octubre</strong> (faltan '+days+' día'+(days===1?'':'s')+'). Ve descargando el formulario y los Ejercicios para el cuestionario.';
+  } else if (cur) {
+    msg = 'Estás en la <strong>'+esc(cur.title)+'</strong> ('+esc(cur.dates)+'). '+esc(cur.goal);
+    if (cur.eval) { var left = Math.round((d('2026-11-01')-today)/864e5); msg += ' Te quedan <strong>'+left+' día'+(left===1?'':'s')+'</strong> para cerrar el cuestionario.'; }
+  } else {
+    msg = 'La UD2 ha terminado. Repásala antes del <strong>examen de la 1ª evaluación (16–20 de noviembre)</strong>: usa el checklist final.';
+  }
+  st.innerHTML = msg;
+
+  // Pestañas
+  var tabs = document.querySelectorAll('[role="tab"]');
+  function show(id){
+    tabs.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-t')===id ? 'true':'false'); });
+    document.querySelectorAll('[role="tabpanel"]').forEach(function(p){ p.classList.toggle('on', p.id===id); });
+    try { localStorage.setItem(KEY+'-tab', id); } catch(e){}
+  }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ show(b.getAttribute('data-t')); window.scrollTo({top: document.querySelector('nav').offsetTop, behavior:'smooth'}); }); });
+  try { var lt = localStorage.getItem(KEY+'-tab'); if (lt && document.getElementById(lt)) show(lt); } catch(e){}
+
+  // Imprimir / PDF por apartado
+  var openedForPrint=[];
+  function prepPrint(sec){
+    openedForPrint=[];
+    document.querySelectorAll(sec?('#'+sec.id+' details'):'details').forEach(function(dd){ if(!dd.open){ dd.open=true; openedForPrint.push(dd);} });
+    if(sec){ document.body.classList.add('print-one'); sec.classList.add('printing'); }
+  }
+  function endPrint(){
+    document.body.classList.remove('print-one');
+    document.querySelectorAll('.printing').forEach(function(x){x.classList.remove('printing');});
+    openedForPrint.forEach(function(dd){dd.open=false;}); openedForPrint=[];
+  }
+  window.addEventListener('afterprint', endPrint);
+  document.querySelectorAll('section[role="tabpanel"]').forEach(function(sec){
+    var h=sec.querySelector('h2'); if(!h) return;
+    var wrap=document.createElement('div'); wrap.className='sechead';
+    h.parentNode.insertBefore(wrap,h); wrap.appendChild(h);
+    var b=document.createElement('button'); b.type='button'; b.className='pbtn';
+    b.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/></svg>Imprimir / PDF';
+    b.title='Imprime este apartado o guárdalo como PDF (elige «Guardar como PDF» en el destino)';
+    b.addEventListener('click', function(){ prepPrint(sec); setTimeout(function(){ window.print(); }, 50); });
+    wrap.appendChild(b);
+  });
+  var pa=document.getElementById('printall');
+  if(pa) pa.addEventListener('click', function(){ prepPrint(null); setTimeout(function(){ window.print(); },50); });
+})();
+</script>
+</body>
+</html>
