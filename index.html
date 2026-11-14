@@ -13,7 +13,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="icon-192.png">
-<script>if('serviceWorker' in navigator){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})})}</script>
+<script>if('serviceWorker' in navigator&&location.protocol!=='file:'){addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})})}</script>
 <style>
 :root{--bg:#f5f6f8;--card:#fff;--tx:#1d2733;--mut:#6b7785;--ac:#1f4e79;--ac2:#e7eff7;--bd:#dde2e8;--ok:#e8f5e9;--fs:17px}
 @media (prefers-color-scheme:dark){:root{--bg:#12161b;--card:#1b2129;--tx:#e6ebf0;--mut:#9aa6b2;--ac:#7db4e6;--ac2:#22303f;--bd:#2c3540;--ok:#1e3324}}
@@ -106,7 +106,7 @@ const store = {get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(
 const DOCS_ALL = JSON.parse(document.getElementById('data').textContent);
 DOCS_ALL.forEach(d=>{d.key=d.id||d.p.join('/')});
 let OCULTOS=[];
-if(EST.publica){try{const x=new XMLHttpRequest();x.open('GET','ocultos.json',false);x.send();if(x.status==200)OCULTOS=JSON.parse(x.responseText)}catch(e){}
+if(EST.publica&&location.protocol!=='file:'){try{const x=new XMLHttpRequest();x.open('GET','ocultos.json',false);x.send();if(x.status==200)OCULTOS=JSON.parse(x.responseText)}catch(e){}
  const loc=store.get('ocultos_local',{add:[],del:[]});OCULTOS=OCULTOS.filter(k=>!loc.del.includes(k)).concat(loc.add.filter(k=>!OCULTOS.includes(k)))}
 const DOCS = DOCS_ALL.filter(d=>!OCULTOS.includes(d.key));
 const BYKEY = Object.fromEntries(DOCS.map(d=>[d.key,d]));
@@ -272,7 +272,8 @@ function openOriginal(d){
  VW=d;$('#vw').style.display='flex';$('#vwt').textContent=nice(d.title);$('#vwopen').href=d.o;
  const box=$('#vwb');box.innerHTML='';box.scrollTop=0;
  try{history.pushState({vw:1},'')}catch(e){}
- if(d.t==='PDF')renderPdf(d.o,box,d);
+ if(d.t==='PDF'&&location.protocol==='file:')box.innerHTML=`<iframe src="${esc(d.o)}" style="width:100%;height:100%;border:0;background:#fff;border-radius:10px"></iframe>`;
+ else if(d.t==='PDF')renderPdf(d.o,box,d);
  else if(d.t==='MP4')box.innerHTML=`<video src="${esc(d.o)}" controls playsinline style="width:100%;max-height:100%;background:#000;border-radius:10px"></video>`;
  else box.innerHTML=`<iframe src="${esc(d.o)}" style="width:100%;height:100%;border:0;background:#fff;border-radius:10px"></iframe>`;
 }
@@ -292,7 +293,7 @@ async function renderPdf(url,box,d){
    await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;e.target.appendChild(c)}),{root:box,rootMargin:'1200px 0px'});
   const r=(await pdf.getPage(1)).getViewport({scale:1});
   for(let n=1;n<=pdf.numPages;n++){const ph=document.createElement('div');ph.className='pg';ph.dataset.n=n;ph.style.width=W+'px';ph.style.minHeight=Math.round(W*r.height/r.width)+'px';box.appendChild(ph);io.observe(ph)}
- }catch(e){box.innerHTML='<div class="empty">No se pudo mostrar el PDF aquí. Prueba con «Abrir aparte».</div>'}
+ }catch(e){box.innerHTML=`<iframe src="${esc(url)}" style="width:100%;height:100%;border:0;background:#fff;border-radius:10px"></iframe>`}
 }
 $('#vwback').onclick=()=>closeViewer(false);
 function route(){
