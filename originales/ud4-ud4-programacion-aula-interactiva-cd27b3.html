@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UD4 Programación de aula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#f5f7f8; --paper:#ffffff; --ink:#18222d; --muted:#5a6774; --line:#d9e0e5;
+  --accent:#0d6b63; --accent-ink:#ffffff; --accent-soft:#e3f1ef; --mark:#fff3cf;
+  --ok:#1d7a3e; --ok-soft:#e4f4e9; --bad:#b4372b; --bad-soft:#fbe9e6;
+  --f-display:"IBM Plex Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --f-num:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11171c; --paper:#182128; --ink:#e4eaee; --muted:#9aa8b3; --line:#2c3943;
+    --accent:#4fb3a8; --accent-ink:#0d1a19; --accent-soft:#1c3330; --mark:#4a4020;
+    --ok:#5cc184; --ok-soft:#1b3326; --bad:#ef8a7e; --bad-soft:#3a2220;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11171c; --paper:#182128; --ink:#e4eaee; --muted:#9aa8b3; --line:#2c3943;
+  --accent:#4fb3a8; --accent-ink:#0d1a19; --accent-soft:#1c3330; --mark:#4a4020;
+  --ok:#5cc184; --ok-soft:#1b3326; --bad:#ef8a7e; --bad-soft:#3a2220;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body)}
+h1,h2,h3{font-family:var(--f-display);line-height:1.2;margin:0;text-wrap:balance}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header{background:var(--paper);border-bottom:1px solid var(--line);padding:28px 0 20px}
+.kicker{font:500 .8rem var(--f-num);color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+header h1{font-size:clamp(1.5rem,4vw,2.2rem);margin:6px 0 10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.92rem}
+.meta b{color:var(--ink);font-weight:600}
+.status{margin-top:16px;padding:12px 14px;border-radius:6px;background:var(--accent-soft);border-left:4px solid var(--accent);font-size:.95rem}
+.status strong{color:var(--accent)}
+.prog{margin-top:14px;display:flex;align-items:center;gap:12px;font-size:.88rem;color:var(--muted)}
+.bar{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:thin}
+nav button{flex:0 0 auto;border:1px solid transparent;background:none;color:var(--muted);font:500 .9rem var(--f-body);padding:7px 12px;border-radius:5px;cursor:pointer}
+nav button:hover{color:var(--ink);background:var(--paper)}
+nav button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+main{padding:24px 0 60px}
+section[role="tabpanel"]{display:none}
+section[role="tabpanel"].on{display:block}
+h2{font-size:1.45rem;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:0 0 14px}
+.card h3{font:600 1.05rem/1.3 var(--f-body);margin:0 0 8px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+ul,ol{padding-left:1.3em;margin:.4em 0}
+li{margin:.25em 0}
+.tag{display:inline-block;font:500 .75rem var(--f-num);padding:.1em .5em;border-radius:3px;background:var(--accent-soft);color:var(--accent);margin-right:4px}
+.tag.eval{background:var(--mark);color:var(--ink)}
+.week{border-left:4px solid var(--line)}
+.week.now{border-left-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.week.done{opacity:.75}
+.wh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.wh h3{margin:0}
+.wd{font:500 .85rem var(--f-num);color:var(--muted)}
+.now-badge{font:600 .72rem var(--f-body);background:var(--accent);color:var(--accent-ink);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.wsub{color:var(--muted);font-size:.9rem;margin:4px 0 10px}
+.tasks{list-style:none;padding:0;margin:8px 0 0}
+.tasks li{margin:0}
+.tasks label{display:flex;gap:10px;align-items:flex-start;padding:6px 4px;border-radius:4px;cursor:pointer}
+.tasks label:hover{background:var(--bg)}
+.tasks input{margin-top:5px;width:17px;height:17px;accent-color:var(--accent);flex:0 0 auto}
+.tasks input:checked + span{text-decoration:line-through;color:var(--muted)}
+.wprog{font:500 .8rem var(--f-num);color:var(--muted);margin-top:8px}
+.goal{margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:5px;font-size:.9rem}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:8px}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:0}
+.steps li::before{content:counter(s);font:600 .9rem var(--f-num);background:var(--accent);color:var(--accent-ink);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;flex:0 0 auto}
+details{background:var(--paper);border:1px solid var(--line);border-radius:6px;margin:0 0 8px}
+summary{cursor:pointer;padding:10px 14px;font-weight:500;list-style:none;display:flex;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font:600 1rem var(--f-num);color:var(--accent);width:14px}
+details[open] summary::before{content:"−"}
+details .in{padding:0 14px 12px 38px;color:var(--ink)}
+code,.num{font-family:var(--f-num);font-size:.92em}
+.formula{font:500 1rem var(--f-num);background:var(--bg);padding:6px 10px;border-radius:4px;display:inline-block;margin:4px 0}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.small{font-size:.85rem;color:var(--muted)}
+.card p,.card li,.in,.lead,.goal,.wsub{text-align:justify}
+footer{border-top:1px solid var(--line);padding:18px 0 30px;color:var(--muted);font-size:.85rem}
+.sechead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.pbtn{border:1px solid var(--accent);background:var(--paper);color:var(--accent);font:600 .85rem var(--f-body);padding:6px 12px;border-radius:5px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+.pbtn:hover{background:var(--accent);color:var(--accent-ink)}
+@media print{
+  @page{margin:14mm}
+  nav,.tools,.btn,.pbtn,.status,.prog{display:none!important}
+  :root{--bg:#fff;--paper:#fff;--ink:#000;--muted:#444;--line:#ccc;--accent:#0d6b63;--accent-soft:#e3f1ef;--mark:#fff3cf}
+  body{background:#fff;color:#000}
+  header{padding:0 0 10px}
+  main{padding-top:10px}
+  section[role="tabpanel"]{display:block!important;page-break-inside:auto;margin-bottom:18px}
+  body.print-one section[role="tabpanel"]{display:none!important}
+  body.print-one section[role="tabpanel"].printing{display:block!important}
+  .week.now{box-shadow:none}
+  .card,details,.q{break-inside:avoid}
+  footer{padding:8px 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="kicker">0653 Gestión Financiera · CFGS Administración y Finanzas · Semipresencial</div>
+    <h1>UD4. Productos y servicios financieros de activo y pasivo</h1>
+    <div class="meta">
+      <span><b>Periodo:</b> 23 de noviembre – 13 de diciembre de 2026</span>
+      <span><b>Horas:</b> 11 h</span>
+      <span><b>RA2</b> · CE c, d, e, f, g</span>
+      <span><b>RA3</b> · CE b, c, i</span>
+      <span><b>Cuestionario:</b> 7 – 13 dic</span>
+      <span><b>Examen 2ª ev.:</b> lun 1 feb (15:00–16:50) y mar 2 feb (8:00–9:50), SUM</span>
+    </div>
+    <div class="status" id="status">Cargando tu semana…</div>
+    <div class="prog"><span>Tu progreso</span><div class="bar"><i id="pbar"></i></div><span id="ptxt" class="num">0 %</span></div>
+  </div>
+</header>
+
+<nav aria-label="Secciones">
+  <div class="wrap" role="tablist">
+    <button role="tab" data-t="t-plan" aria-selected="true">Plan semanal</button>
+    <button role="tab" data-t="t-unidad">La unidad</button>
+    <button role="tab" data-t="t-estudio">Cómo estudiar</button>
+    <button role="tab" data-t="t-act">Actividades</button>
+    <button role="tab" data-t="t-eval">Evaluación</button>
+    <button role="tab" data-t="t-check">Checklist final</button>
+    <button role="tab" data-t="t-ayuda">Ayuda</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- PLAN -->
+<section role="tabpanel" id="t-plan" class="on">
+  <h2>Plan semana a semana</h2>
+  <p class="lead">Unas 5,5 horas por semana (11 h en total): 2 h de tutoría colectiva (o su documento TC) y el resto de trabajo autónomo. Marca cada tarea al terminarla. Tu progreso se guarda en este navegador.</p>
+  <div id="weeks"></div>
+  <div class="tools">
+    <button class="btn sec" id="reset">Borrar mi progreso</button>
+    <button class="btn sec" id="printall">Imprimir todo / PDF</button>
+  </div>
+</section>
+
+<!-- UNIDAD -->
+<section role="tabpanel" id="t-unidad">
+  <h2>La unidad en un vistazo</h2>
+  <p class="lead">Pasas de valorar rentas (UD3) a aplicarlas a los productos reales del mercado: cómo se devuelve un préstamo, cuánto cuesta un leasing, cómo se liquida una póliza de crédito o una cuenta y qué servicios ofrece el banco. Es la base para la valoración de inversiones (UD5).</p>
+  <div class="card">
+    <h3>Resultados de aprendizaje y criterios</h3>
+    <p><span class="tag">RA2</span>Clasifica los productos y servicios financieros, analizando sus características y formas de contratación.</p>
+    <ul>
+      <li><b>2c)</b> Se han detallado los aspectos específicos de los productos y servicios existentes en el mercado.</li>
+      <li><b>2d)</b> Se han reconocido las variables que intervienen en las operaciones que se realizan con cada producto/servicio financiero.</li>
+      <li><b>2e)</b> Se han identificado los sujetos que intervienen en las operaciones que se realizan con cada producto/servicio financiero.</li>
+      <li><b>2f)</b> Se han relacionado las ventajas e inconvenientes de los distintos productos y servicios.</li>
+      <li><b>2g)</b> Se ha determinado la documentación necesaria exigida y generada con la gestión de los diferentes productos y servicios financieros.</li>
+    </ul>
+    <p><span class="tag">RA3</span>Evalúa productos y servicios financieros del mercado, realizando los cálculos y elaborando los informes oportunos.</p>
+    <ul>
+      <li><b>3b)</b> Se han efectuado las operaciones matemáticas necesarias para valorar cada producto.</li>
+      <li><b>3c)</b> Se han calculado los gastos y comisiones devengados en cada producto.</li>
+      <li><b>3i)</b> Se han realizado los cálculos financieros necesarios utilizando aplicaciones informáticas específicas.</li>
+    </ul>
+    <p class="small">RD 1584/2011, de 4 de noviembre · Orden 13/2015, de 5 de marzo (currículo de la Comunitat Valenciana).</p>
+  </div>
+  <h3 style="font:600 1.1rem var(--f-body);margin:18px 0 10px">Contenidos (estúdialos en este orden)</h3>
+  <details open><summary>4.1.1 Los préstamos: elementos y cuadro de amortización</summary><div class="in">Un préstamo es una operación en la que una entidad entrega un capital C<sub>0</sub> que el prestatario devuelve con intereses en n periodos. Elementos: capital prestado C<sub>0</sub>, término amortizativo a<sub>s</sub>, cuota de interés I<sub>s</sub>, cuota de amortización A<sub>s</sub>, capital amortizado M<sub>s</sub> y capital pendiente C<sub>s</sub>.<br><span class="formula">a<sub>s</sub> = I<sub>s</sub> + A<sub>s</sub></span><br><span class="formula">I<sub>s</sub> = C<sub>s−1</sub> · i  ·  C<sub>s</sub> = C<sub>s−1</sub> − A<sub>s</sub>  ·  M<sub>s</sub> = C<sub>0</sub> − C<sub>s</sub></span><br>El cuadro de amortización recoge, periodo a periodo, estas cinco columnas. Siempre debe terminar con C<sub>n</sub> = 0.<br><span class="small">Material: Objetivos y contenidos · Presentación UD4 · Formulario de préstamos y leasing · TC teoría · Actividades resueltas 1 a 4</span></div></details>
+  <details><summary>4.1.1 Sistemas de amortización: reembolso único y americano</summary><div class="in"><span class="formula">Reembolso único:  a<sub>n</sub> = C<sub>0</sub> · (1 + i)^n   (a<sub>1</sub> = … = a<sub>n−1</sub> = 0)</span><br><span class="formula">Americano:  a<sub>1</sub> = … = a<sub>n−1</sub> = C<sub>0</sub> · i  ;  a<sub>n</sub> = C<sub>0</sub> + C<sub>0</sub> · i</span><br>En el reembolso único no se paga nada hasta el vencimiento y los intereses se acumulan. En el americano se pagan solo los intereses cada periodo y el capital se devuelve entero al final.<br><span class="small">Material: Formulario (apartados 1 y 2) · Actividades resueltas 1 y 2 · Actividades propuestas 11 y 12</span></div></details>
+  <details><summary>4.1.1 Sistema francés (términos amortizativos constantes)</summary><div class="in"><span class="formula">a = C<sub>0</sub> / a<sub>n⌉i</sub>  con  a<sub>n⌉i</sub> = [1 − (1 + i)^−n] / i</span><br><span class="formula">A<sub>s</sub> = A<sub>1</sub> · (1 + i)^(s−1)  ;  C<sub>s</sub> = a · a<sub>n−s⌉i</sub></span><br>El término es constante, los intereses bajan y la amortización crece cada periodo un factor (1 + i). El capital pendiente se calcula con el método prospectivo (valor actual de los términos que faltan), el retrospectivo o el recurrente.<br><span class="small">Material: Formulario (apartado 3) · Vídeo «Sistemas de amortización de préstamos» · Actividades resueltas 3 · Actividades propuestas 2, 7 y 8</span></div></details>
+  <details><summary>4.1.1 Sistema alemán (cuota de amortización constante)</summary><div class="in"><span class="formula">A = C<sub>0</sub> / n  ;  C<sub>s</sub> = C<sub>0</sub> − s · A  ;  a<sub>s</sub> = C<sub>s−1</sub> · i + A</span><br>La cuota de amortización es siempre la misma, los intereses y el término disminuyen cada periodo.<br><span class="small">Material: Formulario (apartado 4) · Actividades resueltas 4 y 5 · Actividades propuestas 9</span></div></details>
+  <details><summary>4.1.1 Carencia, pagos fraccionados y amortización anticipada</summary><div class="in"><span class="formula">Carencia total:  C<sub>k</sub> = C<sub>0</sub> · (1 + i)^k  (no se paga nada)</span><br><span class="formula">Carencia parcial:  a = C<sub>0</sub> · i  (se pagan solo los intereses)</span><br><span class="formula">Pagos fraccionados:  i<sub>m</sub> = (1 + i)^(1/m) − 1  ;  si es nominal, i<sub>m</sub> = J<sub>m</sub> / m</span><br><span class="formula">Amortización anticipada parcial:  a′ = (C<sub>s</sub> − R) / a<sub>m⌉i</sub></span><br>En la anticipada: 1) calcula el capital pendiente C<sub>s</sub>; 2) réstale la cantidad entregada R; 3) recalcula el término con los m términos que quedan. La comisión se calcula sobre la cantidad que se amortiza. En un préstamo con interés variable se repite el cálculo en cada revisión del tipo, con el capital pendiente y los términos que quedan.<br><span class="small">Material: Formulario (carencia y amortización anticipada) · Actividades resueltas 5 a 7 · Actividades propuestas 1, 3 a 6, 10, 13 y 15</span></div></details>
+  <details><summary>4.1.2 El arrendamiento financiero (leasing)</summary><div class="in"><span class="formula">Valor residual distinto de la cuota:  C<sub>0</sub> = p · a<sub>n⌉i</sub> · (1 + i) + Q · (1 + i)^−n</span><br><span class="formula">Valor residual igual a la cuota:  C<sub>0</sub> = p · a<sub>n+1⌉i</sub> · (1 + i)</span><br>Las cuotas p son prepagables (la primera se paga al firmar) y Q es la opción de compra. Si las cuotas son fraccionadas se usan n · m términos y el tipo i<sub>m</sub>. Desde el punto de vista del arrendatario se calcula el coste actualizado, teniendo en cuenta los gastos de formalización y el ahorro fiscal (t = tipo del impuesto de sociedades).<br><span class="small">Material: Formulario (apartado 5) · Vídeo «Cuadro de amortización en leasing» · Actividades resueltas 13 y 14 · Actividades propuestas 16</span></div></details>
+  <details><summary>4.1.3 Línea o póliza de crédito</summary><div class="in">Producto de financiación a corto plazo: se paga por lo dispuesto y por el tiempo de disposición. Costes: intereses deudores, intereses excedidos (por encima del límite), comisión de apertura, comisión de disponibilidad (sobre el saldo medio no dispuesto) y comisión de excedido (sobre el mayor saldo excedido). Se liquida por el método hamburgués con números comerciales.<br><span class="small">Material: Presentación UD4 · Vídeo «Liquidación póliza de crédito» · Plantillas de liquidación (Excel)</span></div></details>
+  <details><summary>4.2 Productos financieros de pasivo</summary><div class="in"><b>Cuenta corriente y de ahorro:</b> se liquidan con el método hamburgués. Intereses deudores y acreedores = suma de números comerciales por el multiplicador fijo; sobre los intereses acreedores se practica la retención del IRC.<br><b>Depósitos a plazo</b> y <b>planes y fondos de pensiones:</b> características, rentabilidad, fiscalidad, ventajas e inconvenientes.<br><span class="small">Material: Presentación UD4 · Vídeo «Liquidación cuenta bancaria» · Plantillas de liquidación (Excel)</span></div></details>
+  <details><summary>4.3 Servicios financieros</summary><div class="in">Servicios que no generan un rendimiento directo pero permiten gestionar mejor el dinero: tarjetas, banca electrónica, domiciliaciones, transferencias y otros servicios para la empresa. Aprende qué documentación exigen y cuáles son sus ventajas e inconvenientes.<br><span class="small">Material: Presentación UD4 · Objetivos y contenidos</span></div></details>
+  <details><summary>Transversal: coste efectivo (TAE) y hoja de cálculo</summary><div class="in">La TAE es el tipo que iguala lo realmente recibido (capital menos gastos y comisiones) con el valor actual de los términos. Se resuelve por tanteo e interpolación, o con la calculadora (SOLVE).<br><span class="formula">C<sub>0</sub> · (1 − gastos − comisiones) = a · a<sub>n⌉TAE</sub></span><br>Comprueba tus cuadros de amortización con la hoja de cálculo: <code>=PAGO(tasa;nper;va)</code> para el término, <code>=PAGOINT(…)</code> y <code>=PAGOPRIN(…)</code> para intereses y amortización, y <code>=TASA(nper;pago;va)</code> para el tipo.<br><span class="small">Material: Plantillas y ejemplos de la presentación (Excel) · Actividades propuestas 14, 17 y 18</span></div></details>
+  <div class="card" style="margin-top:14px">
+    <h3>Qué tienes que saber hacer al terminar</h3>
+    <ul>
+      <li>Identificar los elementos de un préstamo y elaborar su cuadro de amortización.</li>
+      <li>Distinguir y calcular los sistemas de reembolso único, americano, francés y alemán.</li>
+      <li>Calcular el capital pendiente, la cuota de interés, la de amortización y el capital amortizado de cualquier periodo.</li>
+      <li>Resolver préstamos con carencia y con pagos fraccionados, pasando de un tanto a su equivalente.</li>
+      <li>Calcular una amortización anticipada, total o parcial, con su comisión.</li>
+      <li>Calcular la cuota de un leasing y su coste actualizado para el arrendatario.</li>
+      <li>Calcular el coste efectivo (TAE) de una operación con gastos y comisiones.</li>
+      <li>Liquidar una póliza de crédito y una cuenta corriente por el método hamburgués.</li>
+      <li>Describir los productos de pasivo y los servicios financieros, con su documentación, ventajas e inconvenientes.</li>
+      <li>Usar la calculadora científica y la hoja de cálculo.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ESTUDIO -->
+<section role="tabpanel" id="t-estudio">
+  <h2>Cómo estudiar esta unidad</h2>
+  <p class="lead">Se aprende haciendo ejercicios, no memorizando: la mayor parte del trabajo es práctico.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Ciclo de estudio</h3>
+      <ol class="steps">
+        <li><div><b>Entiende la idea (semana 1).</b> Objetivos y contenidos, Presentación y vídeos de la unidad.</div></li>
+        <li><div><b>Haz tu formulario.</b> Cada fórmula con el significado de cada letra y cuándo se usa.</div></li>
+        <li><div><b>Actividades propuestas (semanas 1 y 2),</b> según avanzas en la teoría. Autocorrige con el solucionario y marca las que fallas.</div></li>
+        <li><div><b>Actividades resueltas (semanas 1 y 2).</b> Tapa la solución, plantéalo y compara. Repite las propuestas falladas.</div></li>
+        <li><div><b>Pregunta</b> lo que no salga: foro de la UD4, mensajería o tutoría individual.</div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Los 6 pasos para cualquier ejercicio de préstamos</h3>
+      <ol class="steps">
+        <li><div>Lee el ejercicio completo.</div></li>
+        <li><div>Identifica incógnita y datos: tradúcelo a C<sub>0</sub>, n, i, a, I<sub>s</sub>, A<sub>s</sub>, C<sub>s</sub> y M<sub>s</sub>.</div></li>
+        <li><div>Identifica el sistema (único, americano, francés o alemán) y si hay carencia, fraccionamiento o amortización anticipada.</div></li>
+        <li><div>Pon el tipo y el número de periodos en la misma unidad que el término (tipo en tanto por uno: 8 % = 0,08).</div></li>
+        <li><div>Aplica la fórmula, guarda los valores intermedios en la calculadora y redondea solo al final, a 4 decimales.</div></li>
+        <li><div>Comprueba: el capital pendiente final debe ser 0 y la suma de las amortizaciones, C<sub>0</sub>.</div></li>
+      </ol>
+    </div>
+  </div>
+  <h3 style="font:600 1.1rem var(--f-body);margin:18px 0 10px">Errores frecuentes (pulsa para ver cómo evitarlos)</h3>
+  <details><summary>Mezclar la periodicidad de la cuota y la del tipo</summary><div class="in">Cuotas mensuales con tipo anual: pasa a tipo mensual, i<sub>12</sub> = (1 + i)^(1/12) − 1, y usa n · 12 términos. Si el dato es un nominal (TIN), i<sub>m</sub> = J<sub>m</sub> / m.</div></details>
+  <details><summary>Confundir carencia total y carencia parcial</summary><div class="in">Total: no se paga nada y los intereses se suman al capital, C<sub>k</sub> = C<sub>0</sub>(1 + i)^k. Parcial: se pagan solo los intereses, a = C<sub>0</sub> · i, y el capital no varía.</div></details>
+  <details><summary>Contar mal los términos que quedan por pagar</summary><div class="in">Con el método prospectivo, C<sub>s</sub> = a · a<sub>n−s⌉i</sub>: se actualizan los n − s términos que faltan. Si hubo carencia, cuenta solo los periodos de amortización.</div></details>
+  <details><summary>Calcular la comisión de amortización anticipada sobre la base equivocada</summary><div class="in">La comisión se aplica sobre la cantidad que se amortiza: el capital pendiente si la cancelación es total, o la cantidad entregada si es parcial. El desembolso del día incluye también la cuota que vence ese día.</div></details>
+  <details><summary>Olvidar que el leasing es prepagable</summary><div class="in">La primera cuota se paga al firmar el contrato: la renta se multiplica por (1 + i) y el valor residual se actualiza n periodos, (1 + i)^−n. Si la opción de compra es igual a una cuota, hay n + 1 términos.</div></details>
+  <details><summary>Dar la TAE sin descontar gastos y comisiones</summary><div class="in">La TAE se calcula con lo que realmente recibes: capital menos gastos de estudio y comisión de apertura. Siempre sale mayor que el tipo del préstamo.</div></details>
+</section>
+
+<!-- ACTIVIDADES -->
+<section role="tabpanel" id="t-act">
+  <h2>Actividades y entregas</h2>
+  <p class="lead">Solo el cuestionario de Aules cuenta para la nota; el resto son autoevaluables y te preparan para el cuestionario y el examen.</p>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Actividad</th><th>Tipo</th><th>Cuándo</th><th>Para qué</th></tr></thead>
+      <tbody>
+        <tr><td>Actividades propuestas (18) + solucionario</td><td><span class="tag">Autoevaluable</span></td><td>Semanas 1 y 2, según la teoría</td><td>Fijar cada bloque teórico</td></tr>
+        <tr><td>Actividades resueltas (14)</td><td><span class="tag">Autoevaluable</span></td><td>Semanas 1 y 2</td><td>Afianzar el método paso a paso</td></tr>
+        <tr><td>Ejercicios para el cuestionario (PDF)</td><td><span class="tag">Preparación</span></td><td>Desde el 23 nov (inicio de la unidad)</td><td>Resolverlos en papel antes del cuestionario</td></tr>
+        <tr><td><b>Cuestionario UD4: Productos y servicios financieros de activo y pasivo</b></td><td><span class="tag eval">Evaluable</span></td><td><b>7 – 13 dic, 23:59</b></td><td>Evaluar los CE de RA2 y RA3 de la unidad</td></tr>
+        <tr><td>Solución detallada del cuestionario</td><td><span class="tag">Retroalimentación</span></td><td>Desde el 14 dic</td><td>Revisar errores y ver la nota en el Calificador</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Cómo hacer bien el cuestionario</h3>
+    <ul>
+      <li>Resuelve primero todos los ejercicios del PDF en papel, con el procedimiento completo.</li>
+      <li>Abre el cuestionario con tus resultados delante: las preguntas se refieren a esos ejercicios.</li>
+      <li>Test con una respuesta correcta; los errores no restan. Fuera de plazo no se puede entregar.</li>
+      <li>Si tu resultado no aparece entre las opciones, revisa unidades (tipo y n en la misma unidad que el término), el sistema de amortización, la carencia y el redondeo (4 decimales).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EVALUACION -->
+<section role="tabpanel" id="t-eval">
+  <h2>Cómo se evalúa</h2>
+  <p class="lead">La UD4 no tiene examen propio: entra en la prueba presencial de la 2ª evaluación (lunes 1 de febrero de 2027, de 15:00 a 16:50, y martes 2 de febrero, de 8:00 a 9:50, en el SUM), obligatoria para ser evaluado.</p>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Componente</th><th>Peso</th><th>Qué aporta la UD4</th></tr></thead>
+      <tbody>
+        <tr><td>Actitudinal: actividades en plazo, foros, trabajo continuo</td><td class="num">20 % (2 p)</td><td>Cuestionario de la unidad y participación en el foro</td></tr>
+        <tr><td>Prueba objetiva presencial (teoría + práctica)</td><td class="num">80 % (8 p)</td><td>Ejercicios de préstamos y leasing y conceptos de productos y servicios financieros</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Para que la nota cuente</h3><ul><li>Presentarte a la prueba presencial (si no, «no evaluado»).</li><li>Al menos un 50 % en la parte teórica y un 50 % en la práctica.</li><li>Nota de 1 a 10 sin decimales.</li></ul></div>
+    <div class="card"><h3>Qué se valora en el examen</h3><ul><li>Planteamiento y procedimiento, no solo el resultado.</li><li>Explicación y razonamiento del resultado.</li><li>Presentación: limpieza, orden y claridad.</li></ul></div>
+  </div>
+  <p class="small">Detalle completo en la Guía Didáctica 2026-27, apartado 9.</p>
+</section>
+
+<!-- CHECKLIST -->
+<section role="tabpanel" id="t-check">
+  <h2>Checklist final</h2>
+  <p class="lead">Marca lo que ya sabes hacer sin mirar los apuntes. Si algo queda sin marcar, vuelve a las actividades de ese bloque.</p>
+  <div class="card"><ul class="tasks" id="checklist"></ul><div class="wprog" id="ckprog"></div></div>
+</section>
+
+<!-- AYUDA -->
+<section role="tabpanel" id="t-ayuda">
+  <h2>Dónde pedir ayuda</h2>
+  <div class="card tw">
+    <table>
+      <thead><tr><th>Canal</th><th>Para qué</th><th>Cómo</th></tr></thead>
+      <tbody>
+        <tr><td>Foro de dudas de la UD4 (Aules)</td><td>Dudas que pueden servir a todo el grupo</td><td>Indica el número de ejercicio y hasta dónde llegaste</td></tr>
+        <tr><td>Mensajería de Aules o correo</td><td>Dudas personales</td><td><a href="mailto:manolilopez@cipfp-misericordia.org">manolilopez@cipfp-misericordia.org</a></td></tr>
+        <tr><td>Tutoría individual (TIGF)</td><td>Resolver dudas con calma</td><td>Con cita previa, mañana o tarde</td></tr>
+        <tr><td>Tutoría colectiva (TCGF)</td><td>Explicación y ejercicios clave</td><td>Según tu horario; si no puedes venir, documentos TC teoría y TC práctica</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">Días no lectivos en la unidad: el 6 de diciembre (Día de la Constitución) cae en domingo y el 8 de diciembre (Inmaculada Concepción) es festivo, dentro de la semana del cuestionario.</p>
+</section>
+</main>
+
+<footer><div class="wrap">CIPFP Misericordia · Gestión Financiera · Curso 2026-27 · Programación de aula UD4</div></footer>
+
+<script>
+(function(){
+  var KEY = 'gf-ud4-progreso-2627';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ state = {}; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+  var WEEKS = [
+    {id:"s1", title:"Semana 1 · Teoría: los préstamos y el leasing", from:"2026-11-23", to:"2026-11-29", dates:"23 – 29 nov",
+     sub:"4.1.1 Los préstamos: elementos, cuadro de amortización y sistemas (reembolso único, americano, francés y alemán) · 4.1.2 El leasing",
+     goal:"Saber elaborar el cuadro de amortización de un préstamo en cada sistema y calcular su capital pendiente.",
+     tasks:["Leer Objetivos y contenidos y la Presentación UD4","Asistir a la TC teoría (o leer el documento TC teoría)","Ver el vídeo «Sistemas de amortización de préstamos»","Hacer mi propio formulario y compararlo con el Formulario de préstamos y leasing","Actividades resueltas 1 a 7: reembolso único, americano, francés, alemán y pagos fraccionados","Actividades propuestas 2, 7 y 8 (francés), 9 y 10 (alemán), 11 y 12 (reembolso único y americano)","Autocorregir las propuestas con el solucionario y marcar las falladas","Descargar los Ejercicios para el cuestionario (disponibles desde el 23 nov)"]},
+    {id:"s2", title:"Semana 2 · Práctica, leasing, póliza de crédito y productos de pasivo", from:"2026-11-30", to:"2026-12-06", dates:"30 nov – 6 dic",
+     sub:"Carencia, pagos fraccionados y amortización anticipada · leasing · 4.1.3 Póliza de crédito · 4.2 Productos de pasivo · 4.3 Servicios financieros (el cuestionario evaluable se abre el 7 dic y cierra el 13 dic)",
+     goal:"Resolver préstamos con carencia, fraccionados y con amortización anticipada, calcular un leasing y una TAE, y liquidar una póliza de crédito y una cuenta.",
+     tasks:["Asistir a la TC práctica (o leer el documento TC práctica)","Ver el vídeo «Cuadro de amortización en leasing»","Ver los vídeos «Liquidación póliza de crédito» y «Liquidación cuenta bancaria»","Actividades resueltas 8 a 14: TAE, TIN y tantos equivalentes, y leasing","Actividades propuestas 1 y 3 a 6 (carencia y cancelación), 13 a 15 (pagos trimestrales y amortización anticipada), 16 (leasing), 17 (hoja de cálculo) y 18 (TAE)","Repetir las propuestas que fallé","Estudiar 4.1.3, 4.2 y 4.3 con la Presentación UD4","Terminar en papel todos los Ejercicios para el cuestionario"]},
+    {id:"s3", title:"Cuestionario evaluable", from:"2026-12-07", to:"2026-12-13", dates:"7 – 13 dic", eval:true,
+     sub:"Cierre de la UD4 (en paralelo con la semana 2; la solución detallada te servirá para repasar antes de la 2ª evaluación)",
+     goal:"Tener la UD4 evaluada en Aules antes del 13 de diciembre a las 23:59.",
+     tasks:["Hacer el cuestionario UD4 en Aules (antes del 13 dic, 23:59)","Llevar mis dudas al foro de la UD4","Revisar la solución detallada (desde el 14 dic) y mi nota en el Calificador","Repasar con la solución y el Checklist final antes del examen de la 2ª evaluación (1 – 5 feb 2027)"]}
+  ];
+  var CHECK = ["Identifico los elementos de un préstamo y elaboro su cuadro de amortización.","Distingo el reembolso único, el americano, el francés y el alemán.","Calculo el término amortizativo de un préstamo francés y el de un alemán.","Calculo el capital pendiente por el método prospectivo (y lo compruebo con el retrospectivo o el recurrente).","Calculo la cuota de interés, la de amortización y el capital amortizado de cualquier periodo.","Resuelvo préstamos con carencia total y parcial.","Paso de un tipo efectivo al tipo del subperiodo y trabajo con nominales, i(m) = J(m)/m.","Calculo una amortización anticipada, total o parcial, con su comisión.","Calculo la cuota de un leasing prepagable y su coste actualizado para el arrendatario.","Calculo la TAE de una operación con gastos y comisiones.","Liquido una póliza de crédito y una cuenta corriente por el método hamburgués.","Describo los productos de pasivo y los servicios financieros, con su documentación, ventajas e inconvenientes.","Compruebo mis cálculos con la calculadora y la hoja de cálculo.","He hecho el cuestionario evaluable dentro de plazo."];
+
+  function d(s){ var p=s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  var today = new Date(); today.setHours(0,0,0,0);
+
+  function esc(s){ return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+
+  // Semanas
+  var wc = document.getElementById('weeks'), html='';
+  WEEKS.forEach(function(w){
+    var now = today>=d(w.from) && today<=d(w.to), past = today>d(w.to);
+    html += '<div class="card week'+(now?' now':'')+(past?' done':'')+'" id="w-'+w.id+'">'+
+      '<div class="wh"><h3>'+esc(w.title)+(now?'<span class="now-badge">Esta semana</span>':'')+(w.eval?' <span class="tag eval">Evaluable</span>':'')+'</h3><span class="wd">'+esc(w.dates)+'</span></div>'+
+      '<div class="wsub">'+esc(w.sub)+'</div><ul class="tasks">';
+    w.tasks.forEach(function(t,i){
+      var k=w.id+'-'+i;
+      html += '<li><label><input type="checkbox" data-k="'+k+'"'+(state[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>';
+    });
+    html += '</ul><div class="wprog" data-w="'+w.id+'"></div><div class="goal"><b>Al acabar deberías:</b> '+esc(w.goal)+'</div></div>';
+  });
+  wc.innerHTML = html;
+
+  // Checklist
+  var cl = document.getElementById('checklist'), ch='';
+  CHECK.forEach(function(t,i){ var k='ck-'+i; ch += '<li><label><input type="checkbox" data-k="'+k+'"'+(state[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>'; });
+  cl.innerHTML = ch;
+
+  function refresh(){
+    var total=0, done=0;
+    WEEKS.forEach(function(w){
+      var n=w.tasks.length, c=0;
+      w.tasks.forEach(function(_,i){ if(state[w.id+'-'+i]) c++; });
+      total+=n; done+=c;
+      document.querySelector('[data-w="'+w.id+'"]').textContent = c+' de '+n+' tareas hechas';
+    });
+    var pct = total? Math.round(done*100/total):0;
+    document.getElementById('pbar').style.width = pct+'%';
+    document.getElementById('ptxt').textContent = pct+' %';
+    var c2=0; CHECK.forEach(function(_,i){ if(state['ck-'+i]) c2++; });
+    document.getElementById('ckprog').textContent = c2+' de '+CHECK.length+' marcados'+(c2===CHECK.length?' · ¡Unidad dominada!':'');
+  }
+  document.addEventListener('change', function(e){
+    var k = e.target && e.target.getAttribute && e.target.getAttribute('data-k');
+    if(!k) return;
+    if(e.target.checked) state[k]=true; else delete state[k];
+    save(); refresh();
+  });
+  document.getElementById('reset').addEventListener('click', function(){
+    state={}; save(); document.querySelectorAll('input[data-k]').forEach(function(i){i.checked=false;}); refresh();
+  });
+  refresh();
+
+  // Estado de la semana
+  var st = document.getElementById('status'), msg;
+  var cur = WEEKS.filter(function(w){ return today>=d(w.from) && today<=d(w.to); }).pop();
+  var qopen = today>=d('2026-12-07') && today<=d('2026-12-13');
+  if (today < d('2026-11-23')) {
+    var days = Math.round((d('2026-11-23')-today)/864e5);
+    msg = 'La unidad empieza el <strong>23 de noviembre</strong> (faltan '+days+' día'+(days===1?'':'s')+'). Ve descargando el formulario y los Ejercicios para el cuestionario.';
+  } else if (cur) {
+    msg = 'Estás en la <strong>'+esc(cur.title)+'</strong> ('+esc(cur.dates)+'). '+esc(cur.goal);
+    if (cur.eval) { var left = Math.round((d('2026-12-13')-today)/864e5); msg += ' Te quedan <strong>'+left+' día'+(left===1?'':'s')+'</strong> para cerrar el cuestionario.'; }
+    else if (qopen) { msg += ' El cuestionario evaluable está abierto hasta el <strong>13 de diciembre (23:59)</strong>.'; }
+  } else {
+    msg = 'La UD4 ha terminado. Repásala antes del <strong>examen de la 2ª evaluación (1 y 2 de febrero de 2027)</strong>: usa el checklist final.';
+  }
+  st.innerHTML = msg;
+
+  // Pestañas
+  var tabs = document.querySelectorAll('[role="tab"]');
+  function show(id){
+    tabs.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-t')===id ? 'true':'false'); });
+    document.querySelectorAll('[role="tabpanel"]').forEach(function(p){ p.classList.toggle('on', p.id===id); });
+    try { localStorage.setItem(KEY+'-tab', id); } catch(e){}
+  }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ show(b.getAttribute('data-t')); window.scrollTo({top: document.querySelector('nav').offsetTop, behavior:'smooth'}); }); });
+  try { var lt = localStorage.getItem(KEY+'-tab'); if (lt && document.getElementById(lt)) show(lt); } catch(e){}
+
+  // Imprimir / PDF por apartado
+  var openedForPrint=[];
+  function prepPrint(sec){
+    openedForPrint=[];
+    document.querySelectorAll(sec?('#'+sec.id+' details'):'details').forEach(function(dd){ if(!dd.open){ dd.open=true; openedForPrint.push(dd);} });
+    if(sec){ document.body.classList.add('print-one'); sec.classList.add('printing'); }
+  }
+  function endPrint(){
+    document.body.classList.remove('print-one');
+    document.querySelectorAll('.printing').forEach(function(x){x.classList.remove('printing');});
+    openedForPrint.forEach(function(dd){dd.open=false;}); openedForPrint=[];
+  }
+  window.addEventListener('afterprint', endPrint);
+  document.querySelectorAll('section[role="tabpanel"]').forEach(function(sec){
+    var h=sec.querySelector('h2'); if(!h) return;
+    var wrap=document.createElement('div'); wrap.className='sechead';
+    h.parentNode.insertBefore(wrap,h); wrap.appendChild(h);
+    var b=document.createElement('button'); b.type='button'; b.className='pbtn';
+    b.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/></svg>Imprimir / PDF';
+    b.title='Imprime este apartado o guárdalo como PDF (elige «Guardar como PDF» en el destino)';
+    b.addEventListener('click', function(){ prepPrint(sec); setTimeout(function(){ window.print(); }, 50); });
+    wrap.appendChild(b);
+  });
+  var pa=document.getElementById('printall');
+  if(pa) pa.addEventListener('click', function(){ prepPrint(null); setTimeout(function(){ window.print(); },50); });
+})();
+</script>
+</body>
+</html>
