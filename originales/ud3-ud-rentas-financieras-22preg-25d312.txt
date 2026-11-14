@@ -1,0 +1,169 @@
+// =========================
+// UNIDAD 3 - RENTAS FINANCIERAS (CFGS Gestión Financiera)
+// Banco completo: 45 preguntas (40 cálculo + 5 teóricas contextualizadas)
+// Basadas en archivo EJ CUEST UD 3 .pdf
+// =========================
+
+// ---- EJERCICIO 1
+
+::E13.b VA equivalente hoy de 40.000 EUR a 10 años al 5%::
+Sobre el ejercicio 13, ¿cuál es el VA de 40.000 EUR dentro de 10 años, i=5%? {
+=24.556.53 EUR
+~25.000.00 EUR
+~23.950.00 EUR
+~26.000.00 EUR}
+
+// ---- EJERCICIO 14
+::E14. VA de 30 EUR cuatrimestrales PREPAGABLE 2 años al 2%/cuatr.::
+Según el ejercicio 14, ¿cuál es el VA cuatrimestral de 30 EUR prepagables durante 2 años (n=6), con i=2% por cuatrimestre? {
+=171.40 EUR
+~168.05 EUR
+~180.00 EUR
+~150.00 EUR}
+
+::E14.b VF de esa misma renta::
+Sobre el ejercicio 14, ¿cuál es el VF cuatrimestral de esos 30 EUR prepagables (n=6, i=2%/cuatr.)? {
+=193.03 EUR
+~185.00 EUR
+~200.00 EUR
+~176.50 EUR}
+
+// ---- EJERCICIO 15
+::E15. Comparación de opciones al 1% mensual::
+Según el ejercicio 15, entre (a) 10 pagos de 90 EUR vencidos desde mes 2 y (b) 300 EUR ahora + 50 EUR/mes durante 12 meses, con i=1% mensual, ¿qué opción tiene menor VA? {
+=La opción a)
+~La opción b)
+~Son equivalentes
+~Depende de la TIN}
+
+::E15.b VA de la opción a)::
+Según el ejercicio 15, ¿cuál es el VA de la opción a) a i=1% mensual? {
+=843.98 EUR
+~862.75 EUR
+~810.00 EUR
+~900.00 EUR}
+
+::E15.c VA de la opción b)::
+Según el ejercicio 15, ¿cuál es el VA de la opción b) a i=1% mensual? {
+=862.75 EUR
+~843.98 EUR
+~880.00 EUR
+~820.00 EUR}
+
+// ---- EJERCICIO 16
+::E16. VA semestral PREPAGABLE 1.000 EUR 7 años, diferida 3 años (8% anual)::
+Según el ejercicio 16, ¿cuál es el VA hoy de 1.000 EUR semestrales prepagables durante 7 años, con diferimiento de 3 años, si i=8% anual (usa i semestral equivalente)? {
+=8.758.75 EUR
+~8.100.00 EUR
+~9.200.00 EUR
+~7.900.00 EUR}
+
+// ---- EJERCICIO 17
+::E17. VF trimestral PREPAGABLE 1.500 EUR 5 años, anticipada 2,5 años (12% anual)::
+Según el ejercicio 17, ¿cuál es el VF en el momento de valoración anticipado (2,5 años después del final) para 1.500 EUR trimestrales prepagables durante 5 años, con i=12% efectivo anual (usa i trimestral equivalente)? {
+=54.343.03 EUR
+~52.000.00 EUR
+~56.000.00 EUR
+~40.935.38 EUR}
+
+::E17.b VF al final de la renta (sin anticipación)::
+Sobre el ejercicio 17, ¿cuál es el VF al final de los 5 años (antes de anticipar)? {
+=40.935.38 EUR
+~38.500.00 EUR
+~43.000.00 EUR
+~54.343.03 EUR}
+
+// ---- EJERCICIO 18
+::E18. Capital hoy para cobrar 100.000 EUR/año a perpetuidad al 4%::
+Según el ejercicio 18, ¿qué capital hoy genera 100.000 EUR anuales a perpetuidad, con i=4% (perpetua pospagable)? {
+=2.500.000.00 EUR
+~2.400.000.00 EUR
+~2.250.000.00 EUR
+~2.750.000.00 EUR}
+
+// =========================
+// AÑADIDAS - PREGUNTAS TEÓRICAS CONTEXTUALIZADAS
+// =========================
+::T1. Tipo de renta en el ejercicio 1::
+Según el ejercicio 1, la renta formada por pagos de 300 EUR al final de cada año durante 10 años es una renta... {
+=constante, temporal, inmediata y pospagable.
+~constante, perpetua y prepagable.
+~variable, temporal y prepagable.
+~constante, diferida y prepagable.}
+
+::T2. Tipo de renta en el ejercicio 5::
+Según el ejercicio 5, la renta de 200 EUR al principio de cada año durante 8 años se clasifica como... {
+=constante, temporal, inmediata y prepagable.
+~constante, temporal y pospagable.
+~variable y diferida.
+~constante y perpetua.}
+
+::T3. Naturaleza de la renta en el ejercicio 11::
+En el ejercicio 11, los pagos mensuales de 270 EUR al principio de cada mes durante 3 años representan una renta... {
+=fraccionada, constante, temporal y prepagable.
+~constante, anual y pospagable.
+~fraccionada, variable y diferida.
+~perpetua, inmediata y prepagable.}
+
+::T4. Tipo de renta en el ejercicio 16::
+Según el ejercicio 16, la renta de 1.000 EUR semestrales prepagables durante 7 años con un diferimiento de 3 años es una renta... {
+=constante, temporal, diferida y prepagable.
+~constante, inmediata y pospagable.
+~perpetua, prepagable.
+~variable y anticipada.}
+
+::T5. Tipo de renta en el ejercicio 18::
+En el ejercicio 18, la renta de 100.000 EUR anuales que se perciben indefinidamente corresponde a una renta... {
+=perpetua y pospagable.
+~temporal y prepagable.
+~diferida y constante.
+~variable y perpetua.}
+
+::X1.Variante E1 prepagable (depósito hoy)::
+Variante del ejercicio 1: si los 300 EUR fueran **prepagables** (principio de año), ¿qué depósito hoy sería necesario? i=10%. {
+=2.027.71 EUR
+~1.843.37 EUR
+~2.100.00 EUR
+~1.920.00 EUR}
+
+::X3.Diferencia VA(B)−VA(A) al 12% (E3)::
+Sobre el ejercicio 3, ¿cuánto vale VA(B) − VA(A) con i=12%? {
+=721.07 EUR
+~3.072.18 EUR
+~−721.07 EUR
+~−3.072.18 EUR}
+
+::X3b.Diferencia VA(B)−VA(C) al 12% (E3)::
+Sobre el ejercicio 3, ¿cuánto vale VA(B) − VA(C) con i=12%? {
+=3.072.18 EUR
+~721.07 EUR
+~−3.072.18 EUR
+~−721.07 EUR}
+
+::X12.VA con i trimestral 2% (48 EUR/trimestre, 3 años)::
+Variante del ejercicio 12: ¿cuál es el **VA** trimestral de 48 EUR por trimestre durante 3 años al 2% por trimestre? {
+=507.62 EUR
+~505.74 EUR
+~520.00 EUR
+~495.00 EUR}
+
+::X12b.i_trimestral equivalente a 8,5% anual (E12)::
+En el ejercicio 12, ¿cuál es el tanto **efectivo trimestral** equivalente a i_anual=8,5%? {
+=2.06044 %
+~2.12500 %
+~2.00000 %
+~1.95000 %}
+
+::X14.VF de 30 EUR cuatrimestrales prepagables (E14)::
+Variante del ejercicio 14: ¿cuál es el **VF** cuatrimestral de 30 EUR prepagables (n=6) con i=2%/cuatr.? {
+=193.03 EUR
+~185.00 EUR
+~200.00 EUR
+~176.50 EUR}
+
+::X11.Chequeo de VF mensual (E11)::
+Variante del ejercicio 11: ¿Cuál es el **VF** al mes 36 de 270 EUR/mes **vencidos** (no prepagables) con i=1%/mes? {
+=11.629.76 EUR
+~11.747.06 EUR
+~11.500.00 EUR
+~11.300.00 EUR}

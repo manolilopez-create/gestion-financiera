@@ -1,0 +1,200 @@
+En el ejercicio 1, el tipo de interes a que se presto el capital es {
+~ 0,32%
+= 3,2%
+~ 0,32
+}
+
+En el ejercicio 2, el resultado que se obtiene es {
+= Capital inicial es de 1.384,62 euros
+~ El capital final que obtenemos es de 1.500 euros
+~ El capital que se invierte es de 1.800 euros
+}
+
+Los intereses producidos en la operacion financiera del ejercicio 3 son de  {
+~ 100 euros
+~ 175 euros
+= 125 euros
+}
+
+¿Cual es el tiempo que buscamos en el ejercicio 4? {
+= 20 años
+~ 12 años
+~ 10 años
+}
+
+¿Cual es el capital que queremos calcular en el ejercicio 5? {
+~ 1.200 euros, y se trata del capital final capitalizado
+= 990,10 euros, y se trata del capital inicial capitalizado
+~ 909 euros, y se trata del capital inicial descontado
+}
+
+¿Cuales son los intereses producidos en el periodo considerado en el ejercicio 6? {
+~ 3,75%
+= 37,5 euros
+~ 37,5%
+}
+
+¿Cual es el capital que buscamos en el ejercicio 7? {
+~ Buscamos el capital final que es de 78.524,32 euros
+~ Buscamos el capital nominal que es de 78.524,32 euros
+= Buscamos el capital inicial que es de 68.665,29 euros
+}
+
+¿Cual es el tiempo de la operacion financiera del ejercicio 8? {
+~ 15 años
+= 10 años
+~ 12 años
+}
+
+¿Cual es el tipo de interes buscado en el ejercicio 9? {
+~ 0,12%
+~ 1,2%
+= 12%
+}
+
+¿que capital y cuanta es la que hemos de calcular en el ejercicio 10?{
+~ El Nominal de la operacion que es de 35,80 euros
+~ El efectivo de la operacion que es de 30,50 euros
+= El capital final de la operacion de capitalizacion que es de 34,01 euros
+}
+
+El capital final obtenido en el ejercicio 11, en el apartado a) es … {
+= 1.110,81 euros
+~ 1.120,72 euros
+~ 1.200 euros
+}
+
+El capital final obtenido en el ejercicio 11, en el apartado b) es… {
+~ 1.110,81 euros
+~ 1.200 euros
+= 1.120,72 euros
+}
+
+
+¿Cual es el tiempo que se debe calcular en el ejercicio 12? {
+= 11 años, 10 meses y 22 dias
+~ 10 años, 11 meses y 22 días
+~ 12 años
+}
+
+¿Cuantas acciones podra comprar el inversor del ejercicio 13? {
+= 2.017 acciones
+~ 1.207 acciones
+~ 48.427 acciones
+}
+
+¿Cual es el saldo final que se quiere obtener el apartado b) del ejercicio 13  {
+~ 145.000 euros
+~ 131.955,87 euros
+= 141.955,87 euros
+}
+
+¿Cual es el tipo de interes buscado en el ejercicio 14?{
+= 12,36%
+~ 41,85%
+~ 6%
+}
+
+¿Cual es el montante que se quiere calcular en el ejercicio 15? {
+~ 1.500 euros
+~ 1.700 euros
+= 1.683,69 euros
+}
+
+¿Cual es el importe que debera pagar el empresario del ejercicio 16 segun la oferta A a los 7 años? {
+~ 1.090.538 euros
+= 1.099.538 euros
+~ 1.990.538 euros
+}
+
+¿Cual es el capital inicial del que partimos en el ejercicio 17? {
+~ 34.613,91  euros
+= 25.000 euros
+~ 26.250 euros
+}
+
+¿Cuales son los capitales parciales a los que se refiere el ejercicio 17? {
+~ 3.863,91 y 30.750 euros respectivamente
+~ 8.635,91 y 25.978 euros respectivamente
+= 8.363,91 y 26.250 euros respectivamente
+}
+
+¿Que capital cancelara las deudas del ejercicio 18? {
+~ 12.591,31 euros
+~ 12.159,31 euros
+= 12.951,31 euros
+}
+
+¿Cuales son los intereses de descuento que se quieren calcular en el ejercicio 19 {
+= 26,67 euros
+~ 27,67 euros
+~ 73,33 euros
+}
+
+¿Cual es el Efectivo de la operacion de descuento del ejercicio 19? {
+~ 1.933,73 euros
+= 1.973,33 euros
+~ 1.793,33 euros
+}
+
+¿Cual es el plazo que se quiere calcular en el ejercicio 20?{
+= 27 dias
+~ 27 años
+~ 27 meses
+}
+
+¿ que tipo de interes de descuento se aplico en la operacion del ejercicio 21? {
+~ 0,1%
+~ 1,1%
+= 10%
+}
+
+¿Cual es el Efectivo que resulta de la operacion de descuento del ejercicio 22? {
+= 9.590,03 euros
+~ 9.950,03 euros
+~ 9.059,03 euros
+}
+
+¿Cual es el capital que se quiere obtener en el ejercicio 23? {
+= El Nominal de la operacion de descuento que es de 2.485,53 euros
+~ El Efectivo de la operacion de descuento que es de 2.485,53 euros
+~ El capital final de la operacion de capitalizacion que es de 2.485,53 euros
+}
+
+¿Cuales son los intereses de descuento que se quieren calcular en el ejercicio 24? {
+~ 116,10 euros
+= 110,16 euros
+~ 100,16 euros
+}
+
+¿A que tipo de interes de descuento se ha realizado la operacion financiera del ejercicio 25 {
+~ al 0,89% anual
+= al 80,9% anual
+~ al 8,9% anual
+}
+
+¿Cual es el tipo de interes que habría que aplicar en descuento comercial para que el resultado de la operacion financiera realizada en descuento racional en el ejercicio 26, de el mismo resultado? {
+~ 0,96%
+~ 0,096%
+= 9,68%
+}
+
+¿Cuales son los intereses de descuento calculados en el ejercicio 27 a traves del descuento comercial? {
+~ 3.908,23 euros
+~ 3.813,56 euros
+= 4.500 euros
+}
+
+¿Cuales son los intereses de descuento calculados en el ejercicio 27 a traves del descuento racional? {
+~ 4.500 euros
+~ 3.908,23 euros
+= 3.813,56 euros
+}
+
+¿Cuales son los intereses de descuento calculados en el ejercicio 27 a traves del descuento compuesto? {
+= 3.908,23 euros
+~ 4.500 euros
+~ 3.813,56 euros
+}
+
+

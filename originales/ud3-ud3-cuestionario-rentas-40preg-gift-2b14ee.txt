@@ -1,0 +1,284 @@
+// Cuestionario UD3 · Rentas financieras
+// Gestión Financiera (0653) · 40 preguntas · recoge los 18 ejercicios de las actividades evaluables
+// Importar en Aules: Banco de preguntas > Importar > Formato GIFT (codificación UTF-8)
+$CATEGORY: $course$/UD3 Rentas financieras/Cuestionario evaluable
+
+::UD3-01 Ej. 1 · VA pospagable::Ej. 1. ¿Qué cantidad hay que depositar hoy en un banco al 10 % anual para recibir 300 € al final de cada año durante 10 años? {
+	~3.000,00 € #Incorrecto. Renta pospagable inmediata\: V0 \= C · [1 − (1+i)^−n]/i \= 300 · 6,1446 \= 1.843,37 €.
+	~4.781,23 € #Incorrecto. Renta pospagable inmediata\: V0 \= C · [1 − (1+i)^−n]/i \= 300 · 6,1446 \= 1.843,37 €.
+	=1.843,37 € #Renta pospagable inmediata\: V0 \= C · [1 − (1+i)^−n]/i \= 300 · 6,1446 \= 1.843,37 €.
+	~2.027,71 € #Incorrecto. Renta pospagable inmediata\: V0 \= C · [1 − (1+i)^−n]/i \= 300 · 6,1446 \= 1.843,37 €.
+}
+
+::UD3-02 Ej. 1 · VA prepagable (variante)::Variante del ejercicio 1\: si los 300 € se cobraran al principio de cada año (renta prepagable), ¿cuánto habría que depositar hoy al 10 % anual? {
+	~1.843,37 € #Incorrecto. Prepagable\: V0 \= C · [1 − (1+i)^−n]/i · (1+i) \= 300 · 6,1446 · 1,10 \= 2.027,71 €.
+	=2.027,71 € #Prepagable\: V0 \= C · [1 − (1+i)^−n]/i · (1+i) \= 300 · 6,1446 · 1,10 \= 2.027,71 €.
+	~3.000,00 € #Incorrecto. Prepagable\: V0 \= C · [1 − (1+i)^−n]/i · (1+i) \= 300 · 6,1446 · 1,10 \= 2.027,71 €.
+	~1.675,79 € #Incorrecto. Prepagable\: V0 \= C · [1 − (1+i)^−n]/i · (1+i) \= 300 · 6,1446 · 1,10 \= 2.027,71 €.
+}
+
+::UD3-03 Ej. 2 · Cuantía::Ej. 2. ¿Qué cuantía constante debe pagarse al final de cada año durante 10 años para cancelar una deuda actual de 614,46 € al 10 % anual? {
+	~61,45 € #Incorrecto. C \= V0 · i / [1 − (1+i)^−n] \= 614,46 / 6,1446 \= 100,00 €. Si se pagara al principio de cada año saldría 90,91 €.
+	~110,00 € #Incorrecto. C \= V0 · i / [1 − (1+i)^−n] \= 614,46 / 6,1446 \= 100,00 €. Si se pagara al principio de cada año saldría 90,91 €.
+	~90,91 € #Incorrecto. C \= V0 · i / [1 − (1+i)^−n] \= 614,46 / 6,1446 \= 100,00 €. Si se pagara al principio de cada año saldría 90,91 €.
+	=100,00 € #C \= V0 · i / [1 − (1+i)^−n] \= 614,46 / 6,1446 \= 100,00 €. Si se pagara al principio de cada año saldría 90,91 €.
+}
+
+::UD3-04 Ej. 3 · VA oferta B::Ej. 3. Oferta B por un piso\: 6.600 € en la firma y 4.800 € al final de cada año durante 10 años. ¿Cuál es su valor actual al 12 % anual? {
+	~36.975,60 € #Incorrecto. V \= 6.600 + 4.800 · a(10;12 %) \= 6.600 + 4.800 · 5,6502 \= 33.721,07 €.
+	~54.600,00 € #Incorrecto. V \= 6.600 + 4.800 · a(10;12 %) \= 6.600 + 4.800 · 5,6502 \= 33.721,07 €.
+	~33.000,00 € #Incorrecto. V \= 6.600 + 4.800 · a(10;12 %) \= 6.600 + 4.800 · 5,6502 \= 33.721,07 €.
+	=33.721,07 € #V \= 6.600 + 4.800 · a(10;12 %) \= 6.600 + 4.800 · 5,6502 \= 33.721,07 €.
+}
+
+::UD3-05 Ej. 3 · VA oferta C::Ej. 3. Oferta C por un piso\: 4.500 € al final de cada año durante 15 años. ¿Cuál es su valor actual al 12 % anual? {
+	~25.426,00 € #Incorrecto. V \= 4.500 · a(15;12 %) \= 4.500 · 6,8109 \= 30.648,89 €.
+	=30.648,89 € #V \= 4.500 · a(15;12 %) \= 4.500 · 6,8109 \= 30.648,89 €.
+	~34.326,76 € #Incorrecto. V \= 4.500 · a(15;12 %) \= 4.500 · 6,8109 \= 30.648,89 €.
+	~67.500,00 € #Incorrecto. V \= 4.500 · a(15;12 %) \= 4.500 · 6,8109 \= 30.648,89 €.
+}
+
+::UD3-06 Ej. 3 · Oferta más conveniente::Ej. 3. El Sr. A ofrece 33.000 € al contado; el Sr. B, 6.600 € más 4.800 €/año durante 10 años; el Sr. C, 4.500 €/año durante 15 años. Al 12 % anual, ¿qué oferta conviene más al vendedor? {
+	~La del Sr. C, con un valor actual de 30.648,89 € #Incorrecto. Al vendedor le conviene el mayor valor actual\: B \= 33.721,07 € > A \= 33.000,00 € > C \= 30.648,89 €.
+	~La del Sr. A, con un valor actual de 33.000,00 € #Incorrecto. Al vendedor le conviene el mayor valor actual\: B \= 33.721,07 € > A \= 33.000,00 € > C \= 30.648,89 €.
+	=La del Sr. B, con un valor actual de 33.721,07 € #Al vendedor le conviene el mayor valor actual\: B \= 33.721,07 € > A \= 33.000,00 € > C \= 30.648,89 €.
+	~Las tres son equivalentes #Incorrecto. Al vendedor le conviene el mayor valor actual\: B \= 33.721,07 € > A \= 33.000,00 € > C \= 30.648,89 €.
+}
+
+::UD3-07 Ej. 4 · Número de términos::Ej. 4. Se depositan 518,98 € en un banco al 5 % y se retiran 50 € al final de cada año. ¿Durante cuántos años se podrá retirar esa cantidad? {
+	=15 años #n \= −ln(1 − V0·i/C) / ln(1+i) \= −ln(1 − 518,98·0,05/50) / ln(1,05) \= 14,9999 ≈ 15 años. Comprobación\: 50 · a(15;5 %) \= 518,98 €.
+	~16 años #Incorrecto. n \= −ln(1 − V0·i/C) / ln(1+i) \= −ln(1 − 518,98·0,05/50) / ln(1,05) \= 14,9999 ≈ 15 años. Comprobación\: 50 · a(15;5 %) \= 518,98 €.
+	~14 años #Incorrecto. n \= −ln(1 − V0·i/C) / ln(1+i) \= −ln(1 − 518,98·0,05/50) / ln(1,05) \= 14,9999 ≈ 15 años. Comprobación\: 50 · a(15;5 %) \= 518,98 €.
+	~10 años #Incorrecto. n \= −ln(1 − V0·i/C) / ln(1+i) \= −ln(1 − 518,98·0,05/50) / ln(1,05) \= 14,9999 ≈ 15 años. Comprobación\: 50 · a(15;5 %) \= 518,98 €.
+}
+
+::UD3-08 Ej. 4 · Despejar n::Para calcular el número de términos n de una renta a partir de su valor actual, el cuantía C y el tipo i hay que utilizar… {
+	=logaritmos\: n \= −ln(1 − V0·i/C) / ln(1+i) #La incógnita está en el exponente de (1+i)^−n, así que se despeja con logaritmos\: n \= −ln(1 − V0·i/C) / ln(1+i).
+	~una raíz n-ésima de (1+i) #Incorrecto. La incógnita está en el exponente de (1+i)^−n, así que se despeja con logaritmos\: n \= −ln(1 − V0·i/C) / ln(1+i).
+	~el valor final de la renta, sin logaritmos #Incorrecto. La incógnita está en el exponente de (1+i)^−n, así que se despeja con logaritmos\: n \= −ln(1 − V0·i/C) / ln(1+i).
+	~una suma de potencias de (1+i), sin despejar #Incorrecto. La incógnita está en el exponente de (1+i)^−n, así que se despeja con logaritmos\: n \= −ln(1 − V0·i/C) / ln(1+i).
+}
+
+::UD3-09 Ej. 5 · VA prepagable::Ej. 5. ¿Cuánto hay que depositar hoy al 10 % anual para cobrar 200 € al principio de cada año durante 8 años? {
+	~1.066,99 € #Incorrecto. Prepagable\: V0 \= 200 · 5,3349 · 1,10 \= 1.173,68 €. Con pagos al final de año sería 1.066,99 €.
+	~1.600,00 € #Incorrecto. Prepagable\: V0 \= 200 · 5,3349 · 1,10 \= 1.173,68 €. Con pagos al final de año sería 1.066,99 €.
+	=1.173,68 € #Prepagable\: V0 \= 200 · 5,3349 · 1,10 \= 1.173,68 €. Con pagos al final de año sería 1.066,99 €.
+	~969,99 € #Incorrecto. Prepagable\: V0 \= 200 · 5,3349 · 1,10 \= 1.173,68 €. Con pagos al final de año sería 1.066,99 €.
+}
+
+::UD3-10 Ej. 5 · Clasificación::Ej. 5. La renta de 200 € cobrados al principio de cada año durante 8 años es una renta… {
+	~variable, temporal y diferida #Incorrecto. Los términos son iguales (constante), son 8 (temporal), empiezan ya (inmediata) y se cobran al principio del período (prepagable).
+	=constante, temporal, inmediata y prepagable #Los términos son iguales (constante), son 8 (temporal), empiezan ya (inmediata) y se cobran al principio del período (prepagable).
+	~constante, temporal, inmediata y pospagable #Incorrecto. Los términos son iguales (constante), son 8 (temporal), empiezan ya (inmediata) y se cobran al principio del período (prepagable).
+	~constante, perpetua y prepagable #Incorrecto. Los términos son iguales (constante), son 8 (temporal), empiezan ya (inmediata) y se cobran al principio del período (prepagable).
+}
+
+::UD3-11 Ej. 6 · VF prepagable::Ej. 6. ¿Cuál es el valor final de una renta de 400 € anuales prepagables durante 9 años al 8 % anual? {
+	~9.985,07 € #Incorrecto. V̈n \= 400 · [(1+i)^n − 1]/i · (1+i) \= 400 · 12,4876 · 1,08 \= 5.394,62 €.
+	~4.995,02 € #Incorrecto. V̈n \= 400 · [(1+i)^n − 1]/i · (1+i) \= 400 · 12,4876 · 1,08 \= 5.394,62 €.
+	~3.600,00 € #Incorrecto. V̈n \= 400 · [(1+i)^n − 1]/i · (1+i) \= 400 · 12,4876 · 1,08 \= 5.394,62 €.
+	=5.394,62 € #V̈n \= 400 · [(1+i)^n − 1]/i · (1+i) \= 400 · 12,4876 · 1,08 \= 5.394,62 €.
+}
+
+::UD3-12 Ej. 6 · VA prepagable::Ej. 6. ¿Cuál es el valor actual de esa misma renta (400 € anuales prepagables durante 9 años al 8 %)? {
+	~2.313,66 € #Incorrecto. V̈0 \= 400 · 6,2469 · 1,08 \= 2.698,66 €.
+	~5.394,62 € #Incorrecto. V̈0 \= 400 · 6,2469 · 1,08 \= 2.698,66 €.
+	~2.498,76 € #Incorrecto. V̈0 \= 400 · 6,2469 · 1,08 \= 2.698,66 €.
+	=2.698,66 € #V̈0 \= 400 · 6,2469 · 1,08 \= 2.698,66 €.
+}
+
+::UD3-13 Ej. 7 · Capital en t \= 17::Ej. 7. Para cobrar 240 € cada cumpleaños desde los 18 hasta los 28 años (11 cobros), ¿qué capital debe haber a los 17 años, con i \= 4,5 % anual? {
+	~2.640,00 € #Incorrecto. Los cobros son una renta pospagable valorada en t \= 17\: V17 \= 240 · a(11;4,5 %) \= 240 · 8,5289 \= 2.046,94 €.
+	=2.046,94 € #Los cobros son una renta pospagable valorada en t \= 17\: V17 \= 240 · a(11;4,5 %) \= 240 · 8,5289 \= 2.046,94 €.
+	~1.958,79 € #Incorrecto. Los cobros son una renta pospagable valorada en t \= 17\: V17 \= 240 · a(11;4,5 %) \= 240 · 8,5289 \= 2.046,94 €.
+	~2.139,05 € #Incorrecto. Los cobros son una renta pospagable valorada en t \= 17\: V17 \= 240 · a(11;4,5 %) \= 240 · 8,5289 \= 2.046,94 €.
+}
+
+::UD3-14 Ej. 7 · Imposición anual::Ej. 7. Con el capital necesario a los 17 años (2.046,94 €) y 17 imposiciones anuales al final de cada año al 4,5 %, ¿cuál es la cuantía de la imposición? {
+	~120,41 € #Incorrecto. C \= V17 / s(17;4,5 %) \= 2.046,94 / 24,7417 \= 82,73 €.
+	~86,46 € #Incorrecto. C \= V17 / s(17;4,5 %) \= 2.046,94 / 24,7417 \= 82,73 €.
+	=82,73 € #C \= V17 / s(17;4,5 %) \= 2.046,94 / 24,7417 \= 82,73 €.
+	~155,29 € #Incorrecto. C \= V17 / s(17;4,5 %) \= 2.046,94 / 24,7417 \= 82,73 €.
+}
+
+::UD3-15 Ej. 8 · Cuantía::Ej. 8. ¿Qué anualidad (al final de cada año) hay que imponer durante 8 años al 10 % para acumular 8.000 €? {
+	=699,55 € #C \= Vn / s(8;10 %) \= 8.000 / 11,4359 \= 699,55 €.
+	~1.000,00 € #Incorrecto. C \= Vn / s(8;10 %) \= 8.000 / 11,4359 \= 699,55 €.
+	~635,96 € #Incorrecto. C \= Vn / s(8;10 %) \= 8.000 / 11,4359 \= 699,55 €.
+	~1.499,55 € #Incorrecto. C \= Vn / s(8;10 %) \= 8.000 / 11,4359 \= 699,55 €.
+}
+
+::UD3-16 Ej. 8 · VF con 700 €::Ej. 8. Si en lugar de la anualidad exacta se imponen 700 € al final de cada año durante 8 años al 10 %, ¿qué capital se obtiene? {
+	=8.005,12 € #Vn \= 700 · 11,4359 \= 8.005,12 €, algo más de 8.000 € porque 700 € es mayor que la anualidad exacta.
+	~8.805,63 € #Incorrecto. Vn \= 700 · 11,4359 \= 8.005,12 €, algo más de 8.000 € porque 700 € es mayor que la anualidad exacta.
+	~8.000,00 € #Incorrecto. Vn \= 700 · 11,4359 \= 8.005,12 €, algo más de 8.000 € porque 700 € es mayor que la anualidad exacta.
+	~5.600,00 € #Incorrecto. Vn \= 700 · 11,4359 \= 8.005,12 €, algo más de 8.000 € porque 700 € es mayor que la anualidad exacta.
+}
+
+::UD3-17 Ej. 9 · Capital único::Ej. 9a. ¿Qué cantidad hay que entregar hoy para disponer de 10.000 € dentro de 15 años, al 8 % de interés compuesto anual? {
+	~31.721,69 € #Incorrecto. C0 \= Cn · (1+i)^−n \= 10.000 · 0,3152 \= 3.152,42 €.
+	~4.545,45 € #Incorrecto. C0 \= Cn · (1+i)^−n \= 10.000 · 0,3152 \= 3.152,42 €.
+	=3.152,42 € #C0 \= Cn · (1+i)^−n \= 10.000 · 0,3152 \= 3.152,42 €.
+	~666,67 € #Incorrecto. C0 \= Cn · (1+i)^−n \= 10.000 · 0,3152 \= 3.152,42 €.
+}
+
+::UD3-18 Ej. 9 · Aportación anual::Ej. 9b. ¿Qué aportación anual (al final de cada año) permite reunir 10.000 € en 15 años al 8 %? {
+	~341,01 € #Incorrecto. C \= Vn / s(15;8 %) \= 10.000 / 27,1521 \= 368,30 €.
+	=368,30 € #C \= Vn / s(15;8 %) \= 10.000 / 27,1521 \= 368,30 €.
+	~1.168,30 € #Incorrecto. C \= Vn / s(15;8 %) \= 10.000 / 27,1521 \= 368,30 €.
+	~666,67 € #Incorrecto. C \= Vn / s(15;8 %) \= 10.000 / 27,1521 \= 368,30 €.
+}
+
+::UD3-19 Ej. 10 · Tanto equivalente::Ej. 10. Con un tipo del 4 % semestral, ¿cuál es el tanto efectivo anual equivalente? {
+	~8,00 % #Incorrecto. i \= (1 + i2)^2 − 1 \= 1,04^2 − 1 \= 0,0816 → 8,16 % anual.
+	~12,49 % #Incorrecto. i \= (1 + i2)^2 − 1 \= 1,04^2 − 1 \= 0,0816 → 8,16 % anual.
+	~4,08 % #Incorrecto. i \= (1 + i2)^2 − 1 \= 1,04^2 − 1 \= 0,0816 → 8,16 % anual.
+	=8,16 % #i \= (1 + i2)^2 − 1 \= 1,04^2 − 1 \= 0,0816 → 8,16 % anual.
+}
+
+::UD3-20 Ej. 10 · Opción a)::Ej. 10. Opción a)\: 300 € hoy y 50 € al final de cada año durante 3 años. Con un tipo del 4 % semestral, ¿cuál es su valor actual? {
+	~428,85 € #Incorrecto. Tipo anual equivalente 8,16 %\: V \= 300 + 50 · a(3;8,16 %) \= 300 + 50 · 2,5697 \= 428,48 €.
+	~450,00 € #Incorrecto. Tipo anual equivalente 8,16 %\: V \= 300 + 50 · a(3;8,16 %) \= 300 + 50 · 2,5697 \= 428,48 €.
+	~562,11 € #Incorrecto. Tipo anual equivalente 8,16 %\: V \= 300 + 50 · a(3;8,16 %) \= 300 + 50 · 2,5697 \= 428,48 €.
+	=428,48 € #Tipo anual equivalente 8,16 %\: V \= 300 + 50 · a(3;8,16 %) \= 300 + 50 · 2,5697 \= 428,48 €.
+}
+
+::UD3-21 Ej. 10 · Opción b)::Ej. 10. Opción b)\: 8 pagos semestrales de 45 €, el primero hoy, al 4 % semestral. ¿Cuál es su valor actual y qué opción conviene al comprador? {
+	~360,00 €\: conviene la opción a) #Incorrecto. Prepagable\: V \= 45 · 6,7327 · 1,04 \= 315,09 €, menor que 428,48 € de a). El comprador prefiere el menor valor actual.
+	=315,09 €\: conviene la opción b) #Prepagable\: V \= 45 · 6,7327 · 1,04 \= 315,09 €, menor que 428,48 € de a). El comprador prefiere el menor valor actual.
+	~302,97 €\: conviene la opción b) #Incorrecto. Prepagable\: V \= 45 · 6,7327 · 1,04 \= 315,09 €, menor que 428,48 € de a). El comprador prefiere el menor valor actual.
+	~315,09 €\: conviene la opción a) #Incorrecto. Prepagable\: V \= 45 · 6,7327 · 1,04 \= 315,09 €, menor que 428,48 € de a). El comprador prefiere el menor valor actual.
+}
+
+::UD3-22 Ej. 11 · VA prepagable::Ej. 11. Un estudiante recibe 270 € al principio de cada mes durante 3 años. ¿Qué capital equivale hoy a todas las mensualidades, al 1 % mensual? {
+	~8.129,03 € #Incorrecto. V̈0 \= 270 · 30,1075 · 1,01 \= 8.210,32 €.
+	~11.747,06 € #Incorrecto. V̈0 \= 270 · 30,1075 · 1,01 \= 8.210,32 €.
+	=8.210,32 € #V̈0 \= 270 · 30,1075 · 1,01 \= 8.210,32 €.
+	~9.720,00 € #Incorrecto. V̈0 \= 270 · 30,1075 · 1,01 \= 8.210,32 €.
+}
+
+::UD3-23 Ej. 11 · VF prepagable::Ej. 11. ¿Cuál es el valor final, al cabo de los 36 meses, de esas mensualidades de 270 € prepagables al 1 % mensual? {
+	=11.747,06 € #V̈n \= 270 · 43,0769 · 1,01 \= 11.747,06 €.
+	~11.630,76 € #Incorrecto. V̈n \= 270 · 43,0769 · 1,01 \= 11.747,06 €.
+	~8.210,32 € #Incorrecto. V̈n \= 270 · 43,0769 · 1,01 \= 11.747,06 €.
+	~9.720,00 € #Incorrecto. V̈n \= 270 · 43,0769 · 1,01 \= 11.747,06 €.
+}
+
+::UD3-24 Ej. 12 · Tipo trimestral::Ej. 12. ¿Cuál es el tipo efectivo trimestral equivalente a un 8,5 % efectivo anual? {
+	=2,0604 % #i4 \= (1 + 0,085)^(1/4) − 1 \= 0,0206 → 2,0604 % trimestral. Dividir 8,5 entre 4 (2,125 %) sería incorrecto\: es un tipo efectivo, no nominal.
+	~0,6838 % #Incorrecto. i4 \= (1 + 0,085)^(1/4) − 1 \= 0,0206 → 2,0604 % trimestral. Dividir 8,5 entre 4 (2,125 %) sería incorrecto\: es un tipo efectivo, no nominal.
+	~2,1250 % #Incorrecto. i4 \= (1 + 0,085)^(1/4) − 1 \= 0,0206 → 2,0604 % trimestral. Dividir 8,5 entre 4 (2,125 %) sería incorrecto\: es un tipo efectivo, no nominal.
+	~2,0000 % #Incorrecto. i4 \= (1 + 0,085)^(1/4) − 1 \= 0,0206 → 2,0604 % trimestral. Dividir 8,5 entre 4 (2,125 %) sería incorrecto\: es un tipo efectivo, no nominal.
+}
+
+::UD3-25 Ej. 12 · VA al 8,5 % anual::Ej. 12a. ¿Cuál es el valor actual de una renta pospagable de 48 € trimestrales durante 3 años, con un tipo del 8,5 % efectivo anual? {
+	~507,62 € #Incorrecto. V0 \= 48 · a(12; 2,0604 %) \= 48 · 10,5362 \= 505,74 €.
+	~645,97 € #Incorrecto. V0 \= 48 · a(12; 2,0604 %) \= 48 · 10,5362 \= 505,74 €.
+	=505,74 € #V0 \= 48 · a(12; 2,0604 %) \= 48 · 10,5362 \= 505,74 €.
+	~576,00 € #Incorrecto. V0 \= 48 · a(12; 2,0604 %) \= 48 · 10,5362 \= 505,74 €.
+}
+
+::UD3-26 Ej. 12 · VF al 8,5 % anual::Ej. 12a. ¿Cuál es el valor final de esa misma renta (48 € trimestrales, 3 años) con un 8,5 % efectivo anual? {
+	~576,00 € #Incorrecto. Vn \= 48 · s(12; 2,0604 %) \= 48 · 13,4578 \= 645,97 €.
+	=645,97 € #Vn \= 48 · s(12; 2,0604 %) \= 48 · 13,4578 \= 645,97 €.
+	~643,78 € #Incorrecto. Vn \= 48 · s(12; 2,0604 %) \= 48 · 13,4578 \= 645,97 €.
+	~505,74 € #Incorrecto. Vn \= 48 · s(12; 2,0604 %) \= 48 · 13,4578 \= 645,97 €.
+}
+
+::UD3-27 Ej. 12 · VA al 2 % trimestral::Ej. 12b. ¿Cuál es el valor actual de 48 € por trimestre durante 3 años, al 2 % trimestral (pospagable)? {
+	~505,74 € #Incorrecto. V0 \= 48 · a(12;2 %) \= 48 · 10,5753 \= 507,62 €.
+	~643,78 € #Incorrecto. V0 \= 48 · a(12;2 %) \= 48 · 10,5753 \= 507,62 €.
+	~576,00 € #Incorrecto. V0 \= 48 · a(12;2 %) \= 48 · 10,5753 \= 507,62 €.
+	=507,62 € #V0 \= 48 · a(12;2 %) \= 48 · 10,5753 \= 507,62 €.
+}
+
+::UD3-28 Ej. 12 · VF al 2 % trimestral::Ej. 12b. ¿Cuál es el valor final de 48 € por trimestre durante 3 años, al 2 % trimestral (pospagable)? {
+	~576,00 € #Incorrecto. Vn \= 48 · s(12;2 %) \= 48 · 13,4121 \= 643,78 €.
+	~645,97 € #Incorrecto. Vn \= 48 · s(12;2 %) \= 48 · 13,4121 \= 643,78 €.
+	~507,62 € #Incorrecto. Vn \= 48 · s(12;2 %) \= 48 · 13,4121 \= 643,78 €.
+	=643,78 € #Vn \= 48 · s(12;2 %) \= 48 · 13,4121 \= 643,78 €.
+}
+
+::UD3-29 Ej. 13 · Aportación::Ej. 13. ¿Qué cantidad fija hay que ingresar al final de cada año durante 10 años, al 5 %, para comprar un coche de 40.000 € dentro de 10 años? {
+	~4.000,00 € #Incorrecto. C \= Vn / s(10;5 %) \= 40.000 / 12,5779 \= 3.180,18 €.
+	=3.180,18 € #C \= Vn / s(10;5 %) \= 40.000 / 12,5779 \= 3.180,18 €.
+	~3.028,75 € #Incorrecto. C \= Vn / s(10;5 %) \= 40.000 / 12,5779 \= 3.180,18 €.
+	~5.180,18 € #Incorrecto. C \= Vn / s(10;5 %) \= 40.000 / 12,5779 \= 3.180,18 €.
+}
+
+::UD3-30 Ej. 13 · Capital único::Ej. 13. Si en lugar de aportar cada año se hiciera un único ingreso hoy al 5 %, ¿cuánto habría que depositar para tener 40.000 € dentro de 10 años? {
+	~26.666,67 € #Incorrecto. C0 \= 40.000 · 1,05^−10 \= 24.556,53 €.
+	~65.155,79 € #Incorrecto. C0 \= 40.000 · 1,05^−10 \= 24.556,53 €.
+	=24.556,53 € #C0 \= 40.000 · 1,05^−10 \= 24.556,53 €.
+	~20.000,00 € #Incorrecto. C0 \= 40.000 · 1,05^−10 \= 24.556,53 €.
+}
+
+::UD3-31 Ej. 14 · VA prepagable::Ej. 14. ¿Cuál es el valor actual de una renta prepagable de 30 € cada cuatrimestre durante 2 años, al 2 % cuatrimestral? {
+	=171,40 € #n \= 6. V̈0 \= 30 · 5,6014 · 1,02 \= 171,40 €.
+	~180,00 € #Incorrecto. n \= 6. V̈0 \= 30 · 5,6014 · 1,02 \= 171,40 €.
+	~189,24 € #Incorrecto. n \= 6. V̈0 \= 30 · 5,6014 · 1,02 \= 171,40 €.
+	~168,04 € #Incorrecto. n \= 6. V̈0 \= 30 · 5,6014 · 1,02 \= 171,40 €.
+}
+
+::UD3-32 Ej. 14 · VF prepagable::Ej. 14. ¿Cuál es el valor final de esa renta (30 € cuatrimestrales prepagables, 6 cuatrimestres, 2 % cuatrimestral)? {
+	=193,03 € #V̈n \= 30 · 6,3081 · 1,02 \= 193,03 €.
+	~171,40 € #Incorrecto. V̈n \= 30 · 6,3081 · 1,02 \= 193,03 €.
+	~180,00 € #Incorrecto. V̈n \= 30 · 6,3081 · 1,02 \= 193,03 €.
+	~189,24 € #Incorrecto. V̈n \= 30 · 6,3081 · 1,02 \= 193,03 €.
+}
+
+::UD3-33 Ej. 15 · VA opción a)::Ej. 15. Opción a)\: 10 pagos de 90 € al final de cada mes a partir del segundo mes (primer pago al final del mes 2). ¿Cuál es su valor actual al 1 % mensual? {
+	~835,62 € #Incorrecto. Renta pospagable diferida 1 mes\: V \= 90 · a(10;1 %) · 1,01^−1 \= 90 · 9,4713 · 0,9901 \= 843,98 €.
+	~900,00 € #Incorrecto. Renta pospagable diferida 1 mes\: V \= 90 · a(10;1 %) · 1,01^−1 \= 90 · 9,4713 · 0,9901 \= 843,98 €.
+	=843,98 € #Renta pospagable diferida 1 mes\: V \= 90 · a(10;1 %) · 1,01^−1 \= 90 · 9,4713 · 0,9901 \= 843,98 €.
+	~852,42 € #Incorrecto. Renta pospagable diferida 1 mes\: V \= 90 · a(10;1 %) · 1,01^−1 \= 90 · 9,4713 · 0,9901 \= 843,98 €.
+}
+
+::UD3-34 Ej. 15 · Diferimiento::Ej. 15. En la opción a) (10 pagos mensuales pospagables, el primero al final del mes 2), ¿cuántos meses de diferimiento d hay? {
+	~d \= 10 meses #Incorrecto. Una renta pospagable inmediata empieza a pagar al final del mes 1. Si el primer pago es al final del mes 2, se difiere 1 mes (d \= 1).
+	=d \= 1 mes #Una renta pospagable inmediata empieza a pagar al final del mes 1. Si el primer pago es al final del mes 2, se difiere 1 mes (d \= 1).
+	~d \= 2 meses #Incorrecto. Una renta pospagable inmediata empieza a pagar al final del mes 1. Si el primer pago es al final del mes 2, se difiere 1 mes (d \= 1).
+	~d \= 0 meses #Incorrecto. Una renta pospagable inmediata empieza a pagar al final del mes 1. Si el primer pago es al final del mes 2, se difiere 1 mes (d \= 1).
+}
+
+::UD3-35 Ej. 15 · Elección::Ej. 15. Opción a)\: 10 pagos de 90 € al final de cada mes a partir del segundo mes. Opción b)\: 300 € hoy y 50 € al final de cada mes durante 1 año. Al 1 % mensual, ¿qué opción interesa más al comprador? {
+	~La b), porque su valor actual (862,75 €) es menor que el de la a) (843,98 €) #Incorrecto. V(b) \= 300 + 50 · a(12;1 %) \= 300 + 50 · 11,2551 \= 862,75 €. Al comprador le interesa el menor valor actual\: la opción a).
+	~Ninguna\: son equivalentes #Incorrecto. V(b) \= 300 + 50 · a(12;1 %) \= 300 + 50 · 11,2551 \= 862,75 €. Al comprador le interesa el menor valor actual\: la opción a).
+	~La b), porque se paga menos al contado #Incorrecto. V(b) \= 300 + 50 · a(12;1 %) \= 300 + 50 · 11,2551 \= 862,75 €. Al comprador le interesa el menor valor actual\: la opción a).
+	=La a), porque su valor actual (843,98 €) es menor que el de la b) (862,75 €) #V(b) \= 300 + 50 · a(12;1 %) \= 300 + 50 · 11,2551 \= 862,75 €. Al comprador le interesa el menor valor actual\: la opción a).
+}
+
+::UD3-36 Ej. 16 · Tipo semestral::Ej. 16. ¿Cuál es el tipo efectivo semestral equivalente a un 8 % efectivo anual? {
+	~3,8462 % #Incorrecto. i2 \= 1,08^(1/2) − 1 \= 0,0392 → 3,9230 % semestral.
+	~4,0000 % #Incorrecto. i2 \= 1,08^(1/2) − 1 \= 0,0392 → 3,9230 % semestral.
+	~16,6400 % #Incorrecto. i2 \= 1,08^(1/2) − 1 \= 0,0392 → 3,9230 % semestral.
+	=3,9230 % #i2 \= 1,08^(1/2) − 1 \= 0,0392 → 3,9230 % semestral.
+}
+
+::UD3-37 Ej. 16 · VA diferida prepagable::Ej. 16. ¿Cuál es el valor actual de una renta de 1.000 € semestrales prepagables durante 7 años, diferida 3 años, con un 8 % efectivo anual? {
+	~9.830,54 € #Incorrecto. n \= 14 semestres, d \= 6 semestres\: V \= 1.000 · 10,6170 · (1+i2) · (1+i2)^−6 \= 8.758,75 €.
+	=8.758,75 € #n \= 14 semestres, d \= 6 semestres\: V \= 1.000 · 10,6170 · (1+i2) · (1+i2)^−6 \= 8.758,75 €.
+	~8.428,11 € #Incorrecto. n \= 14 semestres, d \= 6 semestres\: V \= 1.000 · 10,6170 · (1+i2) · (1+i2)^−6 \= 8.758,75 €.
+	~11.033,50 € #Incorrecto. n \= 14 semestres, d \= 6 semestres\: V \= 1.000 · 10,6170 · (1+i2) · (1+i2)^−6 \= 8.758,75 €.
+}
+
+::UD3-38 Ej. 17 · VF anticipado::Ej. 17. ¿Cuál es el valor final de una renta de 1.500 € trimestrales prepagables durante 5 años, valorada 2,5 años después de su final, al 12 % efectivo anual? {
+	~40.935,38 € #Incorrecto. i4 \= 1,12^(1/4) − 1 \= 0,0287. V \= 1.500 · s(20;i4) · (1+i4) · (1+i4)^10 \= 54.343,03 €.
+	~52.824,98 € #Incorrecto. i4 \= 1,12^(1/4) − 1 \= 0,0287. V \= 1.500 · s(20;i4) · (1+i4) · (1+i4)^10 \= 54.343,03 €.
+	=54.343,03 € #i4 \= 1,12^(1/4) − 1 \= 0,0287. V \= 1.500 · s(20;i4) · (1+i4) · (1+i4)^10 \= 54.343,03 €.
+	~45.847,62 € #Incorrecto. i4 \= 1,12^(1/4) − 1 \= 0,0287. V \= 1.500 · s(20;i4) · (1+i4) · (1+i4)^10 \= 54.343,03 €.
+}
+
+::UD3-39 Ej. 17 · VF al final de la renta::Ej. 17. ¿Cuál es el valor final de esa renta (1.500 € trimestrales prepagables durante 5 años, 12 % anual) justo al terminar los 5 años, antes de anticiparla? {
+	=40.935,38 € #V̈n \= 1.500 · 26,5279 · (1+i4) \= 40.935,38 €.
+	~30.000,00 € #Incorrecto. V̈n \= 1.500 · 26,5279 · (1+i4) \= 40.935,38 €.
+	~54.343,03 € #Incorrecto. V̈n \= 1.500 · 26,5279 · (1+i4) \= 40.935,38 €.
+	~39.791,86 € #Incorrecto. V̈n \= 1.500 · 26,5279 · (1+i4) \= 40.935,38 €.
+}
+
+::UD3-40 Ej. 18 · Perpetuidad::Ej. 18. ¿Qué capital hay que depositar hoy al 4 % anual para cobrar 100.000 € al final de cada año de forma indefinida? {
+	=2.500.000,00 € #Renta perpetua pospagable\: V0 \= C / i \= 100.000 / 0,04 \= 2.500.000,00 €.
+	~4.000,00 € #Incorrecto. Renta perpetua pospagable\: V0 \= C / i \= 100.000 / 0,04 \= 2.500.000,00 €.
+	~3.000.000,00 € #Incorrecto. Renta perpetua pospagable\: V0 \= C / i \= 100.000 / 0,04 \= 2.500.000,00 €.
+	~2.600.000,00 € #Incorrecto. Renta perpetua pospagable\: V0 \= C / i \= 100.000 / 0,04 \= 2.500.000,00 €.
+}

@@ -1,0 +1,144 @@
+// Cuestionario de teoría UD3 · Rentas financieras
+// Gestión Financiera (0653) · 20 preguntas · basado en la presentación de la unidad
+// Importar en Aules: Banco de preguntas > Importar > Formato GIFT (codificación UTF-8)
+$CATEGORY: $course$/UD3 Rentas financieras/Cuestionario teoría
+
+::UD3T-01 Concepto de renta::En matemática financiera, una renta es… {
+	~el interés total que genera un capital invertido durante varios años #Incorrecto. Una renta es una sucesión de capitales (términos) asociados a una serie de períodos equidistantes; el objetivo es valorarla en una fecha determinada. Ejemplos\: un sueldo mensual, las cuotas de un préstamo o un alquiler.
+	~un único capital que se capitaliza durante varios períodos #Incorrecto. Una renta es una sucesión de capitales (términos) asociados a una serie de períodos equidistantes; el objetivo es valorarla en una fecha determinada. Ejemplos\: un sueldo mensual, las cuotas de un préstamo o un alquiler.
+	=una sucesión de capitales con vencimientos equidistantes en el tiempo, que se valora en una fecha determinada #Una renta es una sucesión de capitales (términos) asociados a una serie de períodos equidistantes; el objetivo es valorarla en una fecha determinada. Ejemplos\: un sueldo mensual, las cuotas de un préstamo o un alquiler.
+	~un conjunto de capitales que vencen en fechas cualesquiera, sin periodicidad #Incorrecto. Una renta es una sucesión de capitales (términos) asociados a una serie de períodos equidistantes; el objetivo es valorarla en una fecha determinada. Ejemplos\: un sueldo mensual, las cuotas de un préstamo o un alquiler.
+}
+
+::UD3T-02 Unidades homogéneas::Al valorar una renta, ¿qué determina el tipo de interés con el que hay que trabajar? {
+	~La duración total de la renta #Incorrecto. Términos y tipo deben ser homogéneos. Lo que determina el tipo es el término de la renta\: si los pagos son mensuales hay que usar el tipo mensual equivalente.
+	=El término de la renta\: el tipo debe estar referido al mismo período que los términos #Términos y tipo deben ser homogéneos. Lo que determina el tipo es el término de la renta\: si los pagos son mensuales hay que usar el tipo mensual equivalente.
+	~Siempre el tipo anual, sea cual sea la frecuencia de los términos #Incorrecto. Términos y tipo deben ser homogéneos. Lo que determina el tipo es el término de la renta\: si los pagos son mensuales hay que usar el tipo mensual equivalente.
+	~El momento de valoración elegido #Incorrecto. Términos y tipo deben ser homogéneos. Lo que determina el tipo es el término de la renta\: si los pagos son mensuales hay que usar el tipo mensual equivalente.
+}
+
+::UD3T-03 Elementos de una renta::En una renta, el «período» es… {
+	~cada uno de los capitales que componen la renta #Incorrecto. Elementos\: término (cada capital), origen (inicio del primer capital), final (fin del último), duración (entre origen y final), tanto de interés y período (intervalo entre dos capitales consecutivos).
+	~el momento en que empieza a devengarse el primer capital #Incorrecto. Elementos\: término (cada capital), origen (inicio del primer capital), final (fin del último), duración (entre origen y final), tanto de interés y período (intervalo entre dos capitales consecutivos).
+	~el tiempo que transcurre entre el origen y el final de la renta #Incorrecto. Elementos\: término (cada capital), origen (inicio del primer capital), final (fin del último), duración (entre origen y final), tanto de interés y período (intervalo entre dos capitales consecutivos).
+	=el intervalo de tiempo entre dos capitales consecutivos #Elementos\: término (cada capital), origen (inicio del primer capital), final (fin del último), duración (entre origen y final), tanto de interés y período (intervalo entre dos capitales consecutivos).
+}
+
+::UD3T-04 Valor actual y valor final::El valor actual (V0) y el valor final (Vn) de una renta son… {
+	~los intereses acumulados y los intereses pendientes de la renta #Incorrecto. V0 traslada todos los términos al momento inicial y Vn al momento final, usando capitalización compuesta con un tipo efectivo. Una renta puede valorarse en cualquier momento, incluso antes del origen o después del final.
+	~el valor de un solo término al principio y al final de la renta #Incorrecto. V0 traslada todos los términos al momento inicial y Vn al momento final, usando capitalización compuesta con un tipo efectivo. Una renta puede valorarse en cualquier momento, incluso antes del origen o después del final.
+	~la suma de los términos sin aplicar ninguna ley financiera, en el origen y en el final #Incorrecto. V0 traslada todos los términos al momento inicial y Vn al momento final, usando capitalización compuesta con un tipo efectivo. Una renta puede valorarse en cualquier momento, incluso antes del origen o después del final.
+	=el resultado de valorar todos los términos en el momento inicial y en el momento final, respectivamente #V0 traslada todos los términos al momento inicial y Vn al momento final, usando capitalización compuesta con un tipo efectivo. Una renta puede valorarse en cualquier momento, incluso antes del origen o después del final.
+}
+
+::UD3T-05 Criterios de clasificación::¿Cuál de las siguientes NO es una forma de clasificar las rentas según la presentación? {
+	~Por el importe de los términos (constantes o variables) #Incorrecto. Las rentas se clasifican por el importe de los términos, la duración, la frecuencia, el momento de valoración y el vencimiento del capital dentro del período. El tipo fijo o variable no es un criterio de clasificación de la renta.
+	=Por el tipo de interés aplicado (fijo o variable) #Las rentas se clasifican por el importe de los términos, la duración, la frecuencia, el momento de valoración y el vencimiento del capital dentro del período. El tipo fijo o variable no es un criterio de clasificación de la renta.
+	~Por la frecuencia de los términos (enteras, periódicas o fraccionadas) #Incorrecto. Las rentas se clasifican por el importe de los términos, la duración, la frecuencia, el momento de valoración y el vencimiento del capital dentro del período. El tipo fijo o variable no es un criterio de clasificación de la renta.
+	~Por el vencimiento del capital dentro del período (prepagables o pospagables) #Incorrecto. Las rentas se clasifican por el importe de los términos, la duración, la frecuencia, el momento de valoración y el vencimiento del capital dentro del período. El tipo fijo o variable no es un criterio de clasificación de la renta.
+}
+
+::UD3T-06 Duración\: perpetuas::Una renta perpetua o indefinida es aquella que… {
+	~tiene términos que crecen siempre en progresión geométrica #Incorrecto. Según la duración, las rentas son temporales (número definido de términos) o indefinidas/perpetuas (número ilimitado de términos).
+	~se valora antes de su origen #Incorrecto. Según la duración, las rentas son temporales (número definido de términos) o indefinidas/perpetuas (número ilimitado de términos).
+	=tiene un número ilimitado de términos #Según la duración, las rentas son temporales (número definido de términos) o indefinidas/perpetuas (número ilimitado de términos).
+	~tiene un número definido de términos, todos iguales #Incorrecto. Según la duración, las rentas son temporales (número definido de términos) o indefinidas/perpetuas (número ilimitado de términos).
+}
+
+::UD3T-07 Frecuencia\: fraccionadas::Una renta con términos mensuales y un tipo de interés efectivo anual es una renta… {
+	=fraccionada, porque la frecuencia de los términos es mayor que la de capitalización de los intereses #Fraccionada\: la frecuencia de los términos (mensual) es superior a la de capitalización de los intereses (anual). Entera\: ambas coinciden. Periódica\: la frecuencia de los términos es inferior (por ejemplo, un pago cada dos años con interés anual).
+	~periódica, porque los términos se pagan varias veces al año #Incorrecto. Fraccionada\: la frecuencia de los términos (mensual) es superior a la de capitalización de los intereses (anual). Entera\: ambas coinciden. Periódica\: la frecuencia de los términos es inferior (por ejemplo, un pago cada dos años con interés anual).
+	~entera, porque ambos tipos son efectivos #Incorrecto. Fraccionada\: la frecuencia de los términos (mensual) es superior a la de capitalización de los intereses (anual). Entera\: ambas coinciden. Periódica\: la frecuencia de los términos es inferior (por ejemplo, un pago cada dos años con interés anual).
+	~diferida, porque el tipo es anual y los términos mensuales #Incorrecto. Fraccionada\: la frecuencia de los términos (mensual) es superior a la de capitalización de los intereses (anual). Entera\: ambas coinciden. Periódica\: la frecuencia de los términos es inferior (por ejemplo, un pago cada dos años con interés anual).
+}
+
+::UD3T-08 Frecuencia\: periódicas::Un gasto de 20.000 € cada dos años, con un interés efectivo anual del 5 %, constituye una renta… {
+	=periódica, y hay que utilizar el tanto bianual equivalente #La frecuencia de los términos (cada dos años) es inferior a la de capitalización (anual)\: renta periódica. Se calcula el tanto bianual equivalente (1,05² − 1 \= 10,25 %) y después el valor actual con el número de períodos de dos años.
+	~entera, y se utiliza directamente el 5 % anual #Incorrecto. La frecuencia de los términos (cada dos años) es inferior a la de capitalización (anual)\: renta periódica. Se calcula el tanto bianual equivalente (1,05² − 1 \= 10,25 %) y después el valor actual con el número de períodos de dos años.
+	~fraccionada, y hay que utilizar el tanto mensual equivalente #Incorrecto. La frecuencia de los términos (cada dos años) es inferior a la de capitalización (anual)\: renta periódica. Se calcula el tanto bianual equivalente (1,05² − 1 \= 10,25 %) y después el valor actual con el número de períodos de dos años.
+	~perpetua, y no tiene valor actual #Incorrecto. La frecuencia de los términos (cada dos años) es inferior a la de capitalización (anual)\: renta periódica. Se calcula el tanto bianual equivalente (1,05² − 1 \= 10,25 %) y después el valor actual con el número de períodos de dos años.
+}
+
+::UD3T-09 Momento de valoración\: diferidas::Una renta se llama diferida cuando… {
+	~los términos vencen al principio de cada período #Incorrecto. Diferida\: se valora antes del origen; el tiempo entre el momento de valoración y el origen es el período de diferimiento. Inmediata\: se valora entre el origen y el final de la renta.
+	~los términos vencen al final de cada período #Incorrecto. Diferida\: se valora antes del origen; el tiempo entre el momento de valoración y el origen es el período de diferimiento. Inmediata\: se valora entre el origen y el final de la renta.
+	=el momento de valoración es anterior al origen de la renta #Diferida\: se valora antes del origen; el tiempo entre el momento de valoración y el origen es el período de diferimiento. Inmediata\: se valora entre el origen y el final de la renta.
+	~el momento de valoración es posterior al final de la renta #Incorrecto. Diferida\: se valora antes del origen; el tiempo entre el momento de valoración y el origen es el período de diferimiento. Inmediata\: se valora entre el origen y el final de la renta.
+}
+
+::UD3T-10 Momento de valoración\: anticipadas::Una renta se llama anticipada cuando… {
+	~los términos crecen en progresión geométrica #Incorrecto. Anticipada\: se valora después de su final; el tiempo entre el final de la renta y el momento de valoración es el período de anticipación (h).
+	=el punto de valoración es posterior al final de la renta #Anticipada\: se valora después de su final; el tiempo entre el final de la renta y el momento de valoración es el período de anticipación (h).
+	~el primer pago se hace al principio del primer período #Incorrecto. Anticipada\: se valora después de su final; el tiempo entre el final de la renta y el momento de valoración es el período de anticipación (h).
+	~el punto de valoración es anterior al origen de la renta #Incorrecto. Anticipada\: se valora después de su final; el tiempo entre el final de la renta y el momento de valoración es el período de anticipación (h).
+}
+
+::UD3T-11 Prepagables y pospagables::Un alquiler que se paga al principio de cada mes y un sueldo que se cobra al final de cada mes son, respectivamente, rentas… {
+	~pospagable y prepagable #Incorrecto. Prepagable\: los términos vencen al principio de cada período (ejemplo\: alquileres). Pospagable\: vencen al final de cada período (ejemplo\: sueldos).
+	~ambas prepagables #Incorrecto. Prepagable\: los términos vencen al principio de cada período (ejemplo\: alquileres). Pospagable\: vencen al final de cada período (ejemplo\: sueldos).
+	~ambas pospagables #Incorrecto. Prepagable\: los términos vencen al principio de cada período (ejemplo\: alquileres). Pospagable\: vencen al final de cada período (ejemplo\: sueldos).
+	=prepagable y pospagable #Prepagable\: los términos vencen al principio de cada período (ejemplo\: alquileres). Pospagable\: vencen al final de cada período (ejemplo\: sueldos).
+}
+
+::UD3T-12 Valor actual pospagable::El valor actual de una renta constante, inmediata, temporal y pospagable se obtiene como la suma de los términos de una progresión geométrica de razón… {
+	~i, y resulta V0 \= C · i / n #Incorrecto. Cada término se actualiza multiplicando por (1+i)^−1, por lo que la suma es una progresión geométrica de razón (1+i)^−1 y V0 \= C · [1 − (1+i)^−n] / i. La otra fórmula con (1+i)^n − 1 es el valor final.
+	~(1 + i)^n, y resulta V0 \= C · (1+i)^n #Incorrecto. Cada término se actualiza multiplicando por (1+i)^−1, por lo que la suma es una progresión geométrica de razón (1+i)^−1 y V0 \= C · [1 − (1+i)^−n] / i. La otra fórmula con (1+i)^n − 1 es el valor final.
+	~(1 + i), y resulta V0 \= C · [(1+i)^n − 1] / i #Incorrecto. Cada término se actualiza multiplicando por (1+i)^−1, por lo que la suma es una progresión geométrica de razón (1+i)^−1 y V0 \= C · [1 − (1+i)^−n] / i. La otra fórmula con (1+i)^n − 1 es el valor final.
+	=(1 + i)^−1, y resulta V0 \= C · [1 − (1+i)^−n] / i #Cada término se actualiza multiplicando por (1+i)^−1, por lo que la suma es una progresión geométrica de razón (1+i)^−1 y V0 \= C · [1 − (1+i)^−n] / i. La otra fórmula con (1+i)^n − 1 es el valor final.
+}
+
+::UD3T-13 Ejemplo de valoración::Se pagan 6.500 € al final de cada año durante 4 años y el tipo efectivo anual es del 10 %. ¿Qué relación hay entre su valor actual y su valor final? {
+	~V0 \= 30.166,50 € y Vn \= 20.604,13 €\: el valor actual siempre es mayor que el final #Incorrecto. V0 \= 6.500 · a(4;10 %) \= 6.500 · 3,1699 \= 20.604,13 € y Vn \= V0 · 1,10^4 \= 30.166,50 €. Son capitales financieramente equivalentes\: uno vence en 0 y el otro en n.
+	=V0 \= 20.604,13 € y Vn \= 30.166,50 €\: son capitales equivalentes, Vn \= V0 · (1,10)^4 #V0 \= 6.500 · a(4;10 %) \= 6.500 · 3,1699 \= 20.604,13 € y Vn \= V0 · 1,10^4 \= 30.166,50 €. Son capitales financieramente equivalentes\: uno vence en 0 y el otro en n.
+	~V0 \= 20.604,13 € y Vn \= 82.416,50 €\: Vn \= 4 · V0 #Incorrecto. V0 \= 6.500 · a(4;10 %) \= 6.500 · 3,1699 \= 20.604,13 € y Vn \= V0 · 1,10^4 \= 30.166,50 €. Son capitales financieramente equivalentes\: uno vence en 0 y el otro en n.
+	~V0 \= Vn \= 26.000,00 €\: la suma de los términos #Incorrecto. V0 \= 6.500 · a(4;10 %) \= 6.500 · 3,1699 \= 20.604,13 € y Vn \= V0 · 1,10^4 \= 30.166,50 €. Son capitales financieramente equivalentes\: uno vence en 0 y el otro en n.
+}
+
+::UD3T-14 Prepagable::El valor actual de una renta prepagable respecto al de la misma renta pospagable… {
+	~no puede compararse #Incorrecto. Prepagable\: V̈0 \= C · [1 − (1+i)^−n] / i · (1+i). Al vencer cada término un período antes, la renta vale más.
+	~es igual, porque los términos son los mismos #Incorrecto. Prepagable\: V̈0 \= C · [1 − (1+i)^−n] / i · (1+i). Al vencer cada término un período antes, la renta vale más.
+	=es mayor, porque se multiplica por (1 + i) #Prepagable\: V̈0 \= C · [1 − (1+i)^−n] / i · (1+i). Al vencer cada término un período antes, la renta vale más.
+	~es menor, porque se divide entre (1 + i) #Incorrecto. Prepagable\: V̈0 \= C · [1 − (1+i)^−n] / i · (1+i). Al vencer cada término un período antes, la renta vale más.
+}
+
+::UD3T-15 Anticipación y diferimiento::¿Qué efecto tienen la anticipación y el diferimiento de una renta constante? {
+	=La anticipación solo afecta al valor final y el diferimiento solo al valor actual #Anticipada\: V(n+h) \= Vn · (1+i)^h; el valor actual se calcula como en una renta inmediata. Diferida\: V0 \= V0 inmediata · (1+i)^−d; el valor final se calcula como en una renta inmediata.
+	~Ambos afectan al valor actual y al valor final #Incorrecto. Anticipada\: V(n+h) \= Vn · (1+i)^h; el valor actual se calcula como en una renta inmediata. Diferida\: V0 \= V0 inmediata · (1+i)^−d; el valor final se calcula como en una renta inmediata.
+	~La anticipación solo afecta al valor actual y el diferimiento solo al valor final #Incorrecto. Anticipada\: V(n+h) \= Vn · (1+i)^h; el valor actual se calcula como en una renta inmediata. Diferida\: V0 \= V0 inmediata · (1+i)^−d; el valor final se calcula como en una renta inmediata.
+	~Ninguno de los dos modifica el valor de la renta #Incorrecto. Anticipada\: V(n+h) \= Vn · (1+i)^h; el valor actual se calcula como en una renta inmediata. Diferida\: V0 \= V0 inmediata · (1+i)^−d; el valor final se calcula como en una renta inmediata.
+}
+
+::UD3T-16 Rentas perpetuas::¿Cuál es la afirmación correcta sobre las rentas perpetuas, constantes, inmediatas y pospagables? {
+	=No tienen valor final y su valor actual es V0 \= C / i #Al ser la duración no finita no existe valor final. El valor actual es finito\: V0 \= C / i, porque los términos más lejanos valen cada vez menos al actualizarlos.
+	~Tienen valor actual infinito, porque suman infinitos términos #Incorrecto. Al ser la duración no finita no existe valor final. El valor actual es finito\: V0 \= C / i, porque los términos más lejanos valen cada vez menos al actualizarlos.
+	~Tienen valor final y su valor actual es V0 \= C · i #Incorrecto. Al ser la duración no finita no existe valor final. El valor actual es finito\: V0 \= C / i, porque los términos más lejanos valen cada vez menos al actualizarlos.
+	~No tienen valor final y su valor actual es V0 \= C · (1+i)^n #Incorrecto. Al ser la duración no finita no existe valor final. El valor actual es finito\: V0 \= C / i, porque los términos más lejanos valen cada vez menos al actualizarlos.
+}
+
+::UD3T-17 Perpetua prepagable::Una renta perpetua, constante, prepagable e inmediata de cuantía C tiene un valor actual de… {
+	~C / (i · (1 + i)) #Incorrecto. Prepagable\: se multiplica el valor de la pospagable por (1+i)\: V̈0 \= (C/i)·(1+i) \= C + C/i (el primer término se cobra hoy y los demás forman una perpetua pospagable).
+	~C · i · (1 + i) #Incorrecto. Prepagable\: se multiplica el valor de la pospagable por (1+i)\: V̈0 \= (C/i)·(1+i) \= C + C/i (el primer término se cobra hoy y los demás forman una perpetua pospagable).
+	=(C / i) · (1 + i), que equivale a C + C / i #Prepagable\: se multiplica el valor de la pospagable por (1+i)\: V̈0 \= (C/i)·(1+i) \= C + C/i (el primer término se cobra hoy y los demás forman una perpetua pospagable).
+	~C / i #Incorrecto. Prepagable\: se multiplica el valor de la pospagable por (1+i)\: V̈0 \= (C/i)·(1+i) \= C + C/i (el primer término se cobra hoy y los demás forman una perpetua pospagable).
+}
+
+::UD3T-18 Rentas variables::En una renta variable en progresión geométrica, si los términos crecen un 2 % cada período, la razón q es… {
+	~q \= 2 #Incorrecto. Cada término se obtiene del anterior multiplicando por q (Cn \= C1 · q^(n−1)). Si crecen un 2 %, q \= 1,02; si decrecen un 2 %, q \= 0,98. q siempre es mayor que 0.
+	=q \= 1,02 #Cada término se obtiene del anterior multiplicando por q (Cn \= C1 · q^(n−1)). Si crecen un 2 %, q \= 1,02; si decrecen un 2 %, q \= 0,98. q siempre es mayor que 0.
+	~q \= 0,02 #Incorrecto. Cada término se obtiene del anterior multiplicando por q (Cn \= C1 · q^(n−1)). Si crecen un 2 %, q \= 1,02; si decrecen un 2 %, q \= 0,98. q siempre es mayor que 0.
+	~q \= 0,98 #Incorrecto. Cada término se obtiene del anterior multiplicando por q (Cn \= C1 · q^(n−1)). Si crecen un 2 %, q \= 1,02; si decrecen un 2 %, q \= 0,98. q siempre es mayor que 0.
+}
+
+::UD3T-19 Fraccionadas\: término anual::Una renta de 1.000 € anuales durante 4 años, con un interés efectivo mensual del 1 %. ¿Qué hay que hacer para valorarla? {
+	~Pasar la renta a 48 términos mensuales de 1.000 € #Incorrecto. Como la renta es anual, el tipo debe ser anual\: i \= (1+i12)^12 − 1 \= 0,126825. Con ese tipo y n \= 4 se calcula V \= 1.000 · s(4; i).
+	~Dividir el 1 % entre 12 para obtener el tipo anual #Incorrecto. Como la renta es anual, el tipo debe ser anual\: i \= (1+i12)^12 − 1 \= 0,126825. Con ese tipo y n \= 4 se calcula V \= 1.000 · s(4; i).
+	~Multiplicar el 1 % por 12 y usar un 12 % anual #Incorrecto. Como la renta es anual, el tipo debe ser anual\: i \= (1+i12)^12 − 1 \= 0,126825. Con ese tipo y n \= 4 se calcula V \= 1.000 · s(4; i).
+	=Pasar el tipo mensual a anual\: i \= (1 + 0,01)^12 − 1 \= 12,6825 % #Como la renta es anual, el tipo debe ser anual\: i \= (1+i12)^12 − 1 \= 0,126825. Con ese tipo y n \= 4 se calcula V \= 1.000 · s(4; i).
+}
+
+::UD3T-20 Fraccionadas\: término mensual::Una renta de 1.000 € mensuales durante 4 años, con un interés efectivo anual del 10 %. ¿Qué tipo y cuántos términos se utilizan? {
+	~i \= 10 % anual y n \= 4 términos #Incorrecto. El término determina el tipo\: al ser mensual hay que usar i12 \= (1+i)^(1/12) − 1 \= 0,00797414 y la duración es m · n \= 12 · 4 \= 48 períodos. Dividir el 10 % entre 12 solo valdría para un tipo nominal.
+	~i12 \= (1,10)^12 − 1 \= 213,84 % mensual y n \= 48 términos #Incorrecto. El término determina el tipo\: al ser mensual hay que usar i12 \= (1+i)^(1/12) − 1 \= 0,00797414 y la duración es m · n \= 12 · 4 \= 48 períodos. Dividir el 10 % entre 12 solo valdría para un tipo nominal.
+	~i12 \= 10 % / 12 \= 0,8333 % mensual y n \= 48 términos #Incorrecto. El término determina el tipo\: al ser mensual hay que usar i12 \= (1+i)^(1/12) − 1 \= 0,00797414 y la duración es m · n \= 12 · 4 \= 48 períodos. Dividir el 10 % entre 12 solo valdría para un tipo nominal.
+	=i12 \= (1,10)^(1/12) − 1 \= 0,7974 % mensual y n \= 48 términos #El término determina el tipo\: al ser mensual hay que usar i12 \= (1+i)^(1/12) − 1 \= 0,00797414 y la duración es m · n \= 12 · 4 \= 48 períodos. Dividir el 10 % entre 12 solo valdría para un tipo nominal.
+}

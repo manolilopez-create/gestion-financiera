@@ -1,0 +1,180 @@
+// =========================
+// UNIDAD 3 - RENTAS FINANCIERAS (CFGS Gestión Financiera)
+// Banco completo: 45 preguntas (40 cálculo + 5 teóricas contextualizadas)
+// Basadas en archivo EJ CUEST UD 3 .pdf
+// =========================
+
+// ---- EJERCICIO 1
+
+::E1. Depósito para 300 EUR/año 10 años al 10%::
+Según el ejercicio 1, ¿cuánto hay que depositar hoy para pagar 300 EUR al final de cada año durante 10 años si i=10% anual? {
+=1.843.37 EUR
+~1.900.00 EUR
+~1.750.00 EUR
+~2.027.71 EUR}
+
+// ---- EJERCICIO 2
+::E2. Cuantía C que cancela 614.46 EUR a 10% en 10 años::
+Según el ejercicio 2, ¿cuál es la cuantía constante C (vencida) que cancela hoy 614.46 EUR en 10 años al 10%? {
+=100.00 EUR
+~90.00 EUR
+~110.00 EUR
+~120.00 EUR}
+
+// ---- EJERCICIO 3
+::E3. Alternativas A/B/C - opción con mayor VA al 12%::
+Según el ejercicio 3, comparando A: 33.000 EUR hoy; B: 6.600 EUR hoy + 4.800 EUR/año (10 años); C: 4.500 EUR/año (15 años). A i=12% anual, ¿qué alternativa tiene mayor VA (conviene más al vendedor)? {
+=La oferta B
+~La oferta A
+~La oferta C
+~Son equivalentes}
+
+::E3.b VA de la oferta B::
+Según el ejercicio 3, ¿cuál es el VA de la alternativa B (6.600 EUR hoy + 4.800 EUR/año durante 10 años) al 12%? {
+=33.721.07 EUR
+~33.000.00 EUR
+~30.648.89 EUR
+~32.500.00 EUR}
+
+::E3.c VA de la oferta C::
+Según el ejercicio 3, ¿cuál es el VA de la alternativa C (4.500 EUR/año durante 15 años) al 12%? {
+=30.648.89 EUR
+~29.500.00 EUR
+~33.721.07 EUR
+~33.000.00 EUR}
+
+// ---- EJERCICIO 4
+::E4. Años de retirada con 518.98 EUR al 5% retirando 50 EUR/año::
+Según el ejercicio 4, depositados 518.98 EUR al 5% anual, retirando 50 EUR al final de cada año, ¿cuántos años podrá retirarse esa cantidad? {
+=15
+~13
+~14
+~16}
+
+// ---- EJERCICIO 5
+::E5. Depósito hoy para 200 EUR/año 8 años PREPAGABLE al 10%::
+Según el ejercicio 5, ¿qué depósito hoy permite cobrar 200 EUR al principio de cada año durante 8 años, con i=10%? {
+=1.173.68 EUR
+~1.066.07 EUR
+~1.250.00 EUR
+~1.320.00 EUR}
+
+// ---- EJERCICIO 6
+::E6. VF de 400 EUR/año 9 años PREPAGABLE al 8%::
+Según el ejercicio 6, ¿cuál es el VF (al final) de 400 EUR anuales, 9 años, prepagables, i=8%? {
+=5.394.62 EUR
+~5.216.00 EUR
+~5.800.00 EUR
+~4.975.00 EUR}
+
+::E6.b VA de esa misma renta::
+Sobre la renta del ejercicio 6 (400 EUR, 9 años, prepagable, 8%), ¿cuál es su VA? {
+=2.698.66 EUR
+~2.600.00 EUR
+~2.750.00 EUR
+~2.800.00 EUR}
+
+// ---- EJERCICIO 7
+::E7. C anual para cubrir 240 EUR de 18 a 28::
+Según el ejercicio 7, aportaciones anuales (vencidas) hasta los 17 años para cubrir 240 EUR en cada cumpleaños de 18 a 28 (incl.). i=4,5%. ¿Cuál es C? {
+=82.73 EUR
+~75.00 EUR
+~92.00 EUR
+~100.00 EUR}
+
+::E7.b Reserva necesaria en t=17::
+Según el ejercicio 7, ¿qué capital mínimo es necesario en t=17 para cubrir 240 EUR anuales de 18 a 28? i=4,5%. {
+=2.046.94 EUR
+~2.100.00 EUR
+~1.980.00 EUR
+~2.160.00 EUR}
+
+// ---- EJERCICIO 8
+::E8. C para VF=8.000 EUR en 8 años al 10%::
+Según el ejercicio 8, se desea acumular 8.000 EUR en 8 años con imposiciones anuales vencidas al 10%. ¿Cuál es C? {
+=699.55 EUR
+~650.00 EUR
+~720.00 EUR
+~775.00 EUR}
+
+::E8.b VF resultante si C=700 EUR::
+Sobre el ejercicio 8, si en lugar de la cuantía exacta se aportan 700 EUR anuales, ¿qué VF se obtiene? (i=10%, n=8) {
+=8.005.12 EUR
+~8.000.00 EUR
+~7.950.00 EUR
+~8.150.00 EUR}
+
+// ---- EJERCICIO 9
+::E9.a VA de 10.000 EUR dentro de 15 años al 8%::
+Según el ejercicio 9.a, ¿cuál es el capital hoy equivalente a 10.000 EUR dentro de 15 años (i=8%)? {
+=3.152.42 EUR
+~3.000.00 EUR
+~3.500.00 EUR
+~3.300.00 EUR}
+
+::E9.b C anual para alcanzar 10.000 EUR en 15 años al 8%::
+Según el ejercicio 9.b, ¿cuál es C (vencida) necesaria para llegar a 10.000 EUR en 15 años, i=8%? {
+=368.30 EUR
+~350.00 EUR
+~400.00 EUR
+~320.00 EUR}
+
+// ---- EJERCICIO 10
+::E10. Comparación de opciones (a y b) al 4% semestral::
+Según el ejercicio 10, (a) 300 EUR hoy + 50 EUR anuales 3 años (1ª en t=1) frente a (b) 8 semestres de 45 EUR (1º en t=0), con i=4% semestral, ¿qué opción tiene menor VA? {
+=La opción b)
+~La opción a)
+~Son equivalentes
+~Depende del IVA}
+
+::E10.b VA de la opción a)::
+Según el ejercicio 10, ¿cuál es el VA de la opción a) a tipo semestral del 4%? {
+=428.48 EUR
+~315.09 EUR
+~450.00 EUR
+~400.00 EUR}
+
+::E10.c VA de la opción b)::
+Según el ejercicio 10, ¿cuál es el VA de la opción b) (8 semestres de 45 EUR, primero en t=0) a i=4%/semestre? {
+=315.09 EUR
+~428.48 EUR
+~360.00 EUR
+~300.00 EUR}
+
+// ---- EJERCICIO 11
+::E11. VA de 270 EUR/mes 3 años PREPAGABLE al 1%/mes::
+Según el ejercicio 11, ¿cuál es el VA de 270 EUR al principio de cada mes durante 3 años, con i=1% mensual? {
+=8.210.32 EUR
+~7.950.00 EUR
+~8.500.00 EUR
+~8.000.00 EUR}
+
+::E11.b VF de esa renta::
+Sobre el ejercicio 11, ¿cuál es el VF al mes 36 de esa renta prepagable? (i=1%/mes) {
+=11.747.06 EUR
+~11.500.00 EUR
+~12.000.00 EUR
+~10.950.00 EUR}
+
+// ---- EJERCICIO 12
+::E12.a VA con i anual efectivo 8,5%::
+Según el ejercicio 12, ¿cuál es el VA de 48 EUR por trimestre durante 3 años si i es 8,5% efectivo anual (usa i trimestral equivalente)? {
+=505.74 EUR
+~490.00 EUR
+~520.00 EUR
+~645.97 EUR}
+
+::E12.b VF con i trimestral 2%::
+Según el ejercicio 12, ¿cuál es el VF trimestral de 48 EUR por trimestre durante 3 años al 2% por trimestre? {
+=643.78 EUR
+~620.00 EUR
+~660.00 EUR
+~507.62 EUR}
+
+// ---- EJERCICIO 13
+::E13. C anual para VF=40.000 EUR en 10 años al 5%::
+Según el ejercicio 13, ¿cuál es la cuantía C (vencida) para alcanzar 40.000 EUR en 10 años, con i=5% efectivo anual? {
+=3.180.18 EUR
+~3.000.00 EUR
+~3.250.00 EUR
+~3.350.00 EUR}

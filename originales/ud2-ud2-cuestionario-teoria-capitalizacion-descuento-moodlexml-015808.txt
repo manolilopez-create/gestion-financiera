@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<question type="category"><category><text>$course$/top/UD2 Capitalización y descuento/Cuestionario teoría</text></category></question>
+<question type="multichoice"><name><text>UD2-T01 Operación financiera</text></name>
+<questiontext format="html"><text><![CDATA[<p>Ante dos capitales de igual cuantía disponibles en momentos distintos, un sujeto racional preferirá…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Premisas básicas: (1) a igual cuantía, se prefiere el capital más cercano; (2) en el mismo momento, se prefiere el de mayor cuantía.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[El que tenga mayor tipo de interés]]></text><feedback format="html"><text><![CDATA[Incorrecto. El enunciado compara capitales de igual cuantía en momentos distintos; la premisa se basa en el tiempo, no en el tipo de interés.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[El más lejano en el tiempo]]></text><feedback format="html"><text><![CDATA[Incorrecto. Esperar más tiempo por la misma cantidad supone renunciar a los rendimientos que podríamos obtener mientras tanto.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[El más cercano en el tiempo]]></text><feedback format="html"><text><![CDATA[¡Correcto! A igualdad de cuantía se prefiere el capital más próximo, porque el dinero disponible antes puede invertirse y generar rendimientos.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Le es indiferente]]></text><feedback format="html"><text><![CDATA[Incorrecto. No es indiferente: el valor del dinero depende del momento en que se dispone de él.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T02 Operación financiera</text></name>
+<questiontext format="html"><text><![CDATA[<p>¿Qué se entiende por operación financiera?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Equivalencia significa «igual valor». La sustitución de capitales financieramente equivalentes se denomina operación financiera.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Cualquier compraventa de bienes a crédito]]></text><feedback format="html"><text><![CDATA[Incorrecto. Una compraventa a crédito puede originar una operación financiera, pero la definición se refiere al intercambio de capitales equivalentes.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[El cobro de intereses de una cuenta corriente]]></text><feedback format="html"><text><![CDATA[Incorrecto. El cobro de intereses es una consecuencia de una operación financiera, no su definición.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[La inversión en activos fijos de la empresa]]></text><feedback format="html"><text><![CDATA[Incorrecto. Eso es una inversión productiva, que se estudia en la unidad de inversión.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[La sustitución de uno o varios capitales por otro u otros financieramente equivalentes]]></text><feedback format="html"><text><![CDATA[¡Correcto! Es la definición de la unidad: intercambio de capitales de igual valor financiero.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T03 Operación financiera</text></name>
+<questiontext format="html"><text><![CDATA[<p>Una operación financiera se considera a corto plazo cuando su duración es…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Según el momento de sustitución: corto plazo (< 1 año) y largo plazo (> 1 año).</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Inferior a cinco años]]></text><feedback format="html"><text><![CDATA[Incorrecto. Una operación de 2, 3 o 4 años es a largo plazo.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Inferior a un año]]></text><feedback format="html"><text><![CDATA[¡Correcto! Corto plazo: menos de un año.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Inferior a un mes]]></text><feedback format="html"><text><![CDATA[Incorrecto. Es demasiado restrictivo: cualquier operación inferior al año es a corto plazo.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Superior a un año]]></text><feedback format="html"><text><![CDATA[Incorrecto. Las operaciones de más de un año son a largo plazo.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T04 Operación financiera</text></name>
+<questiontext format="html"><text><![CDATA[<p>Si se sustituye un capital futuro por otro equivalente con vencimiento presente, se trata de una operación de…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Capitalización: capital presente → capital futuro. Actualización o descuento: capital futuro → capital presente.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Capitalización fraccionada]]></text><feedback format="html"><text><![CDATA[Incorrecto. Es una modalidad de capitalización (de presente a futuro) con periodos inferiores al año.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Amortización]]></text><feedback format="html"><text><![CDATA[Incorrecto. La amortización se refiere a la devolución de un préstamo, no a este traslado de capitales.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Actualización o descuento]]></text><feedback format="html"><text><![CDATA[¡Correcto! Llevamos un capital del futuro al presente.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Capitalización]]></text><feedback format="html"><text><![CDATA[Incorrecto. La capitalización traslada un capital del presente al futuro, justo lo contrario.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T05 Operación financiera</text></name>
+<questiontext format="html"><text><![CDATA[<p>¿Cuál de los siguientes NO es un elemento de la operación financiera?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Elementos: ley financiera, tipo de interés, origen, fin, duración, acreedor/deudor y prestación/contraprestación.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[El origen, el fin y la duración]]></text><feedback format="html"><text><![CDATA[Incorrecto. Son elementos temporales de toda operación financiera.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[El balance de situación del acreedor]]></text><feedback format="html"><text><![CDATA[¡Correcto! El balance es un estado contable, no un elemento de la operación financiera.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[La ley financiera de capitalización o descuento]]></text><feedback format="html"><text><![CDATA[Incorrecto. La ley financiera sí es un elemento: determina cómo se trasladan los capitales en el tiempo.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[La prestación y la contraprestación]]></text><feedback format="html"><text><![CDATA[Incorrecto. Son los capitales que entrega y recibe cada parte; sí son elementos.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T06 Capitalización simple</text></name>
+<questiontext format="html"><text><![CDATA[<p>En capitalización simple, los intereses de cada periodo…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Capitalización simple: el tipo de interés se aplica siempre sobre el capital inicial; los intereses no generan nuevos intereses.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Crecen de forma exponencial]]></text><feedback format="html"><text><![CDATA[Incorrecto. El crecimiento exponencial es propio de la capitalización compuesta; en la simple es lineal.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Disminuyen con el paso del tiempo]]></text><feedback format="html"><text><![CDATA[Incorrecto. Los intereses de cada periodo son constantes, no disminuyen.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Son proporcionales al capital inicial y no se acumulan al capital]]></text><feedback format="html"><text><![CDATA[¡Correcto! El interés se aplica siempre sobre C0, por lo que cada periodo genera los mismos intereses.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Se acumulan al capital para generar nuevos intereses]]></text><feedback format="html"><text><![CDATA[Incorrecto. Esa es la característica de la capitalización compuesta.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T07 Capitalización simple</text></name>
+<questiontext format="html"><text><![CDATA[<p>¿Cuál es la fórmula fundamental de la capitalización simple?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Cn = C0 · (1 + n · i) y los intereses totales I = C0 · n · i. Tiempo y tipo deben estar en la misma unidad.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Cn = C0 · (1 + i)^n]]></text><feedback format="html"><text><![CDATA[Incorrecto. Esa es la fórmula de la capitalización compuesta.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Cn = C0 · (1 − i)^n]]></text><feedback format="html"><text><![CDATA[Incorrecto. Esta expresión haría disminuir el capital; recuerda la forma del descuento compuesto comercial.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[C0 = Cn · (1 − n · d)]]></text><feedback format="html"><text><![CDATA[Incorrecto. Esa expresión corresponde al descuento simple comercial (efectivo a partir del nominal).]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Cn = C0 · (1 + n · i)]]></text><feedback format="html"><text><![CDATA[¡Correcto! (1 + n · i) es el factor de capitalización simple.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T08 Capitalización simple</text></name>
+<questiontext format="html"><text><![CDATA[<p>Gráficamente, la evolución del capital en capitalización simple se representa mediante…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Simple → crecimiento lineal (recta). Compuesta → crecimiento exponencial (curva).</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Una curva decreciente]]></text><feedback format="html"><text><![CDATA[Incorrecto. En una capitalización el capital aumenta con el tiempo.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Una recta, ya que los intereses crecen de forma lineal]]></text><feedback format="html"><text><![CDATA[¡Correcto! Al generarse los mismos intereses en cada periodo, el capital crece en línea recta.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Una línea horizontal]]></text><feedback format="html"><text><![CDATA[Incorrecto. Una horizontal indicaría que el capital no crece; en capitalización simple sí crece.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Una curva exponencial]]></text><feedback format="html"><text><![CDATA[Incorrecto. La curva exponencial representa la capitalización compuesta.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T09 Descuento simple</text></name>
+<questiontext format="html"><text><![CDATA[<p>En una operación de descuento, la diferencia entre el capital nominal y el efectivo se denomina…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Nominal (N o Cn): capital futuro. Efectivo (E o C0): capital presente. Descuento: D = N − E.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Montante]]></text><feedback format="html"><text><![CDATA[Incorrecto. El montante es el capital final de una capitalización.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Tanto efectivo]]></text><feedback format="html"><text><![CDATA[Incorrecto. El tanto efectivo es un tipo de interés, no una cantidad de dinero.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Intereses de descuento (D)]]></text><feedback format="html"><text><![CDATA[¡Correcto! D = N − E.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Capital equivalente]]></text><feedback format="html"><text><![CDATA[Incorrecto. Nominal y efectivo son capitales equivalentes; su diferencia es el descuento.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T10 Descuento simple</text></name>
+<questiontext format="html"><text><![CDATA[<p>El descuento simple racional o matemático se caracteriza porque se calcula…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Racional: sobre el efectivo con i. Comercial: sobre el nominal con d.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Sobre el capital nominal, con el tipo de descuento d]]></text><feedback format="html"><text><![CDATA[Incorrecto. Esa es la característica del descuento comercial.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Siempre a un plazo superior a un año]]></text><feedback format="html"><text><![CDATA[Incorrecto. El descuento simple se aplica habitualmente a corto plazo.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Sobre los intereses acumulados]]></text><feedback format="html"><text><![CDATA[Incorrecto. El descuento se calcula sobre un capital (efectivo o nominal), no sobre los intereses.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Sobre el capital efectivo (C0), utilizando el tipo de interés i]]></text><feedback format="html"><text><![CDATA[¡Correcto! Por eso utiliza la fórmula de la capitalización simple: E = N / (1 + n · i).]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T11 Descuento simple</text></name>
+<questiontext format="html"><text><![CDATA[<p>¿Por qué las entidades financieras suelen aplicar el descuento comercial a sus clientes?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>El nominal es mayor que el efectivo, por lo que el descuento calculado sobre él (comercial) es mayor que el racional.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Porque no depende del plazo]]></text><feedback format="html"><text><![CDATA[Incorrecto. Dc = N · n · d depende del plazo n.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Porque al calcularse sobre el nominal resulta mayor que el racional]]></text><feedback format="html"><text><![CDATA[¡Correcto! Para un mismo nominal, plazo y tipo: Dc > Dr.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Porque es menor que el racional]]></text><feedback format="html"><text><![CDATA[Incorrecto. Es al revés: el comercial es mayor, por eso le interesa a la entidad.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Porque lo exige la normativa contable]]></text><feedback format="html"><text><![CDATA[Incorrecto. No es una exigencia normativa; es una práctica mercantil.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T12 Descuento simple</text></name>
+<questiontext format="html"><text><![CDATA[<p>En el descuento simple comercial, la relación entre efectivo (E) y nominal (N) es…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Descuento comercial simple: Dc = N · n · d; E = N · (1 − n · d).</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[E = N · (1 − d)^n]]></text><feedback format="html"><text><![CDATA[Incorrecto. Esa es la expresión del descuento compuesto comercial.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[E = N · (1 + n · d)]]></text><feedback format="html"><text><![CDATA[Incorrecto. Con el signo + el efectivo sería mayor que el nominal, lo que no tiene sentido en un descuento.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[E = N / (1 + n · i)]]></text><feedback format="html"><text><![CDATA[Incorrecto. Esa es la expresión del descuento simple racional.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[E = N · (1 − n · d)]]></text><feedback format="html"><text><![CDATA[¡Correcto! E = N − Dc = N − N · n · d = N · (1 − n · d).]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T13 Capitalización compuesta</text></name>
+<questiontext format="html"><text><![CDATA[<p>¿Cuál es la característica fundamental que diferencia la capitalización compuesta de la simple?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>En la capitalización compuesta los intereses se acumulan al capital; el factor de capitalización es exponencial.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[No necesita conocer el tiempo de la operación]]></text><feedback format="html"><text><![CDATA[Incorrecto. El tiempo n es imprescindible: Cn = C0 · (1 + i)^n.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Solo se usa a corto plazo]]></text><feedback format="html"><text><![CDATA[Incorrecto. La compuesta se usa sobre todo a largo plazo; la simple, a corto.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Los intereses de cada periodo se acumulan al capital para generar nuevos intereses]]></text><feedback format="html"><text><![CDATA[¡Correcto! Es el «interés sobre interés».]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[El tipo de interés es siempre mayor]]></text><feedback format="html"><text><![CDATA[Incorrecto. Ambas pueden aplicarse con el mismo tipo; la diferencia está en la acumulación de intereses.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T14 Capitalización compuesta</text></name>
+<questiontext format="html"><text><![CDATA[<p>El factor de capitalización compuesta es…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Capitalizar en compuesta: multiplicar por (1 + i)^n. Actualizar: multiplicar por (1 + i)^−n.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[(1 + n · i)]]></text><feedback format="html"><text><![CDATA[Incorrecto. Es el factor de capitalización simple.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[(1 − n · d)]]></text><feedback format="html"><text><![CDATA[Incorrecto. Corresponde al descuento simple comercial.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[(1 + i)^n]]></text><feedback format="html"><text><![CDATA[¡Correcto! Cn = C0 · (1 + i)^n.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[(1 + i)^−n]]></text><feedback format="html"><text><![CDATA[Incorrecto. Es el factor de actualización compuesta (sirve para descontar).]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T15 Descuento compuesto</text></name>
+<questiontext format="html"><text><![CDATA[<p>En el descuento compuesto racional, el efectivo se obtiene…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Descuento compuesto racional: E = N · (1 + i)^−n; D = N − E.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Multiplicando el nominal por (1 − n · d)]]></text><feedback format="html"><text><![CDATA[Incorrecto. Eso es el descuento simple comercial.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Multiplicando el nominal por (1 + i)^n]]></text><feedback format="html"><text><![CDATA[Incorrecto. Eso capitaliza, es decir, lleva el capital hacia el futuro.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Sumando los intereses al nominal]]></text><feedback format="html"><text><![CDATA[Incorrecto. En un descuento el efectivo es menor que el nominal; no se suman intereses.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Multiplicando el nominal por el factor de actualización (1 + i)^−n]]></text><feedback format="html"><text><![CDATA[¡Correcto! Es la operación inversa a la capitalización compuesta.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T16 Descuento compuesto</text></name>
+<questiontext format="html"><text><![CDATA[<p>Respecto al descuento compuesto comercial, es correcto afirmar que…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Descuento compuesto comercial: el nominal va disminuyendo cada periodo en (1 − d): E = N · (1 − d)^n.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="100" format="html"><text><![CDATA[Se calcula en función del nominal y se aplica con menos frecuencia que el comercial simple]]></text><feedback format="html"><text><![CDATA[¡Correcto! E = N · (1 − d)^n.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Es el más utilizado en la negociación de efectos]]></text><feedback format="html"><text><![CDATA[Incorrecto. En la negociación de efectos se usa sobre todo el descuento comercial simple.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Se calcula sobre el efectivo]]></text><feedback format="html"><text><![CDATA[Incorrecto. Al ser comercial, se calcula sobre el nominal.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Coincide siempre con el racional]]></text><feedback format="html"><text><![CDATA[Incorrecto. Con el mismo tipo, el comercial es mayor que el racional.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T17 Comparativa simple-compuesta</text></name>
+<questiontext format="html"><text><![CDATA[<p>Para una operación con un plazo inferior a un año, al mismo tipo de interés…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>n < 1 año: simple > compuesta. n = 1 año: iguales. n > 1 año: compuesta > simple.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="100" format="html"><text><![CDATA[La capitalización simple genera más intereses]]></text><feedback format="html"><text><![CDATA[¡Correcto! Para periodos inferiores al año, la simple da más intereses que la compuesta.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[No puede aplicarse la capitalización simple]]></text><feedback format="html"><text><![CDATA[Incorrecto. Precisamente la simple es la habitual a corto plazo.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[La capitalización compuesta genera más intereses]]></text><feedback format="html"><text><![CDATA[Incorrecto. Eso ocurre cuando el plazo es superior a un año.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Ambas generan los mismos intereses]]></text><feedback format="html"><text><![CDATA[Incorrecto. Solo coinciden cuando el plazo es exactamente un año.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T18 Equivalencia financiera</text></name>
+<questiontext format="html"><text><![CDATA[<p>Según el principio de equivalencia financiera, dos capitales con vencimientos distintos son equivalentes cuando…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>El valor de un capital depende del momento en que se valora y del tipo de interés aplicado.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Se han pactado con la misma entidad]]></text><feedback format="html"><text><![CDATA[Incorrecto. La entidad no influye en la equivalencia financiera.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Valorados en un mismo momento del tiempo tienen el mismo valor]]></text><feedback format="html"><text><![CDATA[¡Correcto! Al tener el mismo valor pueden intercambiarse.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Tienen la misma cuantía]]></text><feedback format="html"><text><![CDATA[Incorrecto. Dos capitales de igual cuantía en momentos distintos no valen lo mismo.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Vencen en el mismo año]]></text><feedback format="html"><text><![CDATA[Incorrecto. La equivalencia no depende de coincidir en el año, sino de su valor en un mismo momento.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T19 Equivalencia financiera</text></name>
+<questiontext format="html"><text><![CDATA[<p>Cuando el nominal del capital único que sustituye a varios capitales es igual a la suma de los nominales sustituidos, el vencimiento que se calcula es el…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Vencimiento común: capital único ≠ suma de capitales. Vencimiento medio: capital único = suma de capitales.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Vencimiento nominal]]></text><feedback format="html"><text><![CDATA[Incorrecto. No existe ese concepto; el nominal es una cuantía, no un vencimiento.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Vencimiento medio]]></text><feedback format="html"><text><![CDATA[¡Correcto! En el vencimiento medio, el capital único es igual a la suma de los capitales sustituidos.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Vencimiento anticipado]]></text><feedback format="html"><text><![CDATA[Incorrecto. No es un concepto de equivalencia financiera de esta unidad.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Vencimiento común]]></text><feedback format="html"><text><![CDATA[Incorrecto. En el vencimiento común, el capital único es distinto de la suma de los sustituidos.]]></text></feedback></answer>
+</question>
+<question type="multichoice"><name><text>UD2-T20 Tantos equivalentes</text></name>
+<questiontext format="html"><text><![CDATA[<p>En capitalización compuesta fraccionada, el tanto efectivo anual (i) y el tanto nominal (j)…</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Nominal j: el pactado. Fraccionado ik = j/k. Efectivo i = (1 + ik)^k − 1. En compuesta, i ≠ j.</p>]]></text></generalfeedback>
+<defaultgrade>1</defaultgrade><penalty>0</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+<answer fraction="0" format="html"><text><![CDATA[Solo difieren en capitalización simple]]></text><feedback format="html"><text><![CDATA[Incorrecto. En capitalización simple los tantos proporcionales son equivalentes (12 % anual = 1 % mensual).]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Son siempre iguales]]></text><feedback format="html"><text><![CDATA[Incorrecto. En capitalización compuesta fraccionada, i ≠ j.]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[Son distintos: el nominal j siempre es mayor que i]]></text><feedback format="html"><text><![CDATA[Incorrecto. Es al revés: con k > 1, el efectivo i es mayor que el nominal j.]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[Son distintos: el efectivo i = (1 + j/k)^k − 1 es mayor que j]]></text><feedback format="html"><text><![CDATA[¡Correcto! Al acumularse los intereses en cada fracción del año, el tanto efectivo supera al nominal.]]></text></feedback></answer>
+</question>
+</quiz>

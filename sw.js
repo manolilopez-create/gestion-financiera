@@ -1,4 +1,4 @@
-const CACHE='gf-00b2ade787';
+const CACHE='gf-6fdf57c74b';
 const FILES=['./','index.html','pdfjs/pdf.min.mjs','pdfjs/pdf.worker.min.mjs','manifest.webmanifest','icon-192.png','icon-512.png','apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});

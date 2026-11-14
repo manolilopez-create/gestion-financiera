@@ -1,0 +1,179 @@
+::1. Elementos del sistema financiero::
+¿Qué elemento NO forma parte del sistema financiero?
+{
+~Intermediarios financieros.
+~Agentes económicos.
+=Productos agrícolas.
+~Mercados financieros.
+}
+
+::2. Dinero como activo básico::
+El dinero se considera el activo financiero básico porque:
+{
+~No tiene valor real.
+=Sirve como medio de pago, depósito de valor y unidad de cuenta.
+~Su valor depende del oro.
+~Solo lo emite el BCE.
+}
+
+::3. Pertenencia al SEBC::
+¿Cuál de las siguientes instituciones pertenece al SEBC?
+{
+~FMI.
+=BCE y bancos centrales nacionales.
+~Consejo Europeo.
+~CNMV.
+}
+
+::4. Misión del BCE::
+¿Cuál es la misión principal del BCE?
+{
+~Supervisar las cajas de ahorro.
+=Mantener la estabilidad de precios.
+~Emitir deuda pública.
+~Financiar al Tesoro español.
+}
+
+::5. Función del Banco de España::
+El Banco de España actúa como:
+{
+=Banco central nacional integrado en el SEBC.
+~Entidad privada de ahorro.
+~Ministerio de Economía.
+~Fondo de inversión estatal.
+}
+
+::6. Supervisión bursátil::
+¿Qué organismo supervisa los mercados bursátiles en España?
+{
+~El Banco de España.
+=La CNMV.
+~El ICO.
+~El Tribunal de Cuentas.
+}
+
+::7. Función de los intermediarios::
+Los intermediarios financieros reducen:
+{
+~La competencia entre bancos.
+=Los costes y plazos de intermediación.
+~Los beneficios de los ahorradores.
+~La liquidez del sistema.
+}
+
+::8. Garantía del préstamo hipotecario::
+En un préstamo hipotecario, la garantía es:
+{
+~Personal.
+=Real, sobre un bien inmueble.
+~Temporal.
+~Aval del Estado.
+}
+
+::9. Depósitos a la vista::
+Los depósitos a la vista se caracterizan por:
+{
+~Ser de larga duración.
+~Ofrecer alta rentabilidad.
+=Tener liquidez inmediata.
+~No estar garantizados.
+}
+
+::10. Renta variable::
+Un activo de renta variable se diferencia porque:
+{
+~Su rentabilidad se conoce de antemano.
+~No genera riesgo.
+=Su rendimiento depende de los beneficios del emisor.
+~Tiene interés fijo.
+}
+
+::11. Letras del Tesoro::
+Las Letras del Tesoro son:
+{
+~Productos de renta variable.
+=Activos financieros de corto plazo y renta fija.
+~Acciones del Estado.
+~Productos derivados.
+}
+
+::12. Fondo de Garantía de Depósitos::
+El Fondo de Garantía de Depósitos cubre:
+{
+=Hasta 100.000 euros por titular y entidad.
+~Solo depósitos empresariales.
+~Depósitos en divisas extranjeras.
+~Un máximo de 10.000 euros.
+}
+
+::13. Mercado de divisas::
+¿Qué tipo de mercado corresponde a la compraventa de divisas?
+{
+~Mercado interbancario.
+~Mercado de capitales.
+=Mercado FOREX.
+~Mercado primario.
+}
+
+::14. Mercado primario::
+El mercado donde se emiten por primera vez los títulos se llama:
+{
+~Secundario.
+=Primario.
+~Derivado.
+~OTC.
+}
+
+::15. Activo con menor riesgo::
+¿Qué tipo de activo financiero tiene menor riesgo?
+{
+~Acciones.
+=Bonos del Estado.
+~Opciones sobre índices.
+~Warrants.
+}
+
+::16. Mercado interbancario::
+El mercado donde los bancos se prestan dinero entre sí se denomina:
+{
+=Interbancario.
+~Monetario minorista.
+~De capitales.
+~De valores.
+}
+
+::17. Factoring::
+El factoring consiste en:
+{
+~Financiar a los proveedores mediante pagos confirmados.
+=Anticipar el cobro de facturas a una empresa.
+~Un préstamo hipotecario empresarial.
+~Un producto de ahorro.
+}
+
+::18. Productos derivados::
+¿Qué producto deriva de otro activo subyacente?
+{
+~Bono.
+~Depósito a plazo.
+=Opción o futuro.
+~Préstamo personal.
+}
+
+::19. Eurosistema::
+El Eurosistema está formado por:
+{
+=Los países de la UE que usan el euro.
+~Todos los países de la UE.
+~El FMI y el BCE.
+~El BCE y la CNMV.
+}
+
+::20. Globalización financiera::
+En un sistema financiero globalizado:
+{
+~Los movimientos de capital son lentos.
+=Las decisiones financieras pueden afectar a la economía real.
+~Los estados controlan totalmente los flujos financieros.
+~No existen riesgos de contagio.
+}
